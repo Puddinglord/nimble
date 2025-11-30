@@ -1,0 +1,421 @@
+{% extends "base.html" %}
+
+{% block title %}{{name}} - Character Sheet{% endblock %}
+
+{% block styles %}
+<style>
+    .character-header {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 3px solid var(--nimble-green);
+    }
+
+    .character-portrait {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 3px solid var(--nimble-brown);
+    }
+
+    .character-info h1 {
+        margin: 0 0 5px 0;
+        color: var(--nimble-brown);
+        font-size: 2em;
+    }
+
+    .character-info .subtitle {
+        font-size: 1.2em;
+        color: var(--nimble-green);
+        margin: 0 0 5px 0;
+    }
+
+    .character-info .level {
+        color: #666;
+        font-weight: bold;
+    }
+
+    .stat-block {
+        background: var(--nimble-cream);
+        border: 2px solid var(--nimble-brown);
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .stat-block h2 {
+        margin: 0 0 15px 0;
+        color: var(--nimble-brown);
+        border-bottom: 2px solid var(--nimble-gold);
+        padding-bottom: 8px;
+        font-size: 1.5em;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .stat-box {
+        text-align: center;
+        background: white;
+        padding: 12px;
+        border-radius: 6px;
+        border: 2px solid var(--nimble-green);
+    }
+
+    .stat-box .label {
+        font-size: 0.85em;
+        color: #666;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .stat-box .value {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: var(--nimble-brown);
+    }
+
+    .stat-box .modifier {
+        font-size: 1.1em;
+        color: var(--nimble-green);
+    }
+
+    .hp-bar {
+        background: var(--nimble-dark-red);
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+    }
+
+    .hp-bar h3 {
+        margin: 0 0 10px 0;
+    }
+
+    .hp-values {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .skill-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 10px;
+    }
+
+    .skill-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        background: white;
+        border-radius: 4px;
+        border-left: 3px solid var(--nimble-green);
+    }
+
+    .skill-item.proficient {
+        border-left-color: var(--nimble-gold);
+        background: #fffef8;
+    }
+
+    .skill-item .skill-name {
+        font-weight: 500;
+    }
+
+    .skill-item .skill-bonus {
+        font-weight: bold;
+        color: var(--nimble-green);
+    }
+
+    .ability-entry, .attack-entry, .spell-entry {
+        margin: 15px 0;
+        padding: 15px;
+        background: white;
+        border-radius: 6px;
+        border-left: 4px solid var(--nimble-green);
+    }
+
+    .ability-entry h3, .attack-entry h3, .spell-entry h3 {
+        margin: 0 0 8px 0;
+        color: var(--nimble-brown);
+    }
+
+    .ability-meta, .attack-meta, .spell-meta {
+        font-size: 0.9em;
+        color: #666;
+        font-style: italic;
+        margin-bottom: 8px;
+    }
+
+    .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
+
+    .equipment-item {
+        padding: 10px;
+        background: white;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+    }
+
+    .equipment-item.equipped {
+        border-color: var(--nimble-gold);
+        background: #fffef8;
+    }
+
+    .equipment-item strong {
+        color: var(--nimble-brown);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="character-header">
+    {% if image %}
+    <img src="{{image}}" alt="{{name}}" class="character-portrait">
+    {% endif %}
+    <div class="character-info">
+        <h1>{{name}}</h1>
+        <p class="subtitle">{{data.ancestry.name|default: 'Unknown Ancestry'}} {{data.class.name|default: 'Unknown Class'}}</p>
+        <p class="level">Level {{data.level|default: '1'}}</p>
+        {% if data.background %}
+        <p class="background">{{data.background}}</p>
+        {% endif %}
+    </div>
+</div>
+
+{% if descr %}
+<div class="stat-block">
+    <h2>Description</h2>
+    <p>{{descr}}</p>
+</div>
+{% endif %}
+
+<div class="stat-block">
+    <h2>Core Statistics</h2>
+    <div class="stat-grid">
+        <div class="stat-box">
+            <div class="label">AC</div>
+            <div class="value">{{data.ac.value|default: '10'}}</div>
+            {% if data.ac.notes %}<div class="modifier">{{data.ac.notes}}</div>{% endif %}
+        </div>
+        <div class="stat-box">
+            <div class="label">Initiative</div>
+            <div class="value">{{data.initiative|default: '0'|signed}}</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">Speed</div>
+            <div class="value">{{data.movement.walk|default: '6'}}</div>
+            <div class="modifier">spaces</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">Prof. Bonus</div>
+            <div class="value">{{data.proficiencyBonus|default: '+2'}}</div>
+        </div>
+    </div>
+
+    <div class="hp-bar">
+        <h3>Hit Points</h3>
+        <div class="hp-values">
+            <span>{{data.hp.current|default: '0'}} / {{data.hp.max|default: '0'}}</span>
+            {% if data.hp.temp > 0 %}<span style="color: var(--nimble-gold);">+{{data.hp.temp}} temp</span>{% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="stat-block">
+    <h2>Abilities</h2>
+    <div class="stat-grid">
+        <div class="stat-box">
+            <div class="label">Strength</div>
+            <div class="value">{{data.abilities.str.score|default: '10'}}</div>
+            <div class="modifier">{{data.abilities.str.modifier|default: '0'|signed}}</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">Dexterity</div>
+            <div class="value">{{data.abilities.dex.score|default: '10'}}</div>
+            <div class="modifier">{{data.abilities.dex.modifier|default: '0'|signed}}</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">Intelligence</div>
+            <div class="value">{{data.abilities.int.score|default: '10'}}</div>
+            <div class="modifier">{{data.abilities.int.modifier|default: '0'|signed}}</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">Will</div>
+            <div class="value">{{data.abilities.wil.score|default: '10'}}</div>
+            <div class="modifier">{{data.abilities.wil.modifier|default: '0'|signed}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="stat-block">
+    <h2>Skills</h2>
+    <div class="skill-list">
+        <div class="skill-item{% if data.skills.arcana.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Arcana (INT)</span>
+            <span class="skill-bonus">{{data.skills.arcana.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.examination.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Examination (INT)</span>
+            <span class="skill-bonus">{{data.skills.examination.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.finesse.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Finesse (DEX)</span>
+            <span class="skill-bonus">{{data.skills.finesse.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.influence.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Influence (WIL)</span>
+            <span class="skill-bonus">{{data.skills.influence.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.insight.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Insight (WIL)</span>
+            <span class="skill-bonus">{{data.skills.insight.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.might.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Might (STR)</span>
+            <span class="skill-bonus">{{data.skills.might.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.lore.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Lore (INT)</span>
+            <span class="skill-bonus">{{data.skills.lore.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.naturecraft.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Naturecraft (WIL)</span>
+            <span class="skill-bonus">{{data.skills.naturecraft.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.perception.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Perception (WIL)</span>
+            <span class="skill-bonus">{{data.skills.perception.bonus|default: '0'|signed}}</span>
+        </div>
+        <div class="skill-item{% if data.skills.stealth.proficiency %} proficient{% endif %}">
+            <span class="skill-name">Stealth (DEX)</span>
+            <span class="skill-bonus">{{data.skills.stealth.bonus|default: '0'|signed}}</span>
+        </div>
+    </div>
+</div>
+
+{% if data.proficiencies.armor or data.proficiencies.weapons or data.languages %}
+<div class="stat-block">
+    <h2>Proficiencies & Languages</h2>
+    {% if data.proficiencies.armor %}<p><strong>Armor:</strong> {{data.proficiencies.armor}}</p>{% endif %}
+    {% if data.proficiencies.weapons %}<p><strong>Weapons:</strong> {{data.proficiencies.weapons}}</p>{% endif %}
+    {% if data.languages %}<p><strong>Languages:</strong> {{data.languages}}</p>{% endif %}
+</div>
+{% endif %}
+
+{% if data.attacks %}
+<div class="stat-block">
+    <h2>Attacks</h2>
+    {% for attack in data.attacks %}
+    <div class="attack-entry">
+        <h3>{{attack.name}}</h3>
+        <div class="attack-meta">{{attack.range}}{% if attack.properties %} • {{attack.properties}}{% endif %}</div>
+        <p><strong>Attack:</strong> {{attack.attackBonus|signed}} to hit</p>
+        <p><strong>Damage:</strong> {{attack.damage}} {{attack.damageType|map: 'DamageType'}}</p>
+        {% if attack.text %}<p>{{attack.text}}</p>{% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if data.spellcasting %}
+<div class="stat-block">
+    <h2>Spellcasting</h2>
+    <p><strong>Spellcasting Ability:</strong> {{data.spellcasting.ability|map: 'Ability'|uppercase}}</p>
+    <p><strong>Spell Save DC:</strong> {{data.spellcasting.saveDC}}</p>
+    <p><strong>Spell Attack Bonus:</strong> {{data.spellcasting.attackBonus|signed}}</p>
+
+    {% if data.spells %}
+    <h3 style="margin-top: 20px;">Known Spells</h3>
+    {% for spell in data.spells %}
+    <div class="spell-entry">
+        <h3>{{spell.name}}</h3>
+        <div class="spell-meta">
+            {{spell.level|map: 'SpellLevel'}} {{spell.school|map: 'SpellSchool'}} •
+            Casting Time: {{spell.castingTime}} •
+            Range: {{spell.range}} •
+            Components: {{spell.components|join: ', '}} •
+            Duration: {{spell.duration}}
+        </div>
+        <p>{{spell.description}}</p>
+        {% if spell.higherLevel %}<p><strong>At Higher Levels:</strong> {{spell.higherLevel}}</p>{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endif %}
+
+{% if data.class.description or data.features %}
+<div class="stat-block">
+    <h2>Class Features</h2>
+    {% if data.class.description %}<p>{{data.class.description}}</p>{% endif %}
+    {% for feature in data.features %}
+    <div class="ability-entry">
+        <h3>{{feature.name}}</h3>
+        {% if feature.actionType or feature.range or feature.duration %}
+        <div class="ability-meta">
+            {% if feature.actionType %}{{feature.actionType}}{% endif %}
+            {% if feature.range %} • {{feature.range}}{% endif %}
+            {% if feature.duration %} • {{feature.duration}}{% endif %}
+        </div>
+        {% endif %}
+        <p>{{feature.text}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if data.ancestry.description or data.ancestry.features %}
+<div class="stat-block">
+    <h2>Ancestry Features</h2>
+    {% if data.ancestry.description %}<p>{{data.ancestry.description}}</p>{% endif %}
+    {% for feature in data.ancestry.features %}
+    <div class="ability-entry">
+        <h3>{{feature.name}}</h3>
+        <p>{{feature.text}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if data.equipment %}
+<div class="stat-block">
+    <h2>Equipment</h2>
+    {% if data.currency.silver %}<p><strong>Silver:</strong> {{data.currency.silver}}</p>{% endif %}
+    {% if data.equippedArmor.name %}<p><strong>Armor:</strong> {{data.equippedArmor.name}} (AC {{data.equippedArmor.value}})</p>{% endif %}
+
+    <div class="equipment-grid">
+        {% for item in data.equipment %}
+        <div class="equipment-item{% if item.equipped %} equipped{% endif %}">
+            <strong>{{item.name}}</strong>{% if item.quantity > 1 %} (×{{item.quantity}}){% endif %}
+            {% if item.weight %}<br><small>{{item.weight}}</small>{% endif %}
+            {% if item.description %}<br><small>{{item.description}}</small>{% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if data.personality or data.ideals or data.bonds or data.flaws or data.notes %}
+<div class="stat-block">
+    <h2>Character Details</h2>
+    {% if data.personality %}<p><strong>Personality:</strong> {{data.personality}}</p>{% endif %}
+    {% if data.ideals %}<p><strong>Ideals:</strong> {{data.ideals}}</p>{% endif %}
+    {% if data.bonds %}<p><strong>Bonds:</strong> {{data.bonds}}</p>{% endif %}
+    {% if data.flaws %}<p><strong>Flaws:</strong> {{data.flaws}}</p>{% endif %}
+    {% if data.notes %}<p><strong>Notes:</strong> {{data.notes}}</p>{% endif %}
+</div>
+{% endif %}
+{% endblock %}

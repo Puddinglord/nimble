@@ -1,0 +1,46 @@
+{
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Ability name"
+        },
+        {
+          "title": "Type",
+          "type": "picker",
+          "attribute": "type",
+          "attributeType": "CharacterSection",
+          "placeholder": "Select type"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "text",
+          "placeholder": "Ability description"
+        },
+        {
+          "title": "Action Type",
+          "type": "text",
+          "attribute": "actionType",
+          "placeholder": "Action, Bonus Action, Reaction, etc."
+        },
+        {
+          "title": "Range",
+          "type": "text",
+          "attribute": "range",
+          "placeholder": "Self, Touch, 30 spaces, etc."
+        },
+        {
+          "title": "Duration",
+          "type": "text",
+          "attribute": "duration",
+          "placeholder": "Instantaneous, 1 minute, Concentration, etc."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "Monster": {
+    "params": [
+      {
+        "label": "Size",
+        "field": "data.size",
+        "attributeType": "Size"
+      },
+      {
+        "label": "Type",
+        "field": "data.type",
+        "attributeType": "MonsterType"
+      },
+      {
+        "label": "Challenge Rating",
+        "field": "data.cr",
+        "attributeType": "ChallengeRating"
+      }
+    ],
+    "group": [
+      {
+        "label": "Challenge",
+        "field": "data.cr",
+        "type": "ChallengeRating"
+      },
+      {
+        "label": "Type",
+        "field": "data.type",
+        "type": "MonsterType"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Spell": {
+    "params": [
+      {
+        "label": "School",
+        "field": "data.school",
+        "attributeType": "SpellSchool"
+      },
+      {
+        "label": "Level",
+        "field": "data.level",
+        "attributeType": "SpellLevel"
+      },
+      {
+        "label": "Class",
+        "field": "data.classes",
+        "attributeType": "Class",
+        "dynamic": true
+      }
+    ],
+    "group": [
+      {
+        "label": "School",
+        "field": "data.school",
+        "type": "SpellSchool"
+      },
+      {
+        "label": "Level",
+        "field": "data.level",
+        "type": "SpellLevel"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Item": {
+    "params": [
+      {
+        "label": "Type",
+        "field": "data.type",
+        "attributeType": "ItemType"
+      },
+      {
+        "label": "Rarity",
+        "field": "data.rarity",
+        "attributeType": "ItemRarity"
+      }
+    ],
+    "group": [
+      {
+        "label": "Type",
+        "field": "data.type",
+        "type": "ItemType"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Weapon": {
+    "params": [
+      {
+        "label": "Type",
+        "field": "data.type",
+        "values": ["melee", "ranged"]
+      },
+      {
+        "label": "Damage Type",
+        "field": "data.damageType",
+        "attributeType": "DamageType"
+      }
+    ],
+    "group": [
+      {
+        "label": "Type",
+        "field": "data.type"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Armor": {
+    "params": [
+      {
+        "label": "Type",
+        "field": "data.type",
+        "attributeType": "ArmorType"
+      }
+    ],
+    "group": [
+      {
+        "label": "Type",
+        "field": "data.type",
+        "type": "ArmorType"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Class": {
+    "params": [],
+    "group": [
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Subclass": {
+    "params": [
+      {
+        "label": "Class",
+        "field": "data.class",
+        "attributeType": "Class",
+        "dynamic": true
+      }
+    ],
+    "group": [
+      {
+        "label": "Class",
+        "field": "data.class",
+        "type": "Class"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Ancestry": {
+    "params": [
+      {
+        "label": "Category",
+        "field": "data.category",
+        "values": ["Common", "Exotic"]
+      },
+      {
+        "label": "Size",
+        "field": "data.size",
+        "attributeType": "Size"
+      }
+    ],
+    "group": [
+      {
+        "label": "Category",
+        "field": "data.category"
+      },
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Background": {
+    "params": [],
+    "group": [
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Feature": {
+    "params": [],
+    "group": [
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  },
+  "Rule": {
+    "params": [
+      {
+        "label": "Type",
+        "field": "type",
+        "values": ["condition", "skill", "stat", "combat"]
+      }
+    ],
+    "group": [
+      {
+        "label": "Type",
+        "field": "type"
+      }
+    ]
+  },
+  "Table": {
+    "params": [],
+    "group": [
+      {
+        "label": "Name",
+        "field": "name"
+      }
+    ]
+  }
+}

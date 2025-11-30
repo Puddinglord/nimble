@@ -1,0 +1,63 @@
+{
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Spell name"
+        },
+        {
+          "title": "Level",
+          "type": "picker",
+          "attribute": "level",
+          "attributeType": "SpellLevel"
+        },
+        {
+          "title": "School",
+          "type": "picker",
+          "attribute": "school",
+          "attributeType": "SpellSchool"
+        },
+        {
+          "title": "Casting Time",
+          "type": "text",
+          "attribute": "castingTime",
+          "placeholder": "1 action"
+        },
+        {
+          "title": "Range",
+          "type": "text",
+          "attribute": "range",
+          "placeholder": "60 spaces"
+        },
+        {
+          "title": "Components",
+          "type": "tags",
+          "attribute": "components",
+          "attributeType": "SpellComponent"
+        },
+        {
+          "title": "Duration",
+          "type": "text",
+          "attribute": "duration",
+          "placeholder": "Instantaneous"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "description",
+          "placeholder": "Spell effect description"
+        },
+        {
+          "title": "At Higher Levels",
+          "type": "textArea",
+          "attribute": "higherLevel",
+          "placeholder": "Effects when cast at higher levels"
+        }
+      ]
+    }
+  ]
+}

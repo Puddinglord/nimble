@@ -1,0 +1,38 @@
+{
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Item name"
+        },
+        {
+          "title": "Quantity",
+          "type": "number",
+          "attribute": "quantity",
+          "placeholder": "1"
+        },
+        {
+          "title": "Weight",
+          "type": "text",
+          "attribute": "weight",
+          "placeholder": "0 lb"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "description",
+          "placeholder": "Item description"
+        },
+        {
+          "title": "Equipped",
+          "type": "checkbox",
+          "attribute": "equipped"
+        }
+      ]
+    }
+  ]
+}

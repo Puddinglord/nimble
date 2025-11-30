@@ -29,3 +29,11 @@ Temporary Items
 Rules/
 extract_pdf.py
 Heros.pdf
+
+# Build artifacts
+releases/
+*.system
+
+# Internal documentation
+REWRITE_SUMMARY.md
+BUILD.md

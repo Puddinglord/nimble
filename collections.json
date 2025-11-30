@@ -1,0 +1,165 @@
+{
+  "Size": [
+    "T",
+    "S",
+    "M",
+    "L",
+    "H",
+    "G"
+  ],
+  "Ability": [
+    "str",
+    "dex",
+    "int",
+    "wil"
+  ],
+  "ChallengeRating": [
+    "0",
+    "1/8",
+    "1/4",
+    "1/2",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30"
+  ],
+  "ProficiencyCategory": [
+    "armor",
+    "weapon",
+    "skill"
+  ],
+  "ProficiencyLevel": [
+    "proficient",
+    "expert"
+  ],
+  "SpellComponent": [
+    "V",
+    "S",
+    "M"
+  ],
+  "SpellLevel": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "HitDie": [
+    "6",
+    "8",
+    "10",
+    "12",
+    "20"
+  ],
+  "ItemRarity": [
+    "common",
+    "uncommon",
+    "rare",
+    "very rare",
+    "legendary",
+    "artifact",
+    "unknown"
+  ],
+  "ItemTypeCategory": [
+    "armor",
+    "weapon",
+    "item",
+    "equipment"
+  ],
+  "ItemTypeCategoryMapping": {
+    "armor": [
+      "cloth",
+      "leather",
+      "mail",
+      "plate",
+      "shield"
+    ],
+    "weapon": [
+      "melee",
+      "ranged"
+    ],
+    "item": [
+      "consumable",
+      "magical"
+    ],
+    "equipment": [
+      "adventuring gear",
+      "tools"
+    ]
+  },
+  "CharacterSection": [
+    "stats",
+    "skills",
+    "actions",
+    "spells",
+    "items",
+    "features",
+    "other"
+  ],
+  "Class": [
+    "berserker",
+    "the-cheat",
+    "commander",
+    "hunter",
+    "mage",
+    "oathsworn",
+    "shadowmancer",
+    "shepherd",
+    "songweaver",
+    "stormshifter",
+    "zephyr"
+  ],
+  "Ancestry": [
+    "human",
+    "dwarf",
+    "elf",
+    "halfling",
+    "gnome",
+    "bunbun",
+    "dragonborn",
+    "fiendkin",
+    "goblin",
+    "kobold",
+    "orc",
+    "birdfolk",
+    "celestial",
+    "changeling",
+    "crystalborn",
+    "dryad-shroomling",
+    "half-giant",
+    "minotaur-beastfolk",
+    "oozeling-construct",
+    "planarbeing",
+    "ratfolk",
+    "stoatling",
+    "turtlefolk",
+    "wyrdling"
+  ]
+}

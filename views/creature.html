@@ -1,0 +1,417 @@
+{% extends "base.html" %}
+
+{% block title %}{{name}} - Creature{% endblock %}
+
+{% block styles %}
+<style>
+    .creature-block {
+        background: var(--nimble-cream);
+        border: 3px solid var(--nimble-brown);
+        border-radius: 12px;
+        padding: 0;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .creature-header {
+        background: var(--nimble-brown);
+        color: var(--nimble-cream);
+        padding: 20px 25px;
+        border-bottom: 3px solid var(--nimble-gold);
+    }
+
+    .creature-header h1 {
+        margin: 0 0 8px 0;
+        font-size: 2.2em;
+        color: var(--nimble-gold);
+    }
+
+    .creature-header .type-line {
+        font-size: 1.1em;
+        font-style: italic;
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    .creature-content {
+        padding: 25px;
+    }
+
+    .stat-line {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .stat-line:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        font-weight: bold;
+        color: var(--nimble-brown);
+        min-width: 150px;
+    }
+
+    .stat-value {
+        color: #333;
+        flex: 1;
+        text-align: right;
+    }
+
+    .divider {
+        height: 3px;
+        background: var(--nimble-gold);
+        margin: 20px 0;
+        border: none;
+    }
+
+    .ability-scores {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .ability-box {
+        text-align: center;
+        background: white;
+        padding: 15px 10px;
+        border-radius: 8px;
+        border: 2px solid var(--nimble-green);
+    }
+
+    .ability-box .name {
+        font-weight: bold;
+        font-size: 0.9em;
+        color: var(--nimble-green);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    .ability-box .score {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: var(--nimble-brown);
+        margin-bottom: 4px;
+    }
+
+    .ability-box .modifier {
+        font-size: 1.1em;
+        color: #666;
+    }
+
+    .section-title {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: var(--nimble-brown);
+        margin: 25px 0 15px 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--nimble-gold);
+    }
+
+    .trait-block, .action-block {
+        margin: 15px 0;
+        padding: 15px;
+        background: white;
+        border-radius: 6px;
+        border-left: 4px solid var(--nimble-green);
+    }
+
+    .trait-block h3, .action-block h3 {
+        margin: 0 0 10px 0;
+        color: var(--nimble-brown);
+        font-size: 1.2em;
+    }
+
+    .trait-block .meta, .action-block .meta {
+        font-style: italic;
+        color: #666;
+        font-size: 0.95em;
+        margin-bottom: 8px;
+    }
+
+    .trait-block p, .action-block p {
+        margin: 8px 0;
+        line-height: 1.6;
+    }
+
+    .attack-block {
+        margin: 15px 0;
+        padding: 15px;
+        background: white;
+        border-radius: 6px;
+        border-left: 4px solid var(--nimble-dark-red);
+    }
+
+    .attack-block h3 {
+        margin: 0 0 10px 0;
+        color: var(--nimble-dark-red);
+        font-size: 1.2em;
+    }
+
+    .legendary-header {
+        background: var(--nimble-gold);
+        color: var(--nimble-brown);
+        padding: 12px 15px;
+        border-radius: 6px;
+        margin: 20px 0 15px 0;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    .damage-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 15px 0;
+    }
+
+    .damage-item {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .damage-item .label {
+        font-weight: bold;
+        color: var(--nimble-brown);
+        margin-bottom: 4px;
+    }
+
+    .damage-item .value {
+        color: #333;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="creature-block">
+    <div class="creature-header">
+        <h1>{{name}}</h1>
+        <p class="type-line">{{data.size|map: 'Size'}} {{data.type|map: 'MonsterType'}}{% if data.alignment %}, {{data.alignment}}{% endif %}</p>
+    </div>
+
+    <div class="creature-content">
+        <div class="stat-line">
+            <span class="stat-label">Armor Class</span>
+            <span class="stat-value">{{data.ac.value|default: '10'}}{% if data.ac.notes %} ({{data.ac.notes}}){% endif %}</span>
+        </div>
+        <div class="stat-line">
+            <span class="stat-label">Hit Points</span>
+            <span class="stat-value">{{data.hp.current}}/{{data.hp.max}}{% if data.hp.formula %} ({{data.hp.formula}}){% endif %}</span>
+        </div>
+        <div class="stat-line">
+            <span class="stat-label">Speed</span>
+            <span class="stat-value">
+                {{data.movement.walk|default: '6'}} spaces
+                {% if data.movement.fly > 0 %}, fly {{data.movement.fly}} spaces{% endif %}
+                {% if data.movement.swim > 0 %}, swim {{data.movement.swim}} spaces{% endif %}
+                {% if data.movement.climb > 0 %}, climb {{data.movement.climb}} spaces{% endif %}
+                {% if data.movement.burrow > 0 %}, burrow {{data.movement.burrow}} spaces{% endif %}
+                {% if data.movement.notes %} ({{data.movement.notes}}){% endif %}
+            </span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="ability-scores">
+            <div class="ability-box">
+                <div class="name">STR</div>
+                <div class="score">{{data.abilities.str.score|default: '10'}}</div>
+                <div class="modifier">{{data.abilities.str.modifier|default: '0'|signed}}</div>
+            </div>
+            <div class="ability-box">
+                <div class="name">DEX</div>
+                <div class="score">{{data.abilities.dex.score|default: '10'}}</div>
+                <div class="modifier">{{data.abilities.dex.modifier|default: '0'|signed}}</div>
+            </div>
+            <div class="ability-box">
+                <div class="name">INT</div>
+                <div class="score">{{data.abilities.int.score|default: '10'}}</div>
+                <div class="modifier">{{data.abilities.int.modifier|default: '0'|signed}}</div>
+            </div>
+            <div class="ability-box">
+                <div class="name">WIL</div>
+                <div class="score">{{data.abilities.wil.score|default: '10'}}</div>
+                <div class="modifier">{{data.abilities.wil.modifier|default: '0'|signed}}</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        {% if data.skills.perception or data.skills.stealth or data.skills.arcana or data.skills.insight or data.skills.influence or data.skills.other %}
+        <div class="stat-line">
+            <span class="stat-label">Skills</span>
+            <span class="stat-value">
+                {% if data.skills.perception %}Perception {{data.skills.perception|signed}}{% endif %}
+                {% if data.skills.stealth %}, Stealth {{data.skills.stealth|signed}}{% endif %}
+                {% if data.skills.arcana %}, Arcana {{data.skills.arcana|signed}}{% endif %}
+                {% if data.skills.insight %}, Insight {{data.skills.insight|signed}}{% endif %}
+                {% if data.skills.influence %}, Influence {{data.skills.influence|signed}}{% endif %}
+                {% if data.skills.other %}, {{data.skills.other}}{% endif %}
+            </span>
+        </div>
+        {% endif %}
+
+        {% if data.damage.vulnerabilities or data.damage.resistances or data.damage.immunities or data.damage.conditionImmunities %}
+        <div class="damage-info">
+            {% if data.damage.vulnerabilities %}
+            <div class="damage-item">
+                <div class="label">Damage Vulnerabilities</div>
+                <div class="value">{{data.damage.vulnerabilities}}</div>
+            </div>
+            {% endif %}
+            {% if data.damage.resistances %}
+            <div class="damage-item">
+                <div class="label">Damage Resistances</div>
+                <div class="value">{{data.damage.resistances}}</div>
+            </div>
+            {% endif %}
+            {% if data.damage.immunities %}
+            <div class="damage-item">
+                <div class="label">Damage Immunities</div>
+                <div class="value">{{data.damage.immunities}}</div>
+            </div>
+            {% endif %}
+            {% if data.damage.conditionImmunities %}
+            <div class="damage-item">
+                <div class="label">Condition Immunities</div>
+                <div class="value">{{data.damage.conditionImmunities}}</div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if data.senses %}
+        <div class="stat-line">
+            <span class="stat-label">Senses</span>
+            <span class="stat-value">{{data.senses}}</span>
+        </div>
+        {% endif %}
+
+        {% if data.languages %}
+        <div class="stat-line">
+            <span class="stat-label">Languages</span>
+            <span class="stat-value">{{data.languages}}</span>
+        </div>
+        {% endif %}
+
+        <div class="stat-line">
+            <span class="stat-label">Challenge</span>
+            <span class="stat-value">{{data.cr}}{% if data.xp %} ({{data.xp}} XP){% endif %}</span>
+        </div>
+
+        <hr class="divider">
+
+        {% if descr %}
+        <p><strong>Description:</strong> {{descr}}</p>
+        <hr class="divider">
+        {% endif %}
+
+        {% if data.traits %}
+        <div class="section-title">Special Traits</div>
+        {% for trait in data.traits %}
+        <div class="trait-block">
+            <h3>{{trait.name}}</h3>
+            {% if trait.actionType or trait.range or trait.duration %}
+            <div class="meta">
+                {% if trait.actionType %}{{trait.actionType}}{% endif %}
+                {% if trait.range %} • Range: {{trait.range}}{% endif %}
+                {% if trait.duration %} • Duration: {{trait.duration}}{% endif %}
+            </div>
+            {% endif %}
+            <p>{{trait.text}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if data.actions %}
+        <div class="section-title">Actions</div>
+        {% for action in data.actions %}
+            {% if action.attackBonus %}
+            <div class="attack-block">
+                <h3>{{action.name}}</h3>
+                <div class="meta">{{action.range}}{% if action.properties %} • {{action.properties}}{% endif %}</div>
+                <p><strong>Attack:</strong> {{action.attackBonus|signed}} to hit</p>
+                <p><strong>Damage:</strong> {{action.damage}} {{action.damageType|map: 'DamageType'}}</p>
+                {% if action.text %}<p>{{action.text}}</p>{% endif %}
+            </div>
+            {% else %}
+            <div class="action-block">
+                <h3>{{action.name}}</h3>
+                {% if action.actionType or action.range or action.duration %}
+                <div class="meta">
+                    {% if action.actionType %}{{action.actionType}}{% endif %}
+                    {% if action.range %} • Range: {{action.range}}{% endif %}
+                    {% if action.duration %} • Duration: {{action.duration}}{% endif %}
+                </div>
+                {% endif %}
+                <p>{{action.text}}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if data.reactions %}
+        <div class="section-title">Reactions</div>
+        {% for reaction in data.reactions %}
+        <div class="action-block">
+            <h3>{{reaction.name}}</h3>
+            {% if reaction.actionType or reaction.range or reaction.duration %}
+            <div class="meta">
+                {% if reaction.actionType %}{{reaction.actionType}}{% endif %}
+                {% if reaction.range %} • Range: {{reaction.range}}{% endif %}
+                {% if reaction.duration %} • Duration: {{reaction.duration}}{% endif %}
+            </div>
+            {% endif %}
+            <p>{{reaction.text}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if data.legendary %}
+        <div class="legendary-header">Legendary Actions</div>
+        {% if data.legendary.description %}
+        <p>{{data.legendary.description}}</p>
+        {% endif %}
+        {% for action in data.legendary.actions %}
+        <div class="action-block">
+            <h3>{{action.name}}</h3>
+            {% if action.actionType or action.range or action.duration %}
+            <div class="meta">
+                {% if action.actionType %}{{action.actionType}}{% endif %}
+                {% if action.range %} • Range: {{action.range}}{% endif %}
+                {% if action.duration %} • Duration: {{action.duration}}{% endif %}
+            </div>
+            {% endif %}
+            <p>{{action.text}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if data.spellcasting %}
+        <div class="section-title">Spellcasting</div>
+        {% if data.spellcasting.description %}
+        <p>{{data.spellcasting.description}}</p>
+        {% endif %}
+        <p><strong>Spellcasting Ability:</strong> {{data.spellcasting.ability|map: 'Ability'|uppercase}}
+           (Spell save DC {{data.spellcasting.saveDC}}, {{data.spellcasting.attackBonus|signed}} to hit with spell attacks)</p>
+        {% if data.spellcasting.spells %}
+        <div style="white-space: pre-wrap; font-family: monospace; background: white; padding: 15px; border-radius: 6px; margin-top: 10px;">{{data.spellcasting.spells}}</div>
+        {% endif %}
+        {% endif %}
+
+        {% if data.loot or data.currency.silver %}
+        <div class="section-title">Loot</div>
+        {% if data.currency.silver %}<p><strong>Silver:</strong> {{data.currency.silver}}</p>{% endif %}
+        {% if data.loot %}<p>{{data.loot}}</p>{% endif %}
+        {% endif %}
+
+        {% if data.notes %}
+        <div class="section-title">GM Notes</div>
+        <p>{{data.notes}}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

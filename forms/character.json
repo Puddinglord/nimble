@@ -1,0 +1,591 @@
+{
+  "title": "Character",
+  "sections": [
+    {
+      "title": "Basic Information",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Character Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Enter character name"
+        },
+        {
+          "title": "Level",
+          "type": "number",
+          "attribute": "data.level",
+          "placeholder": "1"
+        },
+        {
+          "title": "Class",
+          "type": "picker",
+          "attribute": "data.class.id",
+          "attributeType": "Class"
+        },
+        {
+          "title": "Class Name",
+          "type": "text",
+          "attribute": "data.class.name",
+          "placeholder": "Class name"
+        },
+        {
+          "title": "Ancestry",
+          "type": "picker",
+          "attribute": "data.ancestry.id",
+          "attributeType": "Ancestry"
+        },
+        {
+          "title": "Ancestry Name",
+          "type": "text",
+          "attribute": "data.ancestry.name",
+          "placeholder": "Ancestry name"
+        },
+        {
+          "title": "Background",
+          "type": "text",
+          "attribute": "data.background",
+          "placeholder": "Character background"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "Character description, appearance, personality"
+        }
+      ]
+    },
+    {
+      "title": "Abilities",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Strength",
+          "type": "number",
+          "attribute": "data.abilities.str.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "STR Modifier",
+          "type": "number",
+          "attribute": "data.abilities.str.modifier",
+          "placeholder": "0"
+        },
+        {
+          "title": "Dexterity",
+          "type": "number",
+          "attribute": "data.abilities.dex.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "DEX Modifier",
+          "type": "number",
+          "attribute": "data.abilities.dex.modifier",
+          "placeholder": "0"
+        },
+        {
+          "title": "Intelligence",
+          "type": "number",
+          "attribute": "data.abilities.int.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "INT Modifier",
+          "type": "number",
+          "attribute": "data.abilities.int.modifier",
+          "placeholder": "0"
+        },
+        {
+          "title": "Will",
+          "type": "number",
+          "attribute": "data.abilities.wil.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "WIL Modifier",
+          "type": "number",
+          "attribute": "data.abilities.wil.modifier",
+          "placeholder": "0"
+        }
+      ]
+    },
+    {
+      "title": "Hit Points",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Maximum HP",
+          "type": "number",
+          "attribute": "data.hp.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Current HP",
+          "type": "number",
+          "attribute": "data.hp.current",
+          "placeholder": "0"
+        },
+        {
+          "title": "Temporary HP",
+          "type": "number",
+          "attribute": "data.hp.temp",
+          "placeholder": "0"
+        },
+        {
+          "title": "Hit Die",
+          "type": "picker",
+          "attribute": "data.hitDie",
+          "attributeType": "HitDie"
+        }
+      ]
+    },
+    {
+      "title": "Defense",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Armor Class",
+          "type": "number",
+          "attribute": "data.ac.value",
+          "placeholder": "10"
+        },
+        {
+          "title": "AC Notes",
+          "type": "text",
+          "attribute": "data.ac.notes",
+          "placeholder": "Armor type, shield, etc."
+        },
+        {
+          "title": "Initiative",
+          "type": "number",
+          "attribute": "data.initiative",
+          "placeholder": "0"
+        }
+      ]
+    },
+    {
+      "title": "Movement",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Walk Speed",
+          "type": "number",
+          "attribute": "data.movement.walk",
+          "placeholder": "6"
+        },
+        {
+          "title": "Fly Speed",
+          "type": "number",
+          "attribute": "data.movement.fly",
+          "placeholder": "0",
+          "visibleIf": "data.movement.fly > 0"
+        },
+        {
+          "title": "Swim Speed",
+          "type": "number",
+          "attribute": "data.movement.swim",
+          "placeholder": "0",
+          "visibleIf": "data.movement.swim > 0"
+        },
+        {
+          "title": "Climb Speed",
+          "type": "number",
+          "attribute": "data.movement.climb",
+          "placeholder": "0",
+          "visibleIf": "data.movement.climb > 0"
+        },
+        {
+          "title": "Burrow Speed",
+          "type": "number",
+          "attribute": "data.movement.burrow",
+          "placeholder": "0",
+          "visibleIf": "data.movement.burrow > 0"
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Arcana",
+          "type": "number",
+          "attribute": "data.skills.arcana.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Arcana Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.arcana.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Examination",
+          "type": "number",
+          "attribute": "data.skills.examination.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Examination Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.examination.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Finesse",
+          "type": "number",
+          "attribute": "data.skills.finesse.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Finesse Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.finesse.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Influence",
+          "type": "number",
+          "attribute": "data.skills.influence.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Influence Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.influence.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Insight",
+          "type": "number",
+          "attribute": "data.skills.insight.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Insight Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.insight.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Might",
+          "type": "number",
+          "attribute": "data.skills.might.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Might Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.might.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Lore",
+          "type": "number",
+          "attribute": "data.skills.lore.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Lore Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.lore.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Naturecraft",
+          "type": "number",
+          "attribute": "data.skills.naturecraft.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Naturecraft Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.naturecraft.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Perception",
+          "type": "number",
+          "attribute": "data.skills.perception.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Perception Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.perception.proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Stealth",
+          "type": "number",
+          "attribute": "data.skills.stealth.bonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Stealth Proficiency",
+          "type": "picker",
+          "attribute": "data.skills.stealth.proficiency",
+          "attributeType": "ProficiencyLevel"
+        }
+      ]
+    },
+    {
+      "title": "Proficiencies & Languages",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Armor Proficiencies",
+          "type": "text",
+          "attribute": "data.proficiencies.armor",
+          "placeholder": "Cloth, Leather, Mail, Plate, Shield"
+        },
+        {
+          "title": "Weapon Proficiencies",
+          "type": "text",
+          "attribute": "data.proficiencies.weapons",
+          "placeholder": "All simple and martial weapons"
+        },
+        {
+          "title": "Languages",
+          "type": "text",
+          "attribute": "data.languages",
+          "placeholder": "Common, Dwarvish, Elvish, etc."
+        }
+      ]
+    },
+    {
+      "title": "Combat",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Proficiency Bonus",
+          "type": "number",
+          "attribute": "data.proficiencyBonus",
+          "placeholder": "+2"
+        },
+        {
+          "title": "Attacks",
+          "type": "textArea",
+          "attribute": "data.attacks",
+          "placeholder": "List attacks (one per line)"
+        }
+      ]
+    },
+    {
+      "title": "Spellcasting",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Spellcasting Ability",
+          "type": "picker",
+          "attribute": "data.spellcasting.ability",
+          "attributeType": "Ability"
+        },
+        {
+          "title": "Spell Save DC",
+          "type": "number",
+          "attribute": "data.spellcasting.saveDC",
+          "placeholder": "8"
+        },
+        {
+          "title": "Spell Attack Bonus",
+          "type": "number",
+          "attribute": "data.spellcasting.attackBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Cantrips Known",
+          "type": "number",
+          "attribute": "data.spellcasting.cantripsKnown",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spells Known",
+          "type": "number",
+          "attribute": "data.spellcasting.spellsKnown",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spell Slots (Level 1)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.1.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Used Slots (Level 1)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.1.used",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spell Slots (Level 2)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.2.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Used Slots (Level 2)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.2.used",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spell Slots (Level 3)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.3.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Used Slots (Level 3)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.3.used",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spell Slots (Level 4)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.4.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Used Slots (Level 4)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.4.used",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spell Slots (Level 5)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.5.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Used Slots (Level 5)",
+          "type": "number",
+          "attribute": "data.spellcasting.slots.5.used",
+          "placeholder": "0"
+        },
+        {
+          "title": "Spells",
+          "type": "textArea",
+          "attribute": "data.spells",
+          "placeholder": "List spells (one per line)"
+        }
+      ]
+    },
+    {
+      "title": "Class Features & Abilities",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Class Description",
+          "type": "textArea",
+          "attribute": "data.class.description",
+          "placeholder": "Class description and flavor text"
+        },
+        {
+          "title": "Features & Abilities",
+          "type": "textArea",
+          "attribute": "data.features",
+          "placeholder": "List class features and abilities (one per line)"
+        }
+      ]
+    },
+    {
+      "title": "Ancestry Features",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Ancestry Description",
+          "type": "textArea",
+          "attribute": "data.ancestry.description",
+          "placeholder": "Ancestry description and special abilities"
+        },
+        {
+          "title": "Size",
+          "type": "picker",
+          "attribute": "data.size",
+          "attributeType": "Size"
+        },
+        {
+          "title": "Ancestry Features",
+          "type": "textArea",
+          "attribute": "data.ancestry.features",
+          "placeholder": "List ancestry features and abilities (one per line)"
+        }
+      ]
+    },
+    {
+      "title": "Equipment",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Silver (Currency)",
+          "type": "number",
+          "attribute": "data.currency.silver",
+          "placeholder": "0"
+        },
+        {
+          "title": "Equipped Armor",
+          "type": "text",
+          "attribute": "data.equippedArmor.name",
+          "placeholder": "None"
+        },
+        {
+          "title": "Armor Value",
+          "type": "number",
+          "attribute": "data.equippedArmor.value",
+          "placeholder": "0"
+        },
+        {
+          "title": "Equipment & Items",
+          "type": "textArea",
+          "attribute": "data.equipment",
+          "placeholder": "List equipment and items (one per line)"
+        }
+      ]
+    },
+    {
+      "title": "Additional Details",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Alignment",
+          "type": "text",
+          "attribute": "data.alignment",
+          "placeholder": "Lawful Good, Chaotic Neutral, etc."
+        },
+        {
+          "title": "Personality Traits",
+          "type": "textArea",
+          "attribute": "data.personality",
+          "placeholder": "Character personality traits"
+        },
+        {
+          "title": "Ideals",
+          "type": "textArea",
+          "attribute": "data.ideals",
+          "placeholder": "Character ideals"
+        },
+        {
+          "title": "Bonds",
+          "type": "textArea",
+          "attribute": "data.bonds",
+          "placeholder": "Character bonds"
+        },
+        {
+          "title": "Flaws",
+          "type": "textArea",
+          "attribute": "data.flaws",
+          "placeholder": "Character flaws"
+        },
+        {
+          "title": "Notes",
+          "type": "textArea",
+          "attribute": "data.notes",
+          "placeholder": "Additional character notes"
+        }
+      ]
+    }
+  ]
+}

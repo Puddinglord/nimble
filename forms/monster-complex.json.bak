@@ -1,0 +1,389 @@
+{
+  "title": "Monster / NPC",
+  "sections": [
+    {
+      "title": "Basic Information",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Monster or NPC name"
+        },
+        {
+          "title": "Type",
+          "type": "picker",
+          "attribute": "data.type",
+          "attributeType": "MonsterType"
+        },
+        {
+          "title": "Size",
+          "type": "picker",
+          "attribute": "data.size",
+          "attributeType": "Size"
+        },
+        {
+          "title": "Challenge Rating",
+          "type": "picker",
+          "attribute": "data.cr",
+          "attributeType": "ChallengeRating"
+        },
+        {
+          "title": "XP Value",
+          "type": "number",
+          "attribute": "data.xp",
+          "placeholder": "0"
+        },
+        {
+          "title": "Alignment",
+          "type": "text",
+          "attribute": "data.alignment",
+          "placeholder": "Neutral, Chaotic Evil, etc."
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "Monster description, appearance, behavior"
+        }
+      ]
+    },
+    {
+      "title": "Abilities",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Strength",
+          "type": "number",
+          "attribute": "data.abilities.str.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "STR Modifier",
+          "type": "number",
+          "attribute": "data.abilities.str.modifier",
+          "placeholder": "0"
+        },
+        {
+          "title": "Dexterity",
+          "type": "number",
+          "attribute": "data.abilities.dex.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "DEX Modifier",
+          "type": "number",
+          "attribute": "data.abilities.dex.modifier",
+          "placeholder": "0"
+        },
+        {
+          "title": "Intelligence",
+          "type": "number",
+          "attribute": "data.abilities.int.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "INT Modifier",
+          "type": "number",
+          "attribute": "data.abilities.int.modifier",
+          "placeholder": "0"
+        },
+        {
+          "title": "Will",
+          "type": "number",
+          "attribute": "data.abilities.wil.score",
+          "placeholder": "10"
+        },
+        {
+          "title": "WIL Modifier",
+          "type": "number",
+          "attribute": "data.abilities.wil.modifier",
+          "placeholder": "0"
+        }
+      ]
+    },
+    {
+      "title": "Defense & Hit Points",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Armor Class",
+          "type": "number",
+          "attribute": "data.ac.value",
+          "placeholder": "10"
+        },
+        {
+          "title": "AC Notes",
+          "type": "text",
+          "attribute": "data.ac.notes",
+          "placeholder": "Natural armor, shield, etc."
+        },
+        {
+          "title": "Maximum HP",
+          "type": "number",
+          "attribute": "data.hp.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Current HP",
+          "type": "number",
+          "attribute": "data.hp.current",
+          "placeholder": "0"
+        },
+        {
+          "title": "Hit Dice",
+          "type": "text",
+          "attribute": "data.hp.formula",
+          "placeholder": "3d8+6"
+        }
+      ]
+    },
+    {
+      "title": "Movement",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Walk Speed",
+          "type": "number",
+          "attribute": "data.movement.walk",
+          "placeholder": "6"
+        },
+        {
+          "title": "Fly Speed",
+          "type": "number",
+          "attribute": "data.movement.fly",
+          "placeholder": "0"
+        },
+        {
+          "title": "Swim Speed",
+          "type": "number",
+          "attribute": "data.movement.swim",
+          "placeholder": "0"
+        },
+        {
+          "title": "Climb Speed",
+          "type": "number",
+          "attribute": "data.movement.climb",
+          "placeholder": "0"
+        },
+        {
+          "title": "Burrow Speed",
+          "type": "number",
+          "attribute": "data.movement.burrow",
+          "placeholder": "0"
+        },
+        {
+          "title": "Movement Notes",
+          "type": "text",
+          "attribute": "data.movement.notes",
+          "placeholder": "Hover, can't climb while prone, etc."
+        }
+      ]
+    },
+    {
+      "title": "Skills & Senses",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Perception",
+          "type": "number",
+          "attribute": "data.skills.perception",
+          "placeholder": "0"
+        },
+        {
+          "title": "Stealth",
+          "type": "number",
+          "attribute": "data.skills.stealth",
+          "placeholder": "0"
+        },
+        {
+          "title": "Arcana",
+          "type": "number",
+          "attribute": "data.skills.arcana",
+          "placeholder": "0"
+        },
+        {
+          "title": "Insight",
+          "type": "number",
+          "attribute": "data.skills.insight",
+          "placeholder": "0"
+        },
+        {
+          "title": "Influence",
+          "type": "number",
+          "attribute": "data.skills.influence",
+          "placeholder": "0"
+        },
+        {
+          "title": "Other Skills",
+          "type": "text",
+          "attribute": "data.skills.other",
+          "placeholder": "Additional skills with bonuses"
+        },
+        {
+          "title": "Senses",
+          "type": "text",
+          "attribute": "data.senses",
+          "placeholder": "Darkvision 12 spaces, passive Perception 12"
+        },
+        {
+          "title": "Languages",
+          "type": "text",
+          "attribute": "data.languages",
+          "placeholder": "Common, Draconic, etc."
+        }
+      ]
+    },
+    {
+      "title": "Damage Modifiers",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Damage Vulnerabilities",
+          "type": "text",
+          "attribute": "data.damage.vulnerabilities",
+          "placeholder": "Fire, Cold, etc."
+        },
+        {
+          "title": "Damage Resistances",
+          "type": "text",
+          "attribute": "data.damage.resistances",
+          "placeholder": "Bludgeoning, Slashing, Piercing"
+        },
+        {
+          "title": "Damage Immunities",
+          "type": "text",
+          "attribute": "data.damage.immunities",
+          "placeholder": "Poison, Psychic, etc."
+        },
+        {
+          "title": "Condition Immunities",
+          "type": "text",
+          "attribute": "data.damage.conditionImmunities",
+          "placeholder": "Charmed, Frightened, Paralyzed"
+        }
+      ]
+    },
+    {
+      "title": "Special Abilities",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Traits & Abilities",
+          "type": "form",
+          "attribute": "data.traits",
+          "form": "partials/ability.json"
+        }
+      ]
+    },
+    {
+      "title": "Actions",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Attacks & Actions",
+          "type": "form",
+          "attribute": "data.actions",
+          "form": "partials/attack.json"
+        }
+      ]
+    },
+    {
+      "title": "Reactions",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Reactions",
+          "type": "form",
+          "attribute": "data.reactions",
+          "form": "partials/ability.json"
+        }
+      ]
+    },
+    {
+      "title": "Legendary Actions",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Legendary Actions Description",
+          "type": "textArea",
+          "attribute": "data.legendary.description",
+          "placeholder": "The creature can take 3 legendary actions..."
+        },
+        {
+          "title": "Legendary Actions",
+          "type": "form",
+          "attribute": "data.legendary.actions",
+          "form": "partials/ability.json"
+        }
+      ]
+    },
+    {
+      "title": "Spellcasting",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Spellcasting Description",
+          "type": "textArea",
+          "attribute": "data.spellcasting.description",
+          "placeholder": "The creature is a 5th-level spellcaster..."
+        },
+        {
+          "title": "Spellcasting Ability",
+          "type": "picker",
+          "attribute": "data.spellcasting.ability",
+          "attributeType": "Ability"
+        },
+        {
+          "title": "Spell Save DC",
+          "type": "number",
+          "attribute": "data.spellcasting.saveDC",
+          "placeholder": "12"
+        },
+        {
+          "title": "Spell Attack Bonus",
+          "type": "number",
+          "attribute": "data.spellcasting.attackBonus",
+          "placeholder": "+4"
+        },
+        {
+          "title": "Spell List",
+          "type": "textArea",
+          "attribute": "data.spellcasting.spells",
+          "placeholder": "Cantrips: fire bolt, mage hand\n1st level (4 slots): burning hands, shield"
+        }
+      ]
+    },
+    {
+      "title": "Loot & Rewards",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Loot Description",
+          "type": "textArea",
+          "attribute": "data.loot",
+          "placeholder": "Items, treasure, or equipment this creature carries"
+        },
+        {
+          "title": "Silver (Currency)",
+          "type": "number",
+          "attribute": "data.currency.silver",
+          "placeholder": "0"
+        }
+      ]
+    },
+    {
+      "title": "Notes",
+      "type": "group",
+      "fields": [
+        {
+          "title": "GM Notes",
+          "type": "textArea",
+          "attribute": "data.notes",
+          "placeholder": "Additional notes for the Game Master"
+        }
+      ]
+    }
+  ]
+}

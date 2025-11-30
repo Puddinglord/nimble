@@ -1,0 +1,382 @@
+{
+  "type": "vStack",
+  "spacing": 20,
+  "views": [
+    {
+      "type": "hStack",
+      "spacing": 16,
+      "views": [
+        {
+          "type": "image",
+          "value": "{{image}}",
+          "width": 100,
+          "height": 100,
+          "cornerRadius": 12,
+          "contentMode": "aspectFill"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "leading",
+          "views": [
+            {
+              "type": "text",
+              "value": "{{name}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.size|map: 'Size'}} {{data.type|map: 'MonsterType'}}",
+              "style": "title2",
+              "color": "secondary"
+            },
+            {
+              "type": "text",
+              "value": "CR {{data.cr}}{% if data.xp %} ({{data.xp}} XP){% endif %}",
+              "style": "title3",
+              "color": "secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "hStack",
+      "spacing": 12,
+      "distribution": "fillEqually",
+      "views": [
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 12,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.ac.value|default: '10'}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "Armor Class",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 12,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.movement.walk|default: '6'}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "Speed",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "padding": 16,
+      "backgroundColor": "systemRed",
+      "cornerRadius": 12,
+      "views": [
+        {
+          "type": "hStack",
+          "views": [
+            {
+              "type": "text",
+              "value": "Hit Points",
+              "style": "headline",
+              "weight": "semibold",
+              "color": "white"
+            },
+            {
+              "type": "spacer"
+            },
+            {
+              "type": "text",
+              "value": "{{data.hp.current|default: '0'}} / {{data.hp.max|default: '0'}}",
+              "style": "title2",
+              "weight": "bold",
+              "color": "white"
+            }
+          ]
+        },
+        {
+          "type": "progressBar",
+          "value": "{{data.hp.current}}",
+          "maxValue": "{{data.hp.max}}",
+          "color": "white",
+          "backgroundColor": "systemRed"
+        },
+        {
+          "type": "text",
+          "value": "{{data.hp.formula}}",
+          "style": "caption",
+          "color": "white",
+          "visibleIf": "data.hp.formula != ''"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "vStack",
+      "spacing": 12,
+      "views": [
+        {
+          "type": "text",
+          "value": "Abilities",
+          "style": "title",
+          "weight": "bold"
+        },
+        {
+          "type": "hStack",
+          "spacing": 8,
+          "distribution": "fillEqually",
+          "views": [
+            {
+              "type": "vStack",
+              "spacing": 4,
+              "alignment": "center",
+              "padding": 12,
+              "backgroundColor": "systemGray6",
+              "cornerRadius": 8,
+              "views": [
+                {
+                  "type": "text",
+                  "value": "STR",
+                  "style": "caption",
+                  "color": "secondary",
+                  "weight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.str.score|default: '10'}}",
+                  "style": "title",
+                  "weight": "bold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.str.modifier|default: '0'|signed}}",
+                  "style": "body",
+                  "color": "secondary"
+                }
+              ]
+            },
+            {
+              "type": "vStack",
+              "spacing": 4,
+              "alignment": "center",
+              "padding": 12,
+              "backgroundColor": "systemGray6",
+              "cornerRadius": 8,
+              "views": [
+                {
+                  "type": "text",
+                  "value": "DEX",
+                  "style": "caption",
+                  "color": "secondary",
+                  "weight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.dex.score|default: '10'}}",
+                  "style": "title",
+                  "weight": "bold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.dex.modifier|default: '0'|signed}}",
+                  "style": "body",
+                  "color": "secondary"
+                }
+              ]
+            },
+            {
+              "type": "vStack",
+              "spacing": 4,
+              "alignment": "center",
+              "padding": 12,
+              "backgroundColor": "systemGray6",
+              "cornerRadius": 8,
+              "views": [
+                {
+                  "type": "text",
+                  "value": "INT",
+                  "style": "caption",
+                  "color": "secondary",
+                  "weight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.int.score|default: '10'}}",
+                  "style": "title",
+                  "weight": "bold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.int.modifier|default: '0'|signed}}",
+                  "style": "body",
+                  "color": "secondary"
+                }
+              ]
+            },
+            {
+              "type": "vStack",
+              "spacing": 4,
+              "alignment": "center",
+              "padding": 12,
+              "backgroundColor": "systemGray6",
+              "cornerRadius": 8,
+              "views": [
+                {
+                  "type": "text",
+                  "value": "WIL",
+                  "style": "caption",
+                  "color": "secondary",
+                  "weight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.wil.score|default: '10'}}",
+                  "style": "title",
+                  "weight": "bold"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.abilities.wil.modifier|default: '0'|signed}}",
+                  "style": "body",
+                  "color": "secondary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "vStack",
+      "spacing": 12,
+      "views": [
+        {
+          "type": "text",
+          "value": "Information",
+          "style": "title",
+          "weight": "bold"
+        },
+        {
+          "type": "vStack",
+          "spacing": 8,
+          "views": [
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "Senses",
+                  "style": "body",
+                  "weight": "semibold"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.senses|default: 'Normal'}}",
+                  "style": "body"
+                }
+              ],
+              "visibleIf": "data.senses != ''"
+            },
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "Languages",
+                  "style": "body",
+                  "weight": "semibold"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.languages|default: 'None'}}",
+                  "style": "body"
+                }
+              ],
+              "visibleIf": "data.languages != ''"
+            },
+            {
+              "type": "text",
+              "value": "Resistances: {{data.damage.resistances}}",
+              "style": "body",
+              "visibleIf": "data.damage.resistances != ''"
+            },
+            {
+              "type": "text",
+              "value": "Immunities: {{data.damage.immunities}}",
+              "style": "body",
+              "visibleIf": "data.damage.immunities != ''"
+            },
+            {
+              "type": "text",
+              "value": "Vulnerabilities: {{data.damage.vulnerabilities}}",
+              "style": "body",
+              "visibleIf": "data.damage.vulnerabilities != ''"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "vStack",
+      "spacing": 12,
+      "views": [
+        {
+          "type": "text",
+          "value": "Description",
+          "style": "title",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{descr|default: 'No description provided.'}}",
+          "style": "body"
+        }
+      ],
+      "visibleIf": "descr != ''"
+    }
+  ]
+}

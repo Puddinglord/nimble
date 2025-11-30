@@ -1,0 +1,51 @@
+{
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Attack name"
+        },
+        {
+          "title": "Attack Bonus",
+          "type": "number",
+          "attribute": "attackBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Damage",
+          "type": "text",
+          "attribute": "damage",
+          "placeholder": "1d8+3"
+        },
+        {
+          "title": "Damage Type",
+          "type": "picker",
+          "attribute": "damageType",
+          "attributeType": "DamageType"
+        },
+        {
+          "title": "Range",
+          "type": "text",
+          "attribute": "range",
+          "placeholder": "Melee, 30/60, etc."
+        },
+        {
+          "title": "Properties",
+          "type": "text",
+          "attribute": "properties",
+          "placeholder": "Light, 2-Handed, Vicious, etc."
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "text",
+          "placeholder": "Additional attack details"
+        }
+      ]
+    }
+  ]
+}

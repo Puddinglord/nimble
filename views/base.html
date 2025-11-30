@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{name}}{% endblock %}</title>
+    <link rel="stylesheet" href="../styles/default.css">
+    <style>
+        :root {
+            --nimble-green: #2d5016;
+            --nimble-dark-red: #4E1B0E;
+            --nimble-gold: #DBC385;
+            --nimble-cream: #f5f0e8;
+            --nimble-brown: #3d2817;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--nimble-cream);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script>
+        // Handle link clicks for Encounter+ integration
+        document.addEventListener('click', function(event) {
+            const target = event.target.closest('a[data-entity-type]');
+            if (target) {
+                event.preventDefault();
+                const type = target.getAttribute('data-entity-type');
+                const id = target.getAttribute('data-entity-id');
+                if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.openEntity) {
+                    window.webkit.messageHandlers.openEntity.postMessage({
+                        type: type,
+                        id: id
+                    });
+                }
+            }
+        });
+
+        // Handle action submissions
+        function submitAction(actionData) {
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.submitAction) {
+                window.webkit.messageHandlers.submitAction.postMessage(actionData);
+            }
+        }
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

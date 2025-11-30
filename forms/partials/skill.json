@@ -1,0 +1,27 @@
+{
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Skill",
+          "type": "picker",
+          "attribute": "skill",
+          "attributeType": "Skill"
+        },
+        {
+          "title": "Proficiency",
+          "type": "picker",
+          "attribute": "proficiency",
+          "attributeType": "ProficiencyLevel"
+        },
+        {
+          "title": "Bonus",
+          "type": "number",
+          "attribute": "bonus",
+          "placeholder": "0"
+        }
+      ]
+    }
+  ]
+}

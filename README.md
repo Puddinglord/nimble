@@ -4,52 +4,92 @@ This repository contains the complete Nimble RPG system definition for use with 
 
 ## About Nimble
 
-Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, heroic actions, and streamlined mechanics. Heroes wield incredible powers and face deadly challenges in a world where every decision matters.
+Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, heroic actions, and streamlined mechanics. Built on familiar d20 mechanics similar to D&D 5e, Nimble offers a unique twist with its four-stat system (STR, DEX, INT, WIL) and diverse class roster.
 
 **Key Features:**
 - 11 unique character classes with distinct playstyles
 - 24 diverse ancestries (5 common, 19 exotic)
 - Tactical combat with heroic actions and reactions
 - Streamlined d20-based skill system
-- Four core stats: STR, DEX, INT, WIL
+- Four core stats: STR, DEX, INT, WIL (instead of the traditional six)
 - Dynamic magic system with multiple spell schools
+- Based on 5e SRD mechanics with Nimble innovations
 
 ## Installation
 
-1. Download the latest release from this repository
-2. Import the `.system` file into Encounter+
-3. Start creating characters and adventures!
+### Option 1: Download Release (Recommended)
+1. Download the latest `.system` file from the [Releases](https://github.com/encounterplus/nimble/releases) page
+2. On your iOS/Mac device, tap the `.system` file
+3. Choose "Open in Encounter+"
+4. The system will be automatically imported
+
+### Option 2: Import via Files App
+1. Download the latest `.system` file
+2. Save it to your Files app (iCloud Drive, Dropbox, etc.)
+3. In Encounter+, go to **Settings > Import**
+4. Navigate to the `.system` file and import it
+
+### Option 3: AirDrop (iOS/Mac)
+1. Download the latest `.system` file
+2. AirDrop it to your iOS device
+3. Choose "Open in Encounter+"
 
 ## System Contents
 
+### Core System Files
+- `manifest.json` - System metadata and version info
+- `system.json` - System configuration
+- `config.json` - Entity templates and measurements
+- `collections.json` - Enumerated value collections
+- `types.json` - Type definitions and mappings
+- `entities.json` - Entity type definitions
+- `filters.json` - Content filtering and grouping
+
+### Game Content
+- `classes.json` - All 11 character classes
+- `ancestries.json` - All 24 ancestries
+- `weapons.json` - 22 weapons (melee and ranged)
+- `armor.json` - 20 armor types
+- `items.json` - Equipment and consumables
+
 ### Classes (11)
-1. **Berserker** - Unstoppable force of wrath and ruin
-2. **The Cheat** - Sneaky, backstabbing rogue
-3. **Commander** - Battlefield tactician and weapon master
-4. **Hunter** - Resourceful survivalist and bowmaster
-5. **Mage** - Elemental spellcaster (Fire, Ice, Lightning)
-6. **Oathsworn** - Holy warrior and divine protector
-7. **Shadowmancer** - Summoner of shadow minions
-8. **Shepherd** - Master of life and death magic
-9. **Songweaver** - Inspiring bard with sharp wit
-10. **Stormshifter** - Shapeshifter and nature master
-11. **Zephyr** - Swift martial artist
+1. **Berserker** - Unstoppable force of wrath (d12 Hit Die)
+2. **The Cheat** - Sneaky, backstabbing rogue (d6 Hit Die)
+3. **Commander** - Battlefield tactician and weapon master (d10 Hit Die)
+4. **Hunter** - Resourceful survivalist and bowmaster (d8 Hit Die)
+5. **Mage** - Elemental spellcaster: Fire, Ice, Lightning (d6 Hit Die)
+6. **Oathsworn** - Holy warrior and divine protector (d10 Hit Die)
+7. **Shadowmancer** - Summoner of shadow minions (d8 Hit Die)
+8. **Shepherd** - Master of life and death magic (d10 Hit Die)
+9. **Songweaver** - Inspiring bard with sharp wit (d8 Hit Die)
+10. **Stormshifter** - Shapeshifter and nature master (d8 Hit Die)
+11. **Zephyr** - Swift martial artist (d8 Hit Die)
 
 ### Ancestries (24)
-**Common:** Human, Dwarf, Elf, Halfling, Gnome
+**Common (5):** Human, Dwarf, Elf, Halfling, Gnome
 
-**Exotic:** Bunbun, Dragonborn, Fiendkin, Goblin, Kobold, Orc, Birdfolk, Celestial, Changeling, Crystalborn, Dryad/Shroomling, Half-Giant, Minotaur/Beastfolk, Oozeling/Construct, Planarbeing, Ratfolk, Stoatling, Turtlefolk, Wyrdling
+**Exotic (19):** Bunbun, Dragonborn, Fiendkin, Goblin, Kobold, Orc, Birdfolk, Celestial, Changeling, Crystalborn, Dryad/Shroomling, Half-Giant, Minotaur/Beastfolk, Oozeling/Construct, Planarbeing, Ratfolk, Stoatling, Turtlefolk, Wyrdling
 
-### Equipment
-- **Armor:** Cloth, Leather, Mail, Plate, and Shields
-- **Weapons:** 15 melee weapons and 7 ranged weapons
-- **Items:** Healing potions, adventuring gear, and magical items
+### Stats & Skills
+**4 Core Stats:**
+- **Strength (STR)** - Physical power, weapon damage, HP
+- **Dexterity (DEX)** - Agility, reflexes, initiative, armor
+- **Intelligence (INT)** - Knowledge, spellcasting, languages
+- **Will (WIL)** - Force of personality, spellcasting, insight
 
-### Game Mechanics
-- **4 Stats:** Strength (STR), Dexterity (DEX), Intelligence (INT), Will (WIL)
-- **10 Skills:** Arcana, Examination, Finesse, Influence, Insight, Might, Lore, Naturecraft, Perception, Stealth
-- **Combat System:** Turn-based with heroic actions and reactions
-- **Magic:** Multiple spell schools including Fire, Ice, Lightning, Wind, Radiant, Necrotic, and Utility
+**10 Skills:**
+- Arcana (INT), Examination (INT), Lore (INT)
+- Finesse (DEX), Stealth (DEX)
+- Might (STR)
+- Influence (WIL), Insight (WIL), Naturecraft (WIL), Perception (WIL)
+
+### Magic System
+**7 Spell Schools:**
+- Fire, Ice, Lightning (Elemental)
+- Wind, Radiant, Necrotic
+- Utility
+
+**Spell Levels:** Cantrips (0) through 5th-level
 
 ## File Structure
 
@@ -57,32 +97,59 @@ Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, her
 nimble/
 ├── manifest.json         # System metadata
 ├── system.json          # System configuration
-├── config.json          # Game mechanics and rules
-├── classes.json         # All 11 character classes
-├── ancestries.json      # All 24 ancestries
+├── config.json          # Entity templates and measurements
+├── collections.json     # Enumerated values
+├── types.json           # Type definitions
+├── entities.json        # Entity types
+├── filters.json         # Content filters
+├── classes.json         # Character classes
+├── ancestries.json      # Character ancestries/races
 ├── weapons.json         # Weapon definitions
 ├── armor.json           # Armor definitions
 ├── items.json           # Equipment and consumables
-├── fonts/               # Custom fonts
-├── forms/               # Form templates
-├── icons/               # Icon assets
-├── images/              # Visual resources
-├── lang/                # Language localization
-├── themes/              # Visual themes
-├── views/               # UI view templates
-└── Rules/               # Extracted rule text
-    ├── Core Rules Extracted.txt
-    ├── Heros Extracted.txt
-    └── Gamemasters Guide Extracted.txt
+├── .gitignore          # Git ignore rules
+├── fonts/              # Custom fonts
+├── forms/              # Form templates
+├── icons/              # Icon assets
+├── images/             # Visual resources
+│   ├── banner.jpg      # System banner
+│   └── icon.jpg        # System icon
+├── lang/               # Language localization
+├── themes/             # Visual themes
+└── views/              # UI view templates
 ```
+
+## Building the System
+
+To package the system for distribution:
+
+1. Ensure all JSON files are valid
+2. Add banner.jpg and icon.jpg to the `images/` folder
+3. Zip all files and folders (excluding .git, Rules/, and other ignored items)
+4. Rename the `.zip` file to `.system`
+5. The `.system` file can now be imported into Encounter+
+
+## Differences from D&D 5e
+
+While Nimble is built on 5e-compatible mechanics, it includes these key differences:
+
+1. **Four Stats** instead of six (STR, DEX, INT, WIL vs STR, DEX, CON, INT, WIS, CHA)
+2. **Simplified Skills** - 10 skills instead of 18
+3. **Unique Classes** - 11 original classes, no traditional D&D classes
+4. **Heroic Actions** - Special combat mechanics for dynamic encounters
+5. **Streamlined Magic** - Focused spell schools with cantrips and tiered spells
+6. **Wounds System** - Alternative to death saves
+7. **Different Ancestries** - Includes unique options like Bunbun, Crystalborn, etc.
 
 ## Credits
 
 **Game Design:** Evan Diaz and Nimble Co.
 
-**System Definition for Encounter+:** Created based on the official Nimble RPG rulebooks
+**System Definition for Encounter+:** Based on the official Nimble RPG rulebooks and the D&D 5e system structure
 
-**Inspired by:** D&D 5th Edition, Pathfinder 2e, and other great RPG systems
+**Inspired by:** D&D 5th Edition SRD, Pathfinder 2e, and other great RPG systems
+
+**Special Thanks:** The Encounter+ development team for creating an excellent VTT platform
 
 ## License
 
@@ -90,27 +157,39 @@ This system definition is published under the Nimble 3rd Party Creator License.
 
 "Nimble RPG System for Encounter+" is an independent product published under the Nimble 3rd Party Creator License and is not affiliated with Nimble Co. Nimble © 2025 Nimble Co.
 
+This work includes material taken from the System Reference Document 5.1 ("SRD 5.1") by Wizards of the Coast LLC and available at https://dnd.wizards.com/resources/systems-reference-document. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at https://creativecommons.org/licenses/by/4.0/legalcode.
+
 ## Links
 
 - **Official Nimble Website:** [nimbleRPG.com](https://www.nimbleRPG.com)
 - **Nimble Discord:** [nimbleRPG.com/discord](https://www.nimbleRPG.com/discord)
 - **Encounter+ VTT:** [encounter.plus](https://encounter.plus)
+- **Encounter+ Help:** [help.encounter.plus](https://help.encounter.plus)
 
 ## Version History
 
 ### v0.1.0 (Initial Release)
-- Complete class definitions for all 11 classes
-- All 24 ancestries (common and exotic)
-- Full equipment catalog (armor, weapons, items)
-- Core game mechanics and configuration
-- System metadata and manifest files
+- Complete system definition based on D&D 5e structure
+- All 11 character classes with full descriptions
+- All 24 ancestries with special abilities
+- Complete equipment catalog (armor, weapons, items)
+- Core game mechanics (stats, skills, conditions)
+- Entity definitions and filters
+- Type collections and enumerations
 
 ## Contributing
 
 This is a community-created system definition. Contributions, bug reports, and suggestions are welcome!
 
+Please ensure:
+- JSON files are properly formatted
+- Follow the existing structure and naming conventions
+- Test changes before submitting pull requests
+
 ## Support
 
-For questions about the Nimble RPG system itself, visit [nimbleRPG.com](https://www.nimbleRPG.com) or join the Discord.
+**For Nimble RPG questions:** Visit [nimbleRPG.com](https://www.nimbleRPG.com) or join the Discord
 
-For questions about this Encounter+ system definition, please open an issue in this repository.
+**For Encounter+ questions:** Check [help.encounter.plus](https://help.encounter.plus)
+
+**For this system definition:** Open an issue in this repository

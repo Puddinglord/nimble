@@ -1,235 +1,157 @@
 {
-  "stats": [
-    {
-      "id": "str",
-      "name": "Strength",
-      "abbr": "STR",
-      "descr": "Your raw physical power and resilience. Affects STR weapon damage, resistance to Wounds, HP recovery, Concentration, STR saves, carrying capacity, Grappling, and the Might skill."
+  "entities": {
+    "default": {
+      "detail": "",
+      "tokenImage": "images/icon.jpg",
+      "isPlayerControlled": false,
+      "defeatedWhenHpDropsToZero": true,
+      "bars": [
+        {
+          "label": "HP",
+          "maxValue": "{{data.hp.max}}",
+          "value": "{{data.hp.current}}"
+        }
+      ]
     },
-    {
-      "id": "dex",
-      "name": "Dexterity",
-      "abbr": "DEX",
-      "descr": "Your agility, reflexes, and precision. Affects DEX weapon damage, Initiative, DEX saves, Grappling, Armor (for some types), and the Stealth and Finesse skills."
+    "character": {
+      "detail": "{{data.ancestry.name|default: 'Unknown Ancestry'}} {{data.class.name|default: 'Unknown Class'}} {{data.level|default: '1'}}",
+      "tokenImage": "{{image}}",
+      "isPlayerControlled": true,
+      "defeatedWhenHpDropsToZero": true,
+      "role": "friendly",
+      "collection": {
+        "detail": "Level {{data.level|default: '1'}} • {{data.class.name|default: 'Unknown Class'}}"
+      },
+      "combatant": {
+        "initiative": "{{data.initiative|default: '0'}}",
+        "ac": "{{data.ac.value|default: '10'}}",
+        "bars": [
+          {
+            "attribute": "data.hp",
+            "title": "Hit Points",
+            "temporary": true
+          }
+        ]
+      },
+      "bars": [
+        {
+          "label": "HP",
+          "maxValue": "{{data.hp.max}}",
+          "value": "{{data.hp.current}}"
+        }
+      ]
     },
-    {
-      "id": "int",
-      "name": "Intelligence",
-      "abbr": "INT",
-      "descr": "Your knowledge and reasoning. Affects languages, spellcasting, use of wands, spell scrolls, INT saves, and the Arcana, Examination, and Lore skills."
+    "monster": {
+      "detail": "{{data.size|default: 'Medium'|map: 'Size'}} {{data.type|default: 'Humanoid'|map: 'MonsterType'}} • CR {{data.cr|default: '1'}}",
+      "tokenImage": "{{image}}",
+      "isPlayerControlled": false,
+      "defeatedWhenHpDropsToZero": true,
+      "role": "hostile",
+      "collection": {
+        "detail": "CR {{data.cr|default: '1'}} • {{data.type|default: 'Humanoid'|map: 'MonsterType'}}"
+      },
+      "combatant": {
+        "initiative": "{{data.abilities.dex.modifier|default: '0'}}",
+        "ac": "{{data.ac.value|default: '10'}}",
+        "bars": [
+          {
+            "attribute": "data.hp",
+            "title": "Hit Points",
+            "temporary": false
+          }
+        ]
+      },
+      "bars": [
+        {
+          "label": "HP",
+          "maxValue": "{{data.hp.max}}",
+          "value": "{{data.hp.current}}"
+        }
+      ]
     },
+    "npc": {
+      "detail": "{{data.size|default: 'Medium'|map: 'Size'}} {{data.type|default: 'Humanoid'|map: 'MonsterType'}}",
+      "tokenImage": "{{image}}",
+      "isPlayerControlled": false,
+      "defeatedWhenHpDropsToZero": true,
+      "role": "neutral",
+      "collection": {
+        "detail": "{{data.type|default: 'Humanoid'|map: 'MonsterType'}}"
+      },
+      "combatant": {
+        "initiative": "{{data.abilities.dex.modifier|default: '0'}}",
+        "ac": "{{data.ac.value|default: '10'}}",
+        "bars": [
+          {
+            "attribute": "data.hp",
+            "title": "Hit Points",
+            "temporary": false
+          }
+        ]
+      },
+      "bars": [
+        {
+          "label": "HP",
+          "maxValue": "{{data.hp.max}}",
+          "value": "{{data.hp.current}}"
+        }
+      ]
+    },
+    "spell": {
+      "detail": "{% if data.level == '0' %}{{data.school|map: 'SpellSchool'}} cantrip{% else %}{{data.level|map: 'SpellLevel'}} {{data.school|map: 'SpellSchool'}}{% endif %}"
+    },
+    "weapon": {
+      "detail": "{{data.damage}} {{data.damageType|titlecase}} damage"
+    },
+    "armor": {
+      "detail": "Armor {{data.armor}}"
+    },
+    "item": {
+      "detail": "{{data.type|titlecase}}"
+    }
+  },
+  "statusEffects": [
     {
-      "id": "wil",
-      "name": "Will",
-      "abbr": "WIL",
-      "descr": "Your force of personality, courage, and wisdom. Affects spellcasting, WIL saves, and the Insight, Influence, Naturecraft, and Perception skills."
+      "provider": "Rule:condition"
     }
   ],
-  "skills": [
-    {
-      "id": "arcana",
-      "name": "Arcana",
-      "stat": "INT",
-      "descr": "Your understanding of magical phenomena, spells, and enchantments. Use Arcana to identify magical effects, decipher arcane symbols, and discern the properties of magical items. It also grants insights into Aberrations, Elementals, and Oozes."
+  "measurements": {
+    "default": {
+      "distance": {
+        "unit": "spaces",
+        "format": "@value @unit"
+      },
+      "weight": {
+        "unit": "lb",
+        "format": "@value @unit."
+      },
+      "speed": {
+        "unit": "spaces",
+        "format": "@value"
+      }
     },
-    {
-      "id": "examination",
-      "name": "Examination",
-      "stat": "INT",
-      "descr": "Your aptitude for thorough analysis and deduction. Use Examination to diagnose injuries, determine causes of death, uncover clues, and unravel the workings of traps or mechanical devices. It also grants insights into Constructs."
-    },
-    {
-      "id": "finesse",
-      "name": "Finesse",
-      "stat": "DEX",
-      "descr": "Your ability to use your hands and feet in careful ways. Use Finesse for picking locks, disarming traps, piloting vehicles, tinkering, card tricks, stealing or planting items, climbing, or any task requiring precise, careful movement."
-    },
-    {
-      "id": "influence",
-      "name": "Influence",
-      "stat": "WIL",
-      "descr": "Your persuasiveness, charm, and ability to influence others. Use Influence to convince or deceive people, negotiate deals, build trust, win allies, or put on captivating performances."
-    },
-    {
-      "id": "insight",
-      "name": "Insight",
-      "stat": "WIL",
-      "descr": "Your ability to understand people and situations beyond the obvious. Use Insight to sense motives, detect lies, read hidden emotions, make sense of clues, and think ahead when faced with uncertainty."
-    },
-    {
-      "id": "might",
-      "name": "Might",
-      "stat": "STR",
-      "descr": "Your ability to apply strength effectively. Use Might for lifting heavy objects, breaking through obstacles, climbing, swimming, jumping, or performing feats of strength."
-    },
-    {
-      "id": "lore",
-      "name": "Lore",
-      "stat": "INT",
-      "descr": "Your understanding of history, kingdoms, and religions. Use Lore to recall historical events and grasp the significance of cultural practices. It extends to knowledge of Celestials, Dragons, Fey, Fiends, Giants, Humanoids, and Undead."
-    },
-    {
-      "id": "naturecraft",
-      "name": "Naturecraft",
-      "stat": "WIL",
-      "descr": "Your expertise in wilderness survival, navigation, tracking, and handling animals. Use Naturecraft to thrive in the wild, understand beasts, and navigate natural environments. It also grants insights into Beasts, Monstrosities, and Plants."
-    },
-    {
-      "id": "perception",
-      "name": "Perception",
-      "stat": "WIL",
-      "descr": "Your awareness of your surroundings. Use Perception to notice hidden enemies, spot traps, hear distant sounds, or detect anything out of the ordinary in your environment."
-    },
-    {
-      "id": "stealth",
-      "name": "Stealth",
-      "stat": "DEX",
-      "descr": "Your ability to move silently and remain unseen. Use Stealth to sneak past guards, hide from enemies, or move without being detected."
+    "metric": {
+      "distance": {
+        "unit": "m",
+        "format": "@value @unit",
+        "convert": {
+          "spaces": "@value * 1.5"
+        }
+      },
+      "weight": {
+        "unit": "kg",
+        "format": "@value @unit",
+        "convert": {
+          "lb": "@value * 0.5"
+        }
+      },
+      "speed": {
+        "unit": "m",
+        "format": "@value",
+        "convert": {
+          "spaces": "@value * 1.5"
+        }
+      }
     }
-  ],
-  "conditions": [
-    {
-      "id": "blinded",
-      "name": "Blinded",
-      "descr": "You cannot see. Attacks against you have advantage, and your attacks have disadvantage."
-    },
-    {
-      "id": "bloodied",
-      "name": "Bloodied",
-      "descr": "You are at half HP or less."
-    },
-    {
-      "id": "dazed",
-      "name": "Dazed",
-      "descr": "You have disadvantage on attacks and cannot take reactions."
-    },
-    {
-      "id": "deafened",
-      "name": "Deafened",
-      "descr": "You cannot hear."
-    },
-    {
-      "id": "distracted",
-      "name": "Distracted",
-      "descr": "A target is Distracted if it is adjacent to or Taunted by an ally, or if it cannot see you."
-    },
-    {
-      "id": "dying",
-      "name": "Dying",
-      "descr": "You are at 0 HP and making death saves."
-    },
-    {
-      "id": "frightened",
-      "name": "Frightened",
-      "descr": "You cannot willingly move closer to the source of your fear."
-    },
-    {
-      "id": "grappled",
-      "name": "Grappled",
-      "descr": "Your speed is 0 and you cannot move."
-    },
-    {
-      "id": "invisible",
-      "name": "Invisible",
-      "descr": "You cannot be seen. Attacks against you have disadvantage, and your attacks have advantage."
-    },
-    {
-      "id": "paralyzed",
-      "name": "Paralyzed",
-      "descr": "You cannot move or take actions. Attacks against you have advantage."
-    },
-    {
-      "id": "prone",
-      "name": "Prone",
-      "descr": "You are lying on the ground. Melee attacks against you have advantage, ranged attacks have disadvantage. You can stand up by spending half your movement."
-    },
-    {
-      "id": "restrained",
-      "name": "Restrained",
-      "descr": "Your movement is heavily restricted. Attacks against you have advantage, and your attacks have disadvantage."
-    },
-    {
-      "id": "stunned",
-      "name": "Stunned",
-      "descr": "You cannot move, take actions, or reactions."
-    },
-    {
-      "id": "taunted",
-      "name": "Taunted",
-      "descr": "You have disadvantage on attacks against targets other than the creature that taunted you."
-    },
-    {
-      "id": "unconscious",
-      "name": "Unconscious",
-      "descr": "You are knocked out and unaware of your surroundings. Attacks against you have advantage."
-    }
-  ],
-  "damageTypes": [
-    "Bludgeoning",
-    "Piercing",
-    "Slashing",
-    "Fire",
-    "Ice",
-    "Lightning",
-    "Radiant",
-    "Necrotic",
-    "Psychic",
-    "Poison",
-    "Acid",
-    "Force"
-  ],
-  "sizes": [
-    {
-      "id": "tiny",
-      "name": "Tiny",
-      "space": "0.5x0.5"
-    },
-    {
-      "id": "small",
-      "name": "Small",
-      "space": "1x1"
-    },
-    {
-      "id": "medium",
-      "name": "Medium",
-      "space": "1x1"
-    },
-    {
-      "id": "large",
-      "name": "Large",
-      "space": "2x2"
-    },
-    {
-      "id": "huge",
-      "name": "Huge",
-      "space": "3x3"
-    },
-    {
-      "id": "gargantuan",
-      "name": "Gargantuan",
-      "space": "4x4 or larger"
-    }
-  ],
-  "languages": [
-    "Common",
-    "Dwarvish",
-    "Elvish",
-    "Draconic",
-    "Goblin",
-    "Infernal",
-    "Celestial",
-    "Gnomish",
-    "Orcish"
-  ],
-  "mechanics": {
-    "initiative": "Roll 1d20 + DEX",
-    "criticalHit": "Roll maximum damage on primary die",
-    "fumble": "Roll 1 on attack",
-    "advantage": "Roll additional die and keep highest",
-    "disadvantage": "Roll additional die and keep lowest",
-    "skillCheck": "Roll 1d20 + Skill Modifier vs DC",
-    "save": "Roll 1d20 + Save Modifier vs DC",
-    "defaultSpeed": 6,
-    "defaultArmor": "DEX (if unarmored)"
   }
 }
