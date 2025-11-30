@@ -70,10 +70,7 @@ nimble/
 ├── lang/                # Language localization
 ├── themes/              # Visual themes
 ├── views/               # UI view templates
-└── Rules/               # Extracted rule text
-    ├── Core Rules Extracted.txt
-    ├── Heros Extracted.txt
-    └── Gamemasters Guide Extracted.txt
+
 ```
 
 ## Credits
