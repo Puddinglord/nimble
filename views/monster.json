@@ -1,0 +1,176 @@
+{
+  "spacing": 8,
+  "padding": [20, 20, 20, 20],
+  "views": [
+    {
+      "type": "vStack",
+      "spacing": 4,
+      "views": [
+        {
+          "type": "hStack",
+          "views": [
+            {
+              "value": "{{name}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "{{data.size|map: 'Size'}} {{data.type|map: 'MonsterType'}}",
+          "style": "title2",
+          "color": "secondary"
+        },
+        {
+          "type": "text",
+          "value": "CR {{data.cr|default: '0'}}{% if data.xp %} ({{data.xp}} XP){% endif %}",
+          "style": "title3",
+          "color": "secondary"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "**AC** {{data.ac.value|default: '10'}}{% if data.ac.notes %} ({{data.ac.notes}}){% endif %}",
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "value": "**HP** {{data.hp.current|default: '0'}}/{{data.hp.max|default: '0'}}{% if data.hp.formula %} ({{data.hp.formula}}){% endif %}",
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "value": "**Speed** {{data.movement.walk|default: '6'}} spaces{% if data.movement.fly > 0 %}, fly {{data.movement.fly}}{% endif %}{% if data.movement.swim > 0 %}, swim {{data.movement.swim}}{% endif %}{% if data.movement.climb > 0 %}, climb {{data.movement.climb}}{% endif %}{% if data.movement.burrow > 0 %}, burrow {{data.movement.burrow}}{% endif %}",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "vStack",
+      "spacing": 4,
+      "views": [
+        {
+          "type": "text",
+          "value": "**STR** {{data.abilities.str|default: '0'|signed}}, **DEX** {{data.abilities.dex|default: '0'|signed}}, **INT** {{data.abilities.int|default: '0'|signed}}, **WIL** {{data.abilities.wil|default: '0'|signed}}",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "**Skills** {{data.skills}}",
+          "style": "body",
+          "visibleIf": "data.skills != ''"
+        },
+        {
+          "type": "text",
+          "value": "**Senses** {{data.senses}}",
+          "style": "body",
+          "visibleIf": "data.senses != ''"
+        },
+        {
+          "type": "text",
+          "value": "**Languages** {{data.languages}}",
+          "style": "body",
+          "visibleIf": "data.languages != ''"
+        },
+        {
+          "type": "text",
+          "value": "**Damage Vulnerabilities** {{data.damage.vulnerabilities}}",
+          "style": "body",
+          "visibleIf": "data.damage.vulnerabilities != ''"
+        },
+        {
+          "type": "text",
+          "value": "**Damage Resistances** {{data.damage.resistances}}",
+          "style": "body",
+          "visibleIf": "data.damage.resistances != ''"
+        },
+        {
+          "type": "text",
+          "value": "**Damage Immunities** {{data.damage.immunities}}",
+          "style": "body",
+          "visibleIf": "data.damage.immunities != ''"
+        },
+        {
+          "type": "text",
+          "value": "**Condition Immunities** {{data.damage.conditionImmunities}}",
+          "style": "body",
+          "visibleIf": "data.damage.conditionImmunities != ''"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "text",
+      "value": "{{data.traits}}",
+      "visibleIf": "data.traits != ''"
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "text",
+      "value": "{{data.actions}}",
+      "visibleIf": "data.actions != ''"
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "text",
+      "value": "{{data.reactions}}",
+      "visibleIf": "data.reactions != ''"
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "text",
+      "value": "{{data.legendary.description}}\n\n{{data.legendary.actions}}",
+      "visibleIf": "data.legendary.actions != ''"
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "text",
+      "value": "{{descr}}",
+      "visibleIf": "descr != ''"
+    },
+    {
+      "type": "image",
+      "value": "{{image}}",
+      "link": "{{image}}"
+    }
+  ]
+}

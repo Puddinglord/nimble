@@ -56,49 +56,25 @@
         {
           "title": "Strength",
           "type": "number",
-          "attribute": "data.abilities.str.score",
-          "placeholder": "10"
-        },
-        {
-          "title": "STR Modifier",
-          "type": "number",
-          "attribute": "data.abilities.str.modifier",
+          "attribute": "data.abilities.str",
           "placeholder": "0"
         },
         {
           "title": "Dexterity",
           "type": "number",
-          "attribute": "data.abilities.dex.score",
-          "placeholder": "10"
-        },
-        {
-          "title": "DEX Modifier",
-          "type": "number",
-          "attribute": "data.abilities.dex.modifier",
+          "attribute": "data.abilities.dex",
           "placeholder": "0"
         },
         {
           "title": "Intelligence",
           "type": "number",
-          "attribute": "data.abilities.int.score",
-          "placeholder": "10"
-        },
-        {
-          "title": "INT Modifier",
-          "type": "number",
-          "attribute": "data.abilities.int.modifier",
+          "attribute": "data.abilities.int",
           "placeholder": "0"
         },
         {
           "title": "Will",
           "type": "number",
-          "attribute": "data.abilities.wil.score",
-          "placeholder": "10"
-        },
-        {
-          "title": "WIL Modifier",
-          "type": "number",
-          "attribute": "data.abilities.wil.modifier",
+          "attribute": "data.abilities.wil",
           "placeholder": "0"
         }
       ]

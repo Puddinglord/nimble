@@ -51,7 +51,7 @@
         "detail": "CR {{data.cr|default: '1'}} • {{data.type|default: 'Humanoid'|map: 'MonsterType'}}"
       },
       "combatant": {
-        "initiative": "{{data.abilities.dex.modifier|default: '0'}}",
+        "initiative": "{{data.abilities.dex|default: '0'}}",
         "ac": "{{data.ac.value|default: '10'}}",
         "bars": [
           {
@@ -79,7 +79,7 @@
         "detail": "{{data.type|default: 'Humanoid'|map: 'MonsterType'}}"
       },
       "combatant": {
-        "initiative": "{{data.abilities.dex.modifier|default: '0'}}",
+        "initiative": "{{data.abilities.dex|default: '0'}}",
         "ac": "{{data.ac.value|default: '10'}}",
         "bars": [
           {
