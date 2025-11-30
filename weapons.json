@@ -1,0 +1,293 @@
+[
+  {
+    "id": "dagger",
+    "name": "Dagger",
+    "descr": "A light, versatile blade ideal for quick strikes and throwing.",
+    "data": {
+      "type": "melee",
+      "damage": "1d4+DEX",
+      "damageType": "Piercing",
+      "cost": 3,
+      "properties": ["Light", "Thrown 4"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "sickle",
+    "name": "Sickle",
+    "descr": "A curved blade that deals vicious wounds.",
+    "data": {
+      "type": "melee",
+      "damage": "1d4+DEX",
+      "damageType": "Slashing",
+      "cost": 10,
+      "properties": ["Vicious"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "club-mace",
+    "name": "Club/Mace",
+    "descr": "A simple bludgeoning weapon.",
+    "data": {
+      "type": "melee",
+      "damage": "1d6+STR",
+      "damageType": "Bludgeoning",
+      "cost": 2,
+      "properties": [],
+      "reach": 1
+    }
+  },
+  {
+    "id": "hand-axe",
+    "name": "Hand Axe",
+    "descr": "A versatile axe that can be thrown or wielded in melee.",
+    "data": {
+      "type": "melee",
+      "damage": "1d6+STR",
+      "damageType": "Slashing",
+      "cost": 8,
+      "properties": ["Thrown 4"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "short-sword",
+    "name": "Short Sword",
+    "descr": "A light, quick blade perfect for dual wielding.",
+    "data": {
+      "type": "melee",
+      "damage": "1d6+DEX",
+      "damageType": "Piercing",
+      "cost": 10,
+      "properties": ["Light"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "rapier",
+    "name": "Rapier",
+    "descr": "An elegant thrusting sword favored by duelists.",
+    "data": {
+      "type": "melee",
+      "damage": "2d4+DEX",
+      "damageType": "Piercing",
+      "cost": 60,
+      "properties": [],
+      "reach": 1
+    }
+  },
+  {
+    "id": "staff",
+    "name": "Staff",
+    "descr": "A long wooden weapon often used by spellcasters.",
+    "data": {
+      "type": "melee",
+      "damage": "1d8+STR",
+      "damageType": "Bludgeoning",
+      "cost": 8,
+      "properties": ["2-handed"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "longsword",
+    "name": "Longsword",
+    "descr": "A versatile blade that can be wielded with one or two hands.",
+    "data": {
+      "type": "melee",
+      "damage": "1d8+STR",
+      "damageType": "Slashing",
+      "cost": 60,
+      "properties": ["2-handed", "1-handed: Req. 2 STR"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "battleaxe",
+    "name": "Battleaxe",
+    "descr": "A heavy axe designed for devastating blows.",
+    "data": {
+      "type": "melee",
+      "damage": "1d10+STR",
+      "damageType": "Slashing",
+      "cost": 30,
+      "properties": ["2-handed"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "pole-hammer",
+    "name": "Pole Hammer",
+    "descr": "A long-handled hammer with extended reach.",
+    "data": {
+      "type": "melee",
+      "damage": "1d10+STR",
+      "damageType": "Bludgeoning",
+      "cost": 60,
+      "properties": ["2-handed", "Reach 2"],
+      "reach": 2
+    }
+  },
+  {
+    "id": "glaive",
+    "name": "Glaive",
+    "descr": "A polearm with a curved blade, offering extended reach.",
+    "data": {
+      "type": "melee",
+      "damage": "1d10+STR",
+      "damageType": "Slashing",
+      "cost": 60,
+      "properties": ["2-handed", "Reach 2"],
+      "reach": 2
+    }
+  },
+  {
+    "id": "spear",
+    "name": "Spear",
+    "descr": "A long piercing weapon with extended reach.",
+    "data": {
+      "type": "melee",
+      "damage": "1d10+STR",
+      "damageType": "Piercing",
+      "cost": 60,
+      "properties": ["2-handed", "Reach 2"],
+      "reach": 2
+    }
+  },
+  {
+    "id": "greatmaul",
+    "name": "Greatmaul",
+    "descr": "A massive hammer requiring great strength to wield.",
+    "data": {
+      "type": "melee",
+      "damage": "1d12+STR",
+      "damageType": "Bludgeoning",
+      "cost": 80,
+      "properties": ["2-handed", "Req. 2 STR"],
+      "requirements": ["2 STR"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "greataxe",
+    "name": "Greataxe",
+    "descr": "A huge axe that cleaves through enemies.",
+    "data": {
+      "type": "melee",
+      "damage": "2d6+STR",
+      "damageType": "Slashing",
+      "cost": 100,
+      "properties": ["2-handed", "Req. 2 STR"],
+      "requirements": ["2 STR"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "greatsword",
+    "name": "Greatsword",
+    "descr": "A massive blade requiring both hands and exceptional strength.",
+    "data": {
+      "type": "melee",
+      "damage": "3d4+STR",
+      "damageType": "Slashing/Piercing",
+      "cost": 120,
+      "properties": ["2-handed", "Req. 2 STR"],
+      "requirements": ["2 STR"],
+      "reach": 1
+    }
+  },
+  {
+    "id": "sling",
+    "name": "Sling",
+    "descr": "A simple ranged weapon that hurls stones with vicious force.",
+    "data": {
+      "type": "ranged",
+      "damage": "1d4+DEX",
+      "damageType": "Bludgeoning",
+      "cost": 4,
+      "properties": ["2-handed", "Range 12", "Vicious"],
+      "range": 12
+    }
+  },
+  {
+    "id": "javelins",
+    "name": "Javelins",
+    "descr": "Throwing spears sold in stacks.",
+    "data": {
+      "type": "ranged",
+      "damage": "1d6+STR",
+      "damageType": "Piercing",
+      "cost": 20,
+      "properties": ["Range 8", "Stack of 4"],
+      "range": 8
+    }
+  },
+  {
+    "id": "throwing-hammers",
+    "name": "Throwing Hammers",
+    "descr": "Heavy hammers designed for throwing.",
+    "data": {
+      "type": "ranged",
+      "damage": "1d8+STR",
+      "damageType": "Bludgeoning",
+      "cost": 25,
+      "properties": ["Range 4", "Stack of 3"],
+      "range": 4
+    }
+  },
+  {
+    "id": "shortbow",
+    "name": "Shortbow",
+    "descr": "A compact bow ideal for quick shots.",
+    "data": {
+      "type": "ranged",
+      "damage": "1d6+DEX",
+      "damageType": "Piercing",
+      "cost": 25,
+      "properties": ["2-handed", "Range 12"],
+      "range": 12
+    }
+  },
+  {
+    "id": "longbow",
+    "name": "Longbow",
+    "descr": "A powerful bow with extended range.",
+    "data": {
+      "type": "ranged",
+      "damage": "1d8+DEX",
+      "damageType": "Piercing",
+      "cost": 30,
+      "properties": ["2-handed", "Range 16", "Req. 1 STR"],
+      "requirements": ["1 STR"],
+      "range": 16
+    }
+  },
+  {
+    "id": "crossbow",
+    "name": "Crossbow",
+    "descr": "A mechanical bow requiring loading between shots.",
+    "data": {
+      "type": "ranged",
+      "damage": "4d4+DEX",
+      "damageType": "Piercing",
+      "cost": 60,
+      "properties": ["2-handed", "Load: 1 action", "Range 8"],
+      "range": 8
+    }
+  },
+  {
+    "id": "handheld-ballista",
+    "name": "Handheld Ballista",
+    "descr": "A massive crossbow dealing devastating damage.",
+    "data": {
+      "type": "ranged",
+      "damage": "1d20+DEX",
+      "damageType": "Piercing",
+      "cost": 120,
+      "properties": ["2-handed", "Load: 2 actions", "Range 8", "Req. 2 STR"],
+      "requirements": ["2 STR"],
+      "range": 8
+    }
+  }
+]

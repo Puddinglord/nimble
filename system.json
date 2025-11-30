@@ -1,0 +1,13 @@
+{
+  "author": "Nimble Co.",
+  "banner": "images/nimble-banner.jpg",
+  "descr": "Nimble is a fast-paced fantasy tabletop RPG where heroes wield incredible powers and face deadly challenges. From berserkers who grow stronger in battle to mages who command the elements, from shadow summoners to divine shepherds, Nimble offers a diverse roster of classes and tactical combat. The system emphasizes heroic actions, creative problem-solving, and dynamic encounters where every decision matters.",
+  "id": "nimble",
+  "name": "Nimble RPG",
+  "package": "https://github.com/encounterplus/nimble/releases/latest/download/manifest.json",
+  "repository": "https://github.com/encounterplus/nimble",
+  "shortDescr": "Nimble is a fast-paced fantasy tabletop RPG emphasizing tactical combat, heroic actions, and streamlined mechanics.",
+  "shortName": "Nimble",
+  "version": "0.1.0",
+  "website": "https://www.nimbleRPG.com"
+}

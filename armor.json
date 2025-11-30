@@ -1,0 +1,242 @@
+[
+  {
+    "id": "adventurers-garb",
+    "name": "Adventurer's Garb",
+    "descr": "Simple cloth clothing suitable for spellcasters and light travelers.",
+    "data": {
+      "type": "Cloth Armor",
+      "armor": "2+DEX",
+      "cost": 10,
+      "properties": []
+    }
+  },
+  {
+    "id": "cloth-minor-enchantment",
+    "name": "Minor Enchantment (Cloth)",
+    "descr": "Magically enhanced cloth armor.",
+    "data": {
+      "type": "Cloth Armor",
+      "armor": "3+DEX",
+      "cost": 100,
+      "properties": ["Enchanted"]
+    }
+  },
+  {
+    "id": "cloth-major-enchantment",
+    "name": "Major Enchantment (Cloth)",
+    "descr": "Powerfully enchanted cloth armor.",
+    "data": {
+      "type": "Cloth Armor",
+      "armor": "4+DEX",
+      "cost": 1000,
+      "properties": ["Enchanted"]
+    }
+  },
+  {
+    "id": "cloth-epic-enchantment",
+    "name": "Epic Enchantment (Cloth)",
+    "descr": "Legendary enchanted cloth armor.",
+    "data": {
+      "type": "Cloth Armor",
+      "armor": "5+DEX",
+      "cost": 10000,
+      "properties": ["Enchanted"]
+    }
+  },
+  {
+    "id": "cheap-hides",
+    "name": "Cheap Hides",
+    "descr": "Basic leather armor for those on a budget.",
+    "data": {
+      "type": "Leather Armor",
+      "armor": "3+DEX",
+      "cost": 5,
+      "requirements": [],
+      "properties": []
+    }
+  },
+  {
+    "id": "ox-hide",
+    "name": "Ox Hide",
+    "descr": "Sturdy leather armor from oxhide.",
+    "data": {
+      "type": "Leather Armor",
+      "armor": "4+DEX",
+      "cost": 45,
+      "requirements": [],
+      "properties": []
+    }
+  },
+  {
+    "id": "hard-leather",
+    "name": "Hard Leather",
+    "descr": "Hardened leather providing excellent protection.",
+    "data": {
+      "type": "Leather Armor",
+      "armor": "5+DEX",
+      "cost": 300,
+      "requirements": ["1 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "wyrmhide",
+    "name": "Wyrmhide",
+    "descr": "Leather crafted from dragon hide, offering superior protection.",
+    "data": {
+      "type": "Leather Armor",
+      "armor": "6+DEX",
+      "cost": 2000,
+      "requirements": ["1 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "rusty-mail",
+    "name": "Rusty Mail",
+    "descr": "Old, worn chainmail that still offers decent protection.",
+    "data": {
+      "type": "Mail Armor",
+      "armor": "6+DEX (max 2)",
+      "maxDexBonus": 2,
+      "cost": 15,
+      "requirements": [],
+      "properties": ["Max DEX +2"]
+    }
+  },
+  {
+    "id": "chain-shirt",
+    "name": "Chain Shirt",
+    "descr": "A shirt of interlocking metal rings.",
+    "data": {
+      "type": "Mail Armor",
+      "armor": "9+DEX (max 2)",
+      "maxDexBonus": 2,
+      "cost": 60,
+      "requirements": ["2 STR"],
+      "properties": ["Max DEX +2"]
+    }
+  },
+  {
+    "id": "scale-mail",
+    "name": "Scale Mail",
+    "descr": "Armor made from overlapping metal scales.",
+    "data": {
+      "type": "Mail Armor",
+      "armor": "12+DEX (max 2)",
+      "maxDexBonus": 2,
+      "cost": 700,
+      "requirements": ["3 STR"],
+      "properties": ["Max DEX +2"]
+    }
+  },
+  {
+    "id": "dragonscale",
+    "name": "Dragonscale",
+    "descr": "Legendary armor crafted from dragon scales.",
+    "data": {
+      "type": "Mail Armor",
+      "armor": "15+DEX (max 2)",
+      "maxDexBonus": 2,
+      "cost": 3000,
+      "requirements": ["4 STR"],
+      "properties": ["Max DEX +2"]
+    }
+  },
+  {
+    "id": "rusty-plate",
+    "name": "Rusty Plate",
+    "descr": "Old plate armor, battered but functional.",
+    "data": {
+      "type": "Plate Armor",
+      "armor": "10",
+      "cost": 25,
+      "requirements": ["2 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "half-plate",
+    "name": "Half Plate",
+    "descr": "Partial plate armor covering vital areas.",
+    "data": {
+      "type": "Plate Armor",
+      "armor": "14",
+      "cost": 200,
+      "requirements": ["3 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "full-plate",
+    "name": "Full Plate",
+    "descr": "Complete suit of plate armor offering maximum protection.",
+    "data": {
+      "type": "Plate Armor",
+      "armor": "18",
+      "cost": 2000,
+      "requirements": ["4 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "mithril-plate",
+    "name": "Mithril Plate",
+    "descr": "Legendary armor forged from mithril, incredibly strong yet light.",
+    "data": {
+      "type": "Plate Armor",
+      "armor": "22",
+      "cost": 5000,
+      "requirements": ["5 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "wooden-buckler",
+    "name": "Wooden Buckler",
+    "descr": "A small wooden shield.",
+    "data": {
+      "type": "Shield",
+      "armor": "2",
+      "cost": 5,
+      "requirements": [],
+      "properties": []
+    }
+  },
+  {
+    "id": "iron-shield",
+    "name": "Iron Shield",
+    "descr": "A sturdy iron shield.",
+    "data": {
+      "type": "Shield",
+      "armor": "4",
+      "cost": 80,
+      "requirements": ["2 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "tower-shield",
+    "name": "Tower Shield",
+    "descr": "A massive shield providing excellent cover.",
+    "data": {
+      "type": "Shield",
+      "armor": "6",
+      "cost": 1500,
+      "requirements": ["3 STR"],
+      "properties": []
+    }
+  },
+  {
+    "id": "dragon-shield",
+    "name": "Dragon Shield",
+    "descr": "A legendary shield forged from dragon materials.",
+    "data": {
+      "type": "Shield",
+      "armor": "8",
+      "cost": 9000,
+      "requirements": ["3 STR"],
+      "properties": []
+    }
+  }
+]

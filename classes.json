@@ -1,0 +1,391 @@
+[
+  {
+    "id": "berserker",
+    "name": "Berserker",
+    "descr": "Wrath and Ruin. The Berserker is destruction. He knows not fatigue nor caution—both surely driven away from him in a relentless fury. Those of barbaric nature are said to eat only the dust of war and drink naught but the blood of those felled by their own hand. Death is no stranger, for it is said that even death fears to take a Berserker before his battle Rage is satiated. Once a Berserker has begun to fight, he only grows stronger, fueled by battle-lust and an unending Rage.",
+    "data": {
+      "keyStats": ["STR", "DEX"],
+      "hitDie": "d12",
+      "startingHP": 20,
+      "saves": ["STR+", "INT–"],
+      "armorProficiency": "None",
+      "weaponsProficiency": "All STR weapons",
+      "startingGear": "Battleaxe, Rations (meat), Rope (50 ft.)",
+      "complexity": 2,
+      "features": [
+        {
+          "name": "Rage",
+          "text": "(1/turn) **Action:** Roll a Fury Die (1d4) and set it aside. Add it to every STR attack you make. You can have a max of KEY Fury Dice; they are lost when your Rage ends."
+        },
+        {
+          "name": "That all you got?!",
+          "text": "When you are attacked, you may expend 1 or more Fury Dice to reduce the damage taken by STR+DEX for each die spent."
+        },
+        {
+          "name": "Your Rage Ends...",
+          "text": "If you leave combat, drop to 0 HP, or go 1 round without attacking or Raging. Note: You can Rage and gain another Fury Die even if you are already Raging."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Path of the Red Mist",
+          "descr": "Embrace blood frenzy and savage awareness to unleash unstoppable brutality."
+        },
+        {
+          "name": "Path of the Mountainheart",
+          "descr": "Channel stone's resilience and mountainous tenacity to become unbreakable."
+        }
+      ]
+    }
+  },
+  {
+    "id": "the-cheat",
+    "name": "The Cheat",
+    "descr": "Cloak and dagger… and dagger. The common Cheat doesn't call herself a Cheat, of course—rather, a streetsmart rogue, a survivalist, or a liberator of unused goods. They are masters of stealth, pickpocketing, and smooth talking. Some of the more vicious ilk are masters of death-dealing as well. Cheats believe it's a cruel, merciless world, and those who aim to survive don't have time for silly things like 'morals' or 'honor.' Those are luxuries of the rich and powerful. Honor gets you killed—survival is about taking what you want, when you can.",
+    "data": {
+      "keyStats": ["DEX", "INT"],
+      "hitDie": "d6",
+      "startingHP": 10,
+      "saves": ["DEX+", "WIL–"],
+      "armorProficiency": "Leather Armor",
+      "weaponsProficiency": "DEX Weapons",
+      "startingGear": "2 Daggers, Sling, Cheap Hides, Chalk",
+      "complexity": 1,
+      "features": [
+        {
+          "name": "Sneak Attack",
+          "text": "(1/turn) When you crit, deal +1d6 damage."
+        },
+        {
+          "name": "Vicious Opportunist",
+          "text": "(1/turn) When you hit a **Distracted** target with a melee attack, you may change the Primary Die roll to whatever you like (changing it to the max value counts as a crit). **Distracted:** A target is Distracted if it is adjacent to or Taunted by an ally, or if it cannot see you."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Silent Blade",
+          "descr": "The murderous path of assassination and deadly precision."
+        },
+        {
+          "name": "Scoundrel",
+          "descr": "The trickster's path of deception and dirty fighting."
+        }
+      ]
+    }
+  },
+  {
+    "id": "commander",
+    "name": "Commander",
+    "descr": "Soldier… Warrior… Fearless Leader. Among the most skilled soldiers in the world, Commanders are masters of every weapon and form of close combat. A small cohort of soldiers led by a trained Commander is more feared than innumerable legions without one. On the battlefield, they coordinate allies and strike with tactical precision, turning the tide of battle through leadership and martial prowess.",
+    "data": {
+      "keyStats": ["STR", "INT"],
+      "hitDie": "d10",
+      "startingHP": 17,
+      "saves": ["STR+", "DEX–"],
+      "armorProficiency": "Mail Armor, Shields",
+      "weaponsProficiency": "All Martial Weapons",
+      "startingGear": "Short Sword, Javelins, Rusty Mail",
+      "complexity": 2,
+      "features": [
+        {
+          "name": "Coordinated Strike!",
+          "text": "Gain the **Coordinated Strike!** Commander's Order, allowing you to command allies and coordinate devastating attacks."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Bulwark",
+          "descr": "The unassailable defender who stands as an impenetrable wall."
+        },
+        {
+          "name": "Vanguard",
+          "descr": "The relentless front-line fighter who leads the charge."
+        }
+      ]
+    }
+  },
+  {
+    "id": "hunter",
+    "name": "Hunter",
+    "descr": "Respect the forest and her children, and she will bestow upon you many gifts. Long before the first stones of the grand kingdoms had been laid, there was The Wild. We Hunters called groves and fields home, just as the elk and boar still do. Masters of survival, tracking, and precision strikes, Hunters thrive in the wilderness and bring nature's fury to their foes.",
+    "data": {
+      "keyStats": ["DEX", "WIL"],
+      "hitDie": "d8",
+      "startingHP": 13,
+      "saves": ["DEX+", "INT–"],
+      "armorProficiency": "Leather Armor",
+      "weaponsProficiency": "DEX Weapons",
+      "startingGear": "Shortbow, Cheap Hides, Dagger, Hunting Trap",
+      "complexity": 2,
+      "features": [
+        {
+          "name": "Hunter's Mark",
+          "text": "**Action:** A creature you can see is marked as your quarry for 1 day (or until you mark another creature). It can't be hidden from you, and your attacks against it gain your choice of advantage OR +LVL damage (choose before each attack)."
+        },
+        {
+          "name": "Forager",
+          "text": "Gain advantage on skill checks to find food and water in the wild."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Shadowpath",
+          "descr": "The unshakable stalker who strikes from the shadows."
+        },
+        {
+          "name": "Wild Heart",
+          "descr": "The resourceful survivalist who commands nature's beasts."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mage",
+    "name": "Mage",
+    "descr": "Elemental power flows through all things… find it, study it, and harness it. A mage is bestowed their first strand of the Tapestry at birth; however, true mastery eludes those who idly rest upon this innate endowment. Instead, they diligently refine their natural gifts through scholarly pursuit. Mages wield and shape the elements of fire, ice, and lightning with devastating power.",
+    "data": {
+      "keyStats": ["INT", "WIL"],
+      "hitDie": "d6",
+      "startingHP": 10,
+      "saves": ["INT+", "STR–"],
+      "armorProficiency": "Cloth Armor",
+      "weaponsProficiency": "Blades, Staves, Wands",
+      "startingGear": "Adventurer's Garb, Staff, Soap",
+      "complexity": 3,
+      "features": [
+        {
+          "name": "Elemental Spellcasting",
+          "text": "You know **Fire**, **Ice**, and **Lightning** cantrips, allowing you to command the primal elements."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Invoker of Chaos",
+          "descr": "Embrace the madness of wild, unpredictable elemental magic."
+        },
+        {
+          "name": "Invoker of Control",
+          "descr": "Master structured, precise elemental manipulation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "oathsworn",
+    "name": "Oathsworn",
+    "descr": "I will protect my companions and vanquish evil at all costs. Various orders of these zealous, holy warriors have attained great physical and radiant strength through absolute devotion to a higher power in the form of oaths. Faithful guardians, protectors, and avengers of the weak, Oathsworn channel divine power to smite their foes and shield their allies.",
+    "data": {
+      "keyStats": ["STR", "WIL"],
+      "hitDie": "d10",
+      "startingHP": 17,
+      "saves": ["STR+", "DEX–"],
+      "armorProficiency": "All Armor",
+      "weaponsProficiency": "STR Weapons",
+      "startingGear": "Mace, Rusty Mail, Wooden Buckler, Manacles",
+      "complexity": 2,
+      "features": [
+        {
+          "name": "Radiant Judgment",
+          "text": "Whenever an enemy attacks you, if you have no Judgment Dice, roll your Judgment dice (2d6). On your next melee attack this encounter, if you hit, deal that much additional **radiant** damage. The dice are expended whether you hit or miss."
+        },
+        {
+          "name": "Lay on Hands",
+          "text": "Gain a magical pool of healing power. This pool's maximum is always equal to 5×LVL and recharges on a Safe Rest. **Action:** Touch a target and spend any amount of remaining healing power to restore that many HP."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Oath of Vengeance",
+          "descr": "The merciless path of divine retribution and punishment."
+        },
+        {
+          "name": "Oath of Refuge",
+          "descr": "The vigilant path of protection and sanctuary."
+        }
+      ]
+    }
+  },
+  {
+    "id": "shadowmancer",
+    "name": "Shadowmancer",
+    "descr": "Totally NOT evil. Why would you even say that? Great power sometimes comes from… horrible places. But what's the alternative, spend our entire lives… STUDYING?! Now that's horrible. Who'd want to waste their lives reading books—learning magic the hard way? Shadowmancers summon hordes of expendable shadow minions to do their bidding, wielding necrotic power from dark pacts.",
+    "data": {
+      "keyStats": ["INT", "DEX"],
+      "hitDie": "d8",
+      "startingHP": 13,
+      "saves": ["INT+", "WIL–"],
+      "armorProficiency": "Cloth Armor",
+      "weaponsProficiency": "Blades, Wands",
+      "startingGear": "Adventurer's Garb, Sickle, Shovel",
+      "complexity": 3,
+      "features": [
+        {
+          "name": "Conduit of Shadow",
+          "text": "Your Patron grants you knowledge of **Shadow Blast** and **Summon Shadows**."
+        },
+        {
+          "name": "Shadow Blast",
+          "text": "(Necrotic cantrip) **Action:** (1/turn) Range: 8. Damage: 1d12+KEY. **High Levels:** +1d12 damage every 5 levels."
+        },
+        {
+          "name": "Summon Shadows",
+          "text": "(Necrotic cantrip) **Action:** Summon a shadow minion within Reach 1 (max of INT or LVL minions). **Action:** (1/turn) Command ALL minions to move 6 then attack (Reach 1, 1d12 each). **High Levels:** +1 Reach every 5 levels."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Pact of the Red Dragon",
+          "descr": "Draw power from the fury of dragons."
+        },
+        {
+          "name": "Pact of the Abyssal Depths",
+          "descr": "Channel the dark powers of the abyss."
+        }
+      ]
+    }
+  },
+  {
+    "id": "shepherd",
+    "name": "Shepherd",
+    "descr": "Let all who are afflicted come. I will mend thy bones and soothe thy wounds. Thou shalt revere the gifts of life and death, neither of which is ever given or taken. Rather, we are all souls merely journeying between this realm and that of the beyond. Shepherds master life and death, wielding both radiant healing and necrotic destruction.",
+    "data": {
+      "keyStats": ["WIL", "STR"],
+      "hitDie": "d10",
+      "startingHP": 17,
+      "saves": ["WIL+", "DEX–"],
+      "armorProficiency": "Mail Armor, Shields",
+      "weaponsProficiency": "STR Weapons, Wands",
+      "startingGear": "Rusty Mail, Mace, Wooden Buckler, Bell",
+      "complexity": 2,
+      "features": [
+        {
+          "name": "Keeper of Life & Death",
+          "text": "You know **Radiant** and **Necrotic** cantrips, allowing you to heal or harm."
+        },
+        {
+          "name": "Searing Light",
+          "text": "(WIL times/Safe Rest) **Action:** Heal or Inflict grievous injuries. Heal WIL d8 HP to a Dying creature within Reach 6, OR inflict WIL d8 radiant damage to an undead or Bloodied enemy within Reach 6."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Luminary of Mercy",
+          "descr": "The nurturing healer who preserves life."
+        },
+        {
+          "name": "Luminary of Malice",
+          "descr": "The ruinous destroyer who commands death."
+        }
+      ]
+    }
+  },
+  {
+    "id": "songweaver",
+    "name": "Songweaver",
+    "descr": "Just TRY and resist my charm… wait—NO, don't! Each Songweaver holds a spark granted to them by a muse at birth; a spark which fuels their creative energy and flows forth in the form of a sharp wit, relentless humor, or moving art. Masters of inspiration and mockery, Songweavers bolster allies and devastate foes with their performances.",
+    "data": {
+      "keyStats": ["WIL", "INT"],
+      "hitDie": "d8",
+      "startingHP": 13,
+      "saves": ["WIL+", "STR–"],
+      "armorProficiency": "Cloth, Leather",
+      "weaponsProficiency": "DEX, Wands",
+      "startingGear": "Adventurer's Garb, Instrument, Dagger, Mirror",
+      "complexity": 3,
+      "features": [
+        {
+          "name": "Wind Spellcasting",
+          "text": "You know cantrips from the **Wind** school and 1 other school of your choice. You also know the cantrip **Vicious Mockery**."
+        },
+        {
+          "name": "Vicious Mockery",
+          "text": "(Wind cantrip) **Action:** Range: 12. Damage: 1d4+INT psychic (ignoring armor). On hit: the target is **Taunted** during their next turn. **High Levels:** +2 damage every 5 levels."
+        },
+        {
+          "name": "Songweaver's Inspiration",
+          "text": "(2×WIL times/Safe Rest) **Free Reaction:** Allow an ally to reroll a single die related to an attack or save (must keep either result)."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Herald of Snark",
+          "descr": "Master of cutting wit and vicious mockery."
+        },
+        {
+          "name": "Herald of Courage",
+          "descr": "Inspiring presence who bolsters allies."
+        }
+      ]
+    }
+  },
+  {
+    "id": "stormshifter",
+    "name": "Stormshifter",
+    "descr": "The trees whisper their excitement, the clouds sing with glee. Rejoice! The Master of Storm & Fang arrives. All who would seek passage through the ancient grove, heed this warning: Do not provoke the forest or its inhabitants. Stormshifters are masters of beast and nature, shapeshifting and commanding the elements.",
+    "data": {
+      "keyStats": ["WIL", "DEX"],
+      "hitDie": "d8",
+      "startingHP": 13,
+      "saves": ["WIL+", "STR–"],
+      "armorProficiency": "Cloth or Leather Armor",
+      "weaponsProficiency": "Staves, Wands",
+      "startingGear": "Cheap Hides, Staff, Strange Plant",
+      "complexity": 3,
+      "features": [
+        {
+          "name": "Master of Storms",
+          "text": "You know cantrips from the **Lightning** and **Wind** schools."
+        },
+        {
+          "name": "Beastshift",
+          "text": "**Action:** You can transform into a harmless beast (squirrel, pigeon, etc.). While transformed, you can speak with animals. This form lasts until you drop to 0 HP, cast a spell, or if you end it on your turn for free. You have DEX Beastshift charges; they reset on a Safe Rest."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Circle of Fang & Claw",
+          "descr": "The bestial path of savage transformation."
+        },
+        {
+          "name": "Circle of Storm & Sky",
+          "descr": "The tempestuous path of elemental mastery."
+        }
+      ]
+    }
+  },
+  {
+    "id": "zephyr",
+    "name": "Zephyr",
+    "descr": "A Zephyr dedicates their life to the relentless pursuit of kinetic perfection. They hone their bodies into blurs of motion, training from a young age in remote wilds or mountain monasteries, wielding speed to unleash blows that echo through their foes and slip past attacks like a whispering wind. Disciplined martial artists with swift hands and swift feet.",
+    "data": {
+      "keyStats": ["DEX", "STR"],
+      "hitDie": "d8",
+      "startingHP": 13,
+      "saves": ["DEX+", "INT–"],
+      "armorProficiency": "None",
+      "weaponsProficiency": "Melee",
+      "startingGear": "Staff, Traveling Robes & Sandals",
+      "complexity": 2,
+      "features": [
+        {
+          "name": "Iron Defense",
+          "text": "Your armor equals DEX+STR as long as you are unarmored."
+        },
+        {
+          "name": "Swift Fists",
+          "text": "Your unarmed strikes are not subject to disadvantage imposed by Rushed Attacks, and their damage is 1d4+STR."
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Way of Flame",
+          "descr": "The explosive path of fiery strikes."
+        },
+        {
+          "name": "Way of Pain",
+          "descr": "The disciplined path of precise suffering."
+        }
+      ]
+    }
+  }
+]

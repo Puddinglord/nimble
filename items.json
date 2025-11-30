@@ -1,0 +1,211 @@
+[
+  {
+    "id": "healing-potion",
+    "name": "Healing Potion",
+    "descr": "A magical potion that restores health. Can be administered to an adjacent ally.",
+    "data": {
+      "type": "Consumable",
+      "effect": "Heal 2d4+4 HP",
+      "cost": 50,
+      "actionCost": "1 action",
+      "properties": ["Consumable", "Can administer to adjacent ally"]
+    }
+  },
+  {
+    "id": "greater-healing-potion",
+    "name": "Greater Healing Potion",
+    "descr": "A powerful healing potion that restores significant health.",
+    "data": {
+      "type": "Consumable",
+      "effect": "Heal 3d6+6 HP",
+      "cost": 150,
+      "actionCost": "1 action",
+      "properties": ["Consumable", "Can administer to adjacent ally"]
+    }
+  },
+  {
+    "id": "supreme-healing-potion",
+    "name": "Supreme Healing Potion",
+    "descr": "An incredibly potent healing potion that can save lives.",
+    "data": {
+      "type": "Consumable",
+      "effect": "Heal 4d8+8 HP",
+      "cost": 450,
+      "actionCost": "1 action",
+      "properties": ["Consumable", "Can administer to adjacent ally"]
+    }
+  },
+  {
+    "id": "torch",
+    "name": "Torch",
+    "descr": "A simple wooden torch that provides light in dark places.",
+    "data": {
+      "type": "Equipment",
+      "effect": "Light up to 6 spaces, lasts 1 dungeon",
+      "cost": 0.5,
+      "properties": ["Stack of 2", "1 use each", "Requires free hand"]
+    }
+  },
+  {
+    "id": "lantern-oil",
+    "name": "Lantern & Oil",
+    "descr": "A metal lantern with oil that provides reliable light.",
+    "data": {
+      "type": "Equipment",
+      "effect": "Light up to 6 spaces, lasts 1 entire outing until next Safe Rest",
+      "cost": 10,
+      "properties": ["Refill: 1 gp", "Requires free hand"]
+    }
+  },
+  {
+    "id": "rations",
+    "name": "Rations",
+    "descr": "Preserved food for traveling adventurers.",
+    "data": {
+      "type": "Equipment",
+      "effect": "Food for 1 day",
+      "cost": 0.5,
+      "properties": []
+    }
+  },
+  {
+    "id": "rope",
+    "name": "Rope (50 ft.)",
+    "descr": "Sturdy rope useful for climbing and binding.",
+    "data": {
+      "type": "Equipment",
+      "cost": 1,
+      "properties": []
+    }
+  },
+  {
+    "id": "chalk",
+    "name": "Chalk",
+    "descr": "Useful for marking paths and leaving messages.",
+    "data": {
+      "type": "Equipment",
+      "cost": 0.1,
+      "properties": []
+    }
+  },
+  {
+    "id": "hunting-trap",
+    "name": "Hunting Trap",
+    "descr": "A mechanical trap for catching game or hindering enemies.",
+    "data": {
+      "type": "Equipment",
+      "cost": 5,
+      "properties": []
+    }
+  },
+  {
+    "id": "soap",
+    "name": "Soap",
+    "descr": "For staying clean on long adventures.",
+    "data": {
+      "type": "Equipment",
+      "cost": 0.2,
+      "properties": []
+    }
+  },
+  {
+    "id": "manacles",
+    "name": "Manacles",
+    "descr": "Iron restraints for binding prisoners.",
+    "data": {
+      "type": "Equipment",
+      "cost": 2,
+      "properties": []
+    }
+  },
+  {
+    "id": "shovel",
+    "name": "Shovel",
+    "descr": "Essential for digging and burying.",
+    "data": {
+      "type": "Equipment",
+      "cost": 2,
+      "properties": []
+    }
+  },
+  {
+    "id": "bell",
+    "name": "Bell",
+    "descr": "A small bell that can signal or alert.",
+    "data": {
+      "type": "Equipment",
+      "cost": 1,
+      "properties": []
+    }
+  },
+  {
+    "id": "instrument",
+    "name": "Instrument",
+    "descr": "A musical instrument for performances and entertainment.",
+    "data": {
+      "type": "Equipment",
+      "cost": 10,
+      "properties": []
+    }
+  },
+  {
+    "id": "mirror",
+    "name": "Mirror",
+    "descr": "A small hand mirror, useful for looking around corners.",
+    "data": {
+      "type": "Equipment",
+      "cost": 5,
+      "properties": []
+    }
+  },
+  {
+    "id": "strange-plant",
+    "name": "Strange Plant",
+    "descr": "An unusual plant with mysterious properties.",
+    "data": {
+      "type": "Equipment",
+      "cost": 1,
+      "properties": []
+    }
+  },
+  {
+    "id": "backpack",
+    "name": "Backpack",
+    "descr": "Essential for carrying gear and supplies.",
+    "data": {
+      "type": "Equipment",
+      "cost": 2,
+      "properties": []
+    }
+  },
+  {
+    "id": "bedroll",
+    "name": "Bedroll",
+    "descr": "A portable sleeping mat for resting in the wild.",
+    "data": {
+      "type": "Equipment",
+      "cost": 1,
+      "properties": []
+    }
+  },
+  {
+    "id": "waterskin",
+    "name": "Waterskin",
+    "descr": "A leather container for carrying water.",
+    "data": {
+      "type": "Equipment",
+      "cost": 0.2,
+      "properties": []
+    }
+  },
+  {
+    "id": "tinderbox",
+    "name": "Tinderbox",
+    "descr": "For starting fires.",
+    "data": {
+      "type": "Equipment",
+      "cost": 0.5,
+      "properties": []
+    }
+  }
+]
