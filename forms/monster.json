@@ -45,7 +45,7 @@
           "title": "Description",
           "type": "textArea",
           "attribute": "descr",
-          "placeholder": "Monster description, appearance, behavior"
+          "placeholder": "Brief flavor text (1-2 sentences)"
         }
       ]
     },
@@ -80,242 +80,50 @@
       ]
     },
     {
-      "title": "Defense & Hit Points",
+      "title": "Stats",
       "type": "group",
       "fields": [
         {
-          "title": "Armor Class",
-          "type": "number",
-          "attribute": "data.ac.value",
-          "placeholder": "10"
-        },
-        {
-          "title": "AC Notes",
-          "type": "text",
-          "attribute": "data.ac.notes",
-          "placeholder": "Natural armor, shield, etc."
-        },
-        {
-          "title": "Maximum HP",
+          "title": "HP",
           "type": "number",
           "attribute": "data.hp.max",
           "placeholder": "0"
         },
         {
-          "title": "Current HP",
-          "type": "number",
-          "attribute": "data.hp.current",
-          "placeholder": "0"
-        },
-        {
-          "title": "Hit Dice",
-          "type": "text",
-          "attribute": "data.hp.formula",
-          "placeholder": "3d8+6"
-        }
-      ]
-    },
-    {
-      "title": "Movement",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Walk Speed",
-          "type": "number",
-          "attribute": "data.movement.walk",
-          "placeholder": "6"
-        },
-        {
-          "title": "Fly Speed",
+          "title": "Fly Speed (0 = no flight)",
           "type": "number",
           "attribute": "data.movement.fly",
           "placeholder": "0"
-        },
-        {
-          "title": "Swim Speed",
-          "type": "number",
-          "attribute": "data.movement.swim",
-          "placeholder": "0"
-        },
-        {
-          "title": "Climb Speed",
-          "type": "number",
-          "attribute": "data.movement.climb",
-          "placeholder": "0"
-        },
-        {
-          "title": "Burrow Speed",
-          "type": "number",
-          "attribute": "data.movement.burrow",
-          "placeholder": "0"
-        },
-        {
-          "title": "Movement Notes",
-          "type": "text",
-          "attribute": "data.movement.notes",
-          "placeholder": "Hover, can't climb while prone, etc."
         }
       ]
     },
     {
-      "title": "Skills & Senses",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Skills",
-          "type": "text",
-          "attribute": "data.skills",
-          "placeholder": "Perception +5, Stealth +3, etc."
-        },
-        {
-          "title": "Senses",
-          "type": "text",
-          "attribute": "data.senses",
-          "placeholder": "Darkvision 12 spaces, passive Perception 12"
-        },
-        {
-          "title": "Languages",
-          "type": "text",
-          "attribute": "data.languages",
-          "placeholder": "Common, Draconic, etc."
-        }
-      ]
-    },
-    {
-      "title": "Damage Modifiers",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Damage Vulnerabilities",
-          "type": "text",
-          "attribute": "data.damage.vulnerabilities",
-          "placeholder": "Fire, Cold, etc."
-        },
-        {
-          "title": "Damage Resistances",
-          "type": "text",
-          "attribute": "data.damage.resistances",
-          "placeholder": "Bludgeoning, Slashing, Piercing"
-        },
-        {
-          "title": "Damage Immunities",
-          "type": "text",
-          "attribute": "data.damage.immunities",
-          "placeholder": "Poison, Psychic, etc."
-        },
-        {
-          "title": "Condition Immunities",
-          "type": "text",
-          "attribute": "data.damage.conditionImmunities",
-          "placeholder": "Charmed, Frightened, Paralyzed"
-        }
-      ]
-    },
-    {
-      "title": "Special Abilities & Actions",
+      "title": "Abilities & Actions",
       "type": "group",
       "fields": [
         {
           "title": "Special Traits",
           "type": "textArea",
           "attribute": "data.traits",
-          "placeholder": "List special abilities (one per line)"
+          "placeholder": "Bold text for passive abilities (e.g., Brittle Bones. Resistant to piercing, vulnerable to bludgeoning.)"
         },
         {
           "title": "Actions",
           "type": "textArea",
           "attribute": "data.actions",
-          "placeholder": "List actions and attacks (one per line)"
-        },
-        {
-          "title": "Reactions",
-          "type": "textArea",
-          "attribute": "data.reactions",
-          "placeholder": "List reactions (one per line)"
+          "placeholder": "Use bullet points:\n• Action Name. (Type) 1d4+8. Description.\n• Another Action (2×). 1d4+10. Description."
         }
       ]
     },
     {
-      "title": "Legendary Actions",
+      "title": "Last Stand",
       "type": "group",
       "fields": [
         {
-          "title": "Legendary Actions Description",
-          "type": "textArea",
-          "attribute": "data.legendary.description",
-          "placeholder": "The creature can take 3 legendary actions..."
-        },
-        {
-          "title": "Legendary Actions",
+          "title": "Last Stand Actions",
           "type": "textArea",
           "attribute": "data.legendary.actions",
-          "placeholder": "List legendary actions (one per line)"
-        }
-      ]
-    },
-    {
-      "title": "Spellcasting",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Spellcasting Description",
-          "type": "textArea",
-          "attribute": "data.spellcasting.description",
-          "placeholder": "The creature is a 5th-level spellcaster..."
-        },
-        {
-          "title": "Spellcasting Ability",
-          "type": "picker",
-          "attribute": "data.spellcasting.ability",
-          "attributeType": "Ability"
-        },
-        {
-          "title": "Spell Save DC",
-          "type": "number",
-          "attribute": "data.spellcasting.saveDC",
-          "placeholder": "12"
-        },
-        {
-          "title": "Spell Attack Bonus",
-          "type": "number",
-          "attribute": "data.spellcasting.attackBonus",
-          "placeholder": "+4"
-        },
-        {
-          "title": "Spell List",
-          "type": "textArea",
-          "attribute": "data.spellcasting.spells",
-          "placeholder": "Cantrips: fire bolt, mage hand\n1st level (4 slots): burning hands, shield"
-        }
-      ]
-    },
-    {
-      "title": "Loot & Rewards",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Loot Description",
-          "type": "textArea",
-          "attribute": "data.loot",
-          "placeholder": "Items, treasure, or equipment this creature carries"
-        },
-        {
-          "title": "Silver (Currency)",
-          "type": "number",
-          "attribute": "data.currency.silver",
-          "placeholder": "0"
-        }
-      ]
-    },
-    {
-      "title": "Notes",
-      "type": "group",
-      "fields": [
-        {
-          "title": "GM Notes",
-          "type": "textArea",
-          "attribute": "data.notes",
-          "placeholder": "Additional notes for the Game Master"
+          "placeholder": "Special actions when creature reaches 0 HP. Use bullet points:\n• Action Name. Description of what happens."
         }
       ]
     }
