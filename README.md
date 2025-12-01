@@ -107,16 +107,14 @@ nimble/
 ├── weapons.json         # Weapon definitions
 ├── armor.json           # Armor definitions
 ├── items.json           # Equipment and consumables
-├── .gitignore          # Git ignore rules
-├── fonts/              # Custom fonts
-├── forms/              # Form templates
-├── icons/              # Icon assets
-├── images/             # Visual resources
-│   ├── banner.jpg      # System banner
-│   └── icon.jpg        # System icon
-├── lang/               # Language localization
-├── themes/             # Visual themes
-└── views/              # UI view templates
+├── fonts/               # Custom fonts
+├── forms/               # Form templates
+├── icons/               # Icon assets
+├── images/              # Visual resources
+├── lang/                # Language localization
+├── themes/              # Visual themes
+├── views/               # UI view templates
+
 ```
 
 ## Building the System
