@@ -12,6 +12,7 @@
   font-size: 14px;
   line-height: 1.4;
   color: #000;
+  overflow: visible;
 }
 
 /* Monster Header - Name, Level, HP row */
@@ -60,7 +61,14 @@
 .monster-hp {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.hp-icon {
+  margin-top: 5px;
+  font-size: 30px;
+  color: #C5BFB0;
+  opacity: 0.3px;
 }
 
 .monster-fly {
@@ -77,43 +85,62 @@
   font-size: 13px;
 }
 
-/* Traits - pointed banner style */
+/* Wrapper to allow triangles to overflow the stat-block */
+.monster-traits-wrapper {
+  margin: 8px -16px;
+  padding: 0 16px;
+  overflow: visible;
+}
+
+/* Traits - pointed banner style with full-height triangles */
 .monster-traits {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: #CCC7B5;
   color: #000;
   font-style: italic;
-  font-size: 13px;
-  padding: 6px 16px 6px 12px;
-  margin: 8px 0;
+  font-size: 16px;
+  padding: 8px 20px;
+  margin: 0;
   line-height: 1.4;
 }
 
-/* Left pointed edge */
+/* Remove margin from p tags inside traits, add spacing between multiple traits */
+.monster-traits p {
+  margin: 0;
+  padding: 0;
+}
+
+.monster-traits p + p {
+  margin-top: 8px;
+}
+
+/* Left pointed edge - full height triangle */
 .monster-traits::before {
   content: "";
   position: absolute;
-  left: -10px;
+  left: -25px;
   top: 0;
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 10px solid #CCC7B5;
+  bottom: 0;
+  width: 25px;
+  background: #CCC7B5;
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
 }
 
-/* Right pointed edge */
+/* Right pointed edge - full height triangle */
 .monster-traits::after {
   content: "";
   position: absolute;
-  right: -10px;
+  right: -25px;
   top: 0;
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 10px solid #CCC7B5;
+  bottom: 0;
+  width: 25px;
+  background: #CCC7B5;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
 /* Divider */
@@ -149,23 +176,30 @@
 .monster-section-title {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   margin-bottom: 4px;
 }
 
 /* Actions */
 .monster-actions {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .monster-action {
+  display: block;
   margin-bottom: 6px;
 }
 
 .monster-action strong {
   font-weight: bold;
+}
+
+/* Force inline display for markdown-generated p tags inside actions */
+.monster-action p {
+  display: inline;
+  margin: 0;
 }
 
 /* Legendary Section */

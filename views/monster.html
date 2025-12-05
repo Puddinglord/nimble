@@ -16,8 +16,8 @@
         <span class="monster-level">LVL {{data.level|default: '1'}}{% if data.size %}, {{data.size|map: 'Size'|uppercase}}{% endif %}</span>
       </div>
       <div class="monster-header-right">
-        {% if data.defense %}<span class="monster-armor">🛡 {{data.defense}}</span>{% endif %}
-        <span class="monster-hp">♥ {{data.hp.max|default: '10'}}</span>
+        <span class="monster-armor">🛡 {{data.defense|default: '—'}}</span>
+        <span class="monster-hp"><span class="hp-icon">♥</span> {{data.hp.max|default: '—'}}</span>
         {% if data.movement.fly > 0 %}<span class="monster-fly">FLY</span>{% endif %}
       </div>
     </div>
@@ -29,8 +29,10 @@
 
     <!-- Traits -->
     {% if data.traits %}
-    <div class="monster-traits">
-      {{data.traits|md}}
+    <div class="monster-traits-wrapper">
+      <div class="monster-traits">
+        {{data.traits|md}}
+      </div>
     </div>
     {% endif %}
 
@@ -50,9 +52,9 @@
       <div class="monster-section-title">Actions</div>
       <div class="monster-actions">
         {% for action in data.actions %}
-        <p class="monster-action">
+        <span class="monster-action">
           <strong>{{action.name}}.</strong> {{action.text|md}}
-        </p>
+        </span>
         {% endfor %}
       </div>
     </div>
@@ -71,9 +73,9 @@
       {% endif %}
 
       {% for action in data.legendaryActions %}
-      <p class="monster-action">
+      <span class="monster-action">
         <strong>{{action.name}}.</strong> {{action.text|md}}
-      </p>
+      </>
       {% endfor %}
     </div>
     {% endif %}
@@ -117,7 +119,5 @@
     </a>
     {% endif %}
   </section>
-
-  {% include "footer.html" %}
 </main>
 {% endblock %}
