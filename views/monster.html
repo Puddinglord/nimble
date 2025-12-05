@@ -49,7 +49,9 @@
     <!-- Actions -->
     {% if data.actions %}
     <div class="monster-section">
-      <div class="monster-section-title">Actions</div>
+      {% if data.actionFrequency %}
+      <div class="monster-section-title">Actions: <span class="monster-action-frequency">{{data.actionFrequency}}</span></div>
+      {% endif %}
       <div class="monster-actions">
         {% for action in data.actions %}
         <span class="monster-action">

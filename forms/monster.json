@@ -87,6 +87,18 @@
       ]
     },
     {
+      "title": "Action Frequency",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Action Frequency",
+          "type": "text",
+          "attribute": "data.actionFrequency",
+          "placeholder": "e.g., Choose 1, Choose 2, etc."
+        }
+      ]
+    },
+    {
       "title": "Actions",
       "type": "list",
       "attribute": "data.actions",
