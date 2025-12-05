@@ -56,18 +56,9 @@
     }
   },
   "MonsterArmor": {
-    "none": {
-      "name": "None",
-      "description": "Full damage (dice + modifiers)"
-    },
-    "medium": {
-      "name": "Medium",
-      "description": "Dice only (no stat modifier)"
-    },
-    "heavy": {
-      "name": "Heavy",
-      "description": "Half dice only (round down)"
-    }
+    "": "",
+    "M": "M",
+    "H": "H"
   },
   "Language": {
     "common": "Common",

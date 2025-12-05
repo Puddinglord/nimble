@@ -13,9 +13,9 @@
         },
         {
           "title": "Level",
-          "type": "picker",
+          "type": "text",
           "attribute": "data.level",
-          "attributeType": "MonsterLevel"
+          "placeholder": "1"
         },
         {
           "title": "Description",
