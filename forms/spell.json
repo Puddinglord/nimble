@@ -173,12 +173,6 @@
           "title": "Ritual",
           "type": "toggle",
           "attribute": "data.ritual"
-        },
-        {
-          "title": "Notes",
-          "type": "textArea",
-          "attribute": "data.notes",
-          "placeholder": "Additional notes or rulings"
         }
       ]
     }

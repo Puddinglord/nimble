@@ -158,12 +158,6 @@
           "type": "textArea",
           "attribute": "data.special",
           "placeholder": "Any special effects or abilities"
-        },
-        {
-          "title": "Notes",
-          "type": "textArea",
-          "attribute": "data.notes",
-          "placeholder": "Additional notes"
         }
       ]
     }

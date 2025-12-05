@@ -1,684 +1,427 @@
 {
-  "type": "vStack",
-  "spacing": 20,
+  "debug": false,
+  "spacing": 12,
+  "padding": [20, 20, 20, 20],
+  "footer": true,
+  "images": true,
   "views": [
     {
+      "type": "text",
+      "value": "{{name|uppercase}}",
+      "style": "title3",
+      "weight": "black",
+      "alignment": "center",
+      "bgColor": "black",
+      "color": "white",
+      "padding": [8, 12]
+    },
+    {
+      "type": "text",
+      "value": "Level {{data.level|default: '1'}} {{data.ancestry.name|default: 'Unknown'}} {{data.class.name|default: 'Unknown'}}",
+      "style": "subheadline",
+      "alignment": "center"
+    },
+    {
+      "type": "divider",
+      "height": 2,
+      "bgColor": "black"
+    },
+    {
       "type": "hStack",
-      "spacing": 16,
+      "spacing": 8,
+      "distribution": "fillEqually",
       "views": [
         {
-          "type": "image",
-          "value": "{{image}}",
-          "width": 100,
-          "height": 100,
-          "cornerRadius": 12,
-          "contentMode": "aspectFill"
-        },
-        {
           "type": "vStack",
-          "spacing": 4,
-          "alignment": "leading",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [6, 8],
+          "borderColor": "black",
+          "borderWidth": 1,
           "views": [
             {
               "type": "text",
-              "value": "{{name}}",
-              "style": "largeTitle",
+              "value": "STR",
+              "style": "caption2",
               "weight": "bold"
             },
             {
               "type": "text",
-              "value": "{{data.ancestry.name|default: 'Unknown Ancestry'}} {{data.class.name|default: 'Unknown Class'}}",
-              "style": "title2",
-              "color": "secondary"
+              "value": "{{data.abilities.str.score|default: '10'}}",
+              "style": "body",
+              "weight": "bold"
             },
             {
               "type": "text",
-              "value": "Level {{data.level|default: '1'}}",
-              "style": "title3",
-              "color": "secondary"
+              "value": "{{data.abilities.str.modifier|default: '0'|signed}}",
+              "style": "caption"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [6, 8],
+          "borderColor": "black",
+          "borderWidth": 1,
+          "views": [
+            {
+              "type": "text",
+              "value": "DEX",
+              "style": "caption2",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.abilities.dex.score|default: '10'}}",
+              "style": "body",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.abilities.dex.modifier|default: '0'|signed}}",
+              "style": "caption"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [6, 8],
+          "borderColor": "black",
+          "borderWidth": 1,
+          "views": [
+            {
+              "type": "text",
+              "value": "INT",
+              "style": "caption2",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.abilities.int.score|default: '10'}}",
+              "style": "body",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.abilities.int.modifier|default: '0'|signed}}",
+              "style": "caption"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [6, 8],
+          "borderColor": "black",
+          "borderWidth": 1,
+          "views": [
+            {
+              "type": "text",
+              "value": "WIL",
+              "style": "caption2",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.abilities.wil.score|default: '10'}}",
+              "style": "body",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.abilities.wil.modifier|default: '0'|signed}}",
+              "style": "caption"
             }
           ]
         }
       ]
     },
     {
-      "type": "divider"
-    },
-    {
       "type": "hStack",
       "spacing": 12,
-      "distribution": "fillEqually",
       "views": [
         {
           "type": "vStack",
-          "spacing": 4,
+          "spacing": 2,
           "alignment": "center",
-          "padding": 12,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
+          "padding": [8, 16],
+          "bgColor": "black",
           "views": [
+            {
+              "type": "text",
+              "value": "HP",
+              "style": "caption2",
+              "weight": "bold",
+              "color": "white"
+            },
+            {
+              "type": "text",
+              "value": "{{data.hp.current|default: '0'}}/{{data.hp.max|default: '0'}}",
+              "style": "headline",
+              "weight": "bold",
+              "color": "white"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [8, 16],
+          "borderColor": "black",
+          "borderWidth": 1,
+          "views": [
+            {
+              "type": "text",
+              "value": "DEF",
+              "style": "caption2",
+              "weight": "bold"
+            },
             {
               "type": "text",
               "value": "{{data.defense|default: '10'}}",
-              "style": "largeTitle",
-              "weight": "bold"
-            },
-            {
-              "type": "text",
-              "value": "Defense",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 12,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.initiative|default: '0'|signed}}",
-              "style": "largeTitle",
-              "weight": "bold"
-            },
-            {
-              "type": "text",
-              "value": "Initiative (WIL)",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 12,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.movement.walk|default: '30'}} ft",
-              "style": "largeTitle",
-              "weight": "bold"
-            },
-            {
-              "type": "text",
-              "value": "Speed",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 12,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.actionsPerTurn|default: '3'}}",
-              "style": "largeTitle",
-              "weight": "bold"
-            },
-            {
-              "type": "text",
-              "value": "Actions",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "vStack",
-      "spacing": 8,
-      "padding": 16,
-      "backgroundColor": "systemRed",
-      "cornerRadius": 12,
-      "views": [
-        {
-          "type": "hStack",
-          "views": [
-            {
-              "type": "text",
-              "value": "Hit Points",
               "style": "headline",
-              "weight": "semibold",
-              "color": "white"
-            },
-            {
-              "type": "spacer"
-            },
-            {
-              "type": "text",
-              "value": "{{data.hp.current|default: '0'}} / {{data.hp.max|default: '0'}}",
-              "style": "title2",
-              "weight": "bold",
-              "color": "white"
+              "weight": "bold"
             }
           ]
         },
         {
-          "type": "progressBar",
-          "value": "{{data.hp.current}}",
-          "maxValue": "{{data.hp.max}}",
-          "color": "white",
-          "backgroundColor": "systemRed"
+          "type": "vStack",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [8, 16],
+          "borderColor": "black",
+          "borderWidth": 1,
+          "views": [
+            {
+              "type": "text",
+              "value": "SPEED",
+              "style": "caption2",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.movement.walk|default: '30'}}",
+              "style": "headline",
+              "weight": "bold"
+            }
+          ]
         },
         {
-          "type": "text",
-          "value": "Temp HP: {{data.hp.temp|default: '0'}}",
-          "style": "caption",
-          "color": "white",
-          "visibleIf": "data.hp.temp > 0"
+          "type": "spacer"
+        },
+        {
+          "type": "vStack",
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [8, 16],
+          "borderColor": "black",
+          "borderWidth": 1,
+          "views": [
+            {
+              "type": "text",
+              "value": "WOUNDS",
+              "style": "caption2",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.wounds|default: '0'}}/6",
+              "style": "headline",
+              "weight": "bold"
+            }
+          ]
         }
       ]
     },
     {
       "type": "hStack",
       "spacing": 12,
-      "distribution": "fillEqually",
+      "visibleIf": "data.mana.max > 0",
       "views": [
         {
           "type": "vStack",
-          "spacing": 8,
-          "padding": 12,
-          "backgroundColor": "systemOrange",
-          "cornerRadius": 8,
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [8, 16],
+          "borderColor": "black",
+          "borderWidth": 1,
           "views": [
             {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Wounds",
-                  "style": "headline",
-                  "weight": "semibold",
-                  "color": "white"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.wounds|default: '0'}} / 6",
-                  "style": "title2",
-                  "weight": "bold",
-                  "color": "white"
-                }
-              ]
+              "type": "text",
+              "value": "MANA",
+              "style": "caption2",
+              "weight": "bold"
             },
             {
               "type": "text",
-              "value": "Death at 6 wounds",
-              "style": "caption",
-              "color": "white"
-            }
-          ]
-        },
-        {
-          "type": "vStack",
-          "spacing": 8,
-          "padding": 12,
-          "backgroundColor": "systemGreen",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Hit Dice",
-                  "style": "headline",
-                  "weight": "semibold",
-                  "color": "white"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.hitDice.current|default: '0'}} / {{data.hitDice.max|default: '0'}}",
-                  "style": "title2",
-                  "weight": "bold",
-                  "color": "white"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "value": "{{data.hitDie|default: 'd8'}} per die",
-              "style": "caption",
-              "color": "white"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "vStack",
-      "spacing": 8,
-      "padding": 12,
-      "backgroundColor": "systemBlue",
-      "cornerRadius": 8,
-      "views": [
-        {
-          "type": "hStack",
-          "views": [
-            {
-              "type": "text",
-              "value": "Mana",
+              "value": "{{data.mana.current|default: '0'}}/{{data.mana.max|default: '0'}}",
               "style": "headline",
-              "weight": "semibold",
-              "color": "white"
-            },
-            {
-              "type": "spacer"
-            },
-            {
-              "type": "text",
-              "value": "{{data.mana.current|default: '0'}} / {{data.mana.max|default: '0'}}",
-              "style": "title2",
-              "weight": "bold",
-              "color": "white"
+              "weight": "bold"
             }
           ]
-        },
-        {
-          "type": "progressBar",
-          "value": "{{data.mana.current}}",
-          "maxValue": "{{data.mana.max}}",
-          "color": "white",
-          "backgroundColor": "systemBlue"
-        },
-        {
-          "type": "text",
-          "value": "Full Caster: (stat × level) + 5 | Half Caster: (stat × level / 2) + 3",
-          "style": "caption",
-          "color": "white"
-        }
-      ],
-      "visibleIf": "data.mana.max > 0"
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "vStack",
-      "spacing": 12,
-      "views": [
-        {
-          "type": "text",
-          "value": "Abilities",
-          "style": "title",
-          "weight": "bold"
-        },
-        {
-          "type": "hStack",
-          "spacing": 8,
-          "distribution": "fillEqually",
-          "views": [
-            {
-              "type": "vStack",
-              "spacing": 4,
-              "alignment": "center",
-              "padding": 12,
-              "backgroundColor": "systemGray6",
-              "cornerRadius": 8,
-              "views": [
-                {
-                  "type": "text",
-                  "value": "STR",
-                  "style": "caption",
-                  "color": "secondary",
-                  "weight": "semibold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.str.score|default: '10'}}",
-                  "style": "title",
-                  "weight": "bold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.str.modifier|default: '0'|signed}}",
-                  "style": "body",
-                  "color": "secondary"
-                }
-              ]
-            },
-            {
-              "type": "vStack",
-              "spacing": 4,
-              "alignment": "center",
-              "padding": 12,
-              "backgroundColor": "systemGray6",
-              "cornerRadius": 8,
-              "views": [
-                {
-                  "type": "text",
-                  "value": "DEX",
-                  "style": "caption",
-                  "color": "secondary",
-                  "weight": "semibold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.dex.score|default: '10'}}",
-                  "style": "title",
-                  "weight": "bold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.dex.modifier|default: '0'|signed}}",
-                  "style": "body",
-                  "color": "secondary"
-                }
-              ]
-            },
-            {
-              "type": "vStack",
-              "spacing": 4,
-              "alignment": "center",
-              "padding": 12,
-              "backgroundColor": "systemGray6",
-              "cornerRadius": 8,
-              "views": [
-                {
-                  "type": "text",
-                  "value": "INT",
-                  "style": "caption",
-                  "color": "secondary",
-                  "weight": "semibold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.int.score|default: '10'}}",
-                  "style": "title",
-                  "weight": "bold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.int.modifier|default: '0'|signed}}",
-                  "style": "body",
-                  "color": "secondary"
-                }
-              ]
-            },
-            {
-              "type": "vStack",
-              "spacing": 4,
-              "alignment": "center",
-              "padding": 12,
-              "backgroundColor": "systemGray6",
-              "cornerRadius": 8,
-              "views": [
-                {
-                  "type": "text",
-                  "value": "WIL",
-                  "style": "caption",
-                  "color": "secondary",
-                  "weight": "semibold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.wil.score|default: '10'}}",
-                  "style": "title",
-                  "weight": "bold"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.abilities.wil.modifier|default: '0'|signed}}",
-                  "style": "body",
-                  "color": "secondary"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "vStack",
-      "spacing": 12,
-      "views": [
-        {
-          "type": "text",
-          "value": "Skills",
-          "style": "title",
-          "weight": "bold"
         },
         {
           "type": "vStack",
-          "spacing": 8,
+          "spacing": 2,
+          "alignment": "center",
+          "padding": [8, 16],
+          "borderColor": "black",
+          "borderWidth": 1,
           "views": [
             {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Arcana (INT)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.arcana.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
+              "type": "text",
+              "value": "HIT DICE",
+              "style": "caption2",
+              "weight": "bold"
             },
             {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Examination (INT)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.examination.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Finesse (DEX)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.finesse.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Influence (INT)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.influence.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Insight (WIL)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.insight.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Might (STR)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.might.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Lore (INT)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.lore.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Naturecraft (WIL)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.naturecraft.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Perception (WIL)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.perception.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
-            },
-            {
-              "type": "hStack",
-              "views": [
-                {
-                  "type": "text",
-                  "value": "Stealth (DEX)",
-                  "style": "body"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "text",
-                  "value": "{{data.skills.stealth.bonus|default: '0'|signed}}",
-                  "style": "body",
-                  "weight": "semibold"
-                }
-              ]
+              "type": "text",
+              "value": "{{data.hitDice.current|default: '0'}}/{{data.hitDice.max|default: '0'}} ({{data.hitDie|default: 'd8'}})",
+              "style": "headline",
+              "weight": "bold"
             }
           ]
         }
       ]
     },
     {
-      "type": "divider"
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black"
     },
     {
-      "type": "vStack",
-      "spacing": 12,
+      "type": "text",
+      "value": "SKILLS",
+      "style": "caption",
+      "weight": "black"
+    },
+    {
+      "type": "include",
+      "path": "partials/skills.md"
+    },
+    {
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
+      "visibleIf": "data.attacks.size > 0"
+    },
+    {
+      "type": "text",
+      "value": "ATTACKS",
+      "style": "caption",
+      "weight": "black",
+      "visibleIf": "data.attacks.size > 0"
+    },
+    {
+      "type": "forEach",
+      "data": "data.attacks",
       "views": [
         {
           "type": "text",
-          "value": "Description",
-          "style": "title",
-          "weight": "bold"
-        },
-        {
-          "type": "text",
-          "value": "{{descr|default: 'No description provided.'}}",
+          "value": "**{{item.name}}** {{item.attackBonus|signed}} ({{item.damage}} {{item.damageType}})",
           "style": "body"
         }
-      ],
+      ]
+    },
+    {
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
+      "visibleIf": "data.talents.size > 0"
+    },
+    {
+      "type": "text",
+      "value": "TALENTS",
+      "style": "caption",
+      "weight": "black",
+      "visibleIf": "data.talents.size > 0"
+    },
+    {
+      "type": "forEach",
+      "data": "data.talents",
+      "views": [
+        {
+          "type": "text",
+          "value": "**{{item.name}}** {{item.description}}",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
+      "visibleIf": "data.spells.size > 0"
+    },
+    {
+      "type": "text",
+      "value": "SPELLS",
+      "style": "caption",
+      "weight": "black",
+      "visibleIf": "data.spells.size > 0"
+    },
+    {
+      "type": "forEach",
+      "data": "data.spells",
+      "views": [
+        {
+          "type": "text",
+          "value": "**{{item.name}}** ({{item.tier}}) – {{item.manaCost}} mana",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
+      "visibleIf": "data.gear.size > 0"
+    },
+    {
+      "type": "text",
+      "value": "GEAR",
+      "style": "caption",
+      "weight": "black",
+      "visibleIf": "data.gear.size > 0"
+    },
+    {
+      "type": "forEach",
+      "data": "data.gear",
+      "views": [
+        {
+          "type": "text",
+          "value": "{{item.name}}{% if item.quantity > 1 %} (×{{item.quantity}}){% endif %}",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
       "visibleIf": "descr != ''"
+    },
+    {
+      "type": "text",
+      "value": "{{descr}}",
+      "style": "body",
+      "visibleIf": "descr != ''"
+    },
+    {
+      "type": "image",
+      "value": "{{image}}",
+      "link": "{{image}}",
+      "visibleIf": "image != ''"
+    },
+    {
+      "type": "tags",
+      "attribute": "tags"
     }
   ]
 }

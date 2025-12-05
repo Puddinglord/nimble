@@ -12,12 +12,6 @@
           "placeholder": "Monster or NPC name"
         },
         {
-          "title": "Type",
-          "type": "picker",
-          "attribute": "data.type",
-          "attributeType": "MonsterType"
-        },
-        {
           "title": "Size",
           "type": "picker",
           "attribute": "data.size",
@@ -30,52 +24,10 @@
           "attributeType": "MonsterLevel"
         },
         {
-          "title": "XP Value",
-          "type": "number",
-          "attribute": "data.xp",
-          "placeholder": "Auto from level"
-        },
-        {
-          "title": "Alignment",
-          "type": "text",
-          "attribute": "data.alignment",
-          "placeholder": "Neutral, Chaotic Evil, etc."
-        },
-        {
           "title": "Description",
           "type": "textArea",
           "attribute": "descr",
           "placeholder": "Brief flavor text (1-2 sentences)"
-        }
-      ]
-    },
-    {
-      "title": "Abilities",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Strength",
-          "type": "number",
-          "attribute": "data.abilities.str",
-          "placeholder": "0"
-        },
-        {
-          "title": "Dexterity",
-          "type": "number",
-          "attribute": "data.abilities.dex",
-          "placeholder": "0"
-        },
-        {
-          "title": "Intelligence",
-          "type": "number",
-          "attribute": "data.abilities.int",
-          "placeholder": "0"
-        },
-        {
-          "title": "Willpower",
-          "type": "number",
-          "attribute": "data.abilities.wil",
-          "placeholder": "0"
         }
       ]
     },
@@ -108,91 +60,20 @@
       "type": "group",
       "fields": [
         {
-          "title": "Walk Speed",
+          "title": "Speed",
           "type": "number",
-          "attribute": "data.movement.walk",
-          "placeholder": "30"
+          "attribute": "data.movement.speed",
+          "placeholder": "6"
         },
         {
-          "title": "Fly Speed",
-          "type": "number",
-          "attribute": "data.movement.fly",
-          "placeholder": "0"
-        },
-        {
-          "title": "Swim Speed",
-          "type": "number",
-          "attribute": "data.movement.swim",
-          "placeholder": "0"
-        },
-        {
-          "title": "Climb Speed",
-          "type": "number",
-          "attribute": "data.movement.climb",
-          "placeholder": "0"
-        },
-        {
-          "title": "Burrow Speed",
-          "type": "number",
-          "attribute": "data.movement.burrow",
-          "placeholder": "0"
+          "title": "Type",
+          "type": "picker",
+          "attribute": "data.movement.type",
+          "attributeType": "MovementType"
         }
       ]
     },
-    {
-      "title": "Skills & Senses",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Skills",
-          "type": "text",
-          "attribute": "data.skills",
-          "placeholder": "Perception +5, Stealth +3"
-        },
-        {
-          "title": "Senses",
-          "type": "text",
-          "attribute": "data.senses",
-          "placeholder": "Darkvision 60ft, Blindsight 30ft"
-        },
-        {
-          "title": "Languages",
-          "type": "text",
-          "attribute": "data.languages",
-          "placeholder": "Common, Goblin"
-        }
-      ]
-    },
-    {
-      "title": "Damage Modifiers",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Damage Vulnerabilities",
-          "type": "text",
-          "attribute": "data.vulnerabilities",
-          "placeholder": "Fire, Radiant"
-        },
-        {
-          "title": "Damage Resistances",
-          "type": "text",
-          "attribute": "data.resistances",
-          "placeholder": "Cold, Necrotic"
-        },
-        {
-          "title": "Damage Immunities",
-          "type": "text",
-          "attribute": "data.immunities",
-          "placeholder": "Poison, Psychic"
-        },
-        {
-          "title": "Condition Immunities",
-          "type": "text",
-          "attribute": "data.conditionImmunities",
-          "placeholder": "Poisoned, Frightened"
-        }
-      ]
-    },
+
     {
       "title": "Traits & Abilities",
       "type": "group",
@@ -207,34 +88,29 @@
     },
     {
       "title": "Actions",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Actions Per Turn",
-          "type": "number",
-          "attribute": "data.actionsPerTurn",
-          "placeholder": "1"
-        },
-        {
-          "title": "Actions",
-          "type": "textArea",
-          "attribute": "data.actions",
-          "placeholder": "**Bite.** *Melee Attack:* +5 to hit, reach 5ft. *Hit:* 2d6+3 piercing damage.\n\n**Claw (2x).** *Melee Attack:* +5 to hit. *Hit:* 1d6+3 slashing damage."
-        }
-      ]
+      "type": "list",
+      "attribute": "data.actions",
+      "form": {
+        "title": "Action",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Name",
+                "attribute": "name"
+              },
+              {
+                "title": "Description",
+                "type": "textArea",
+                "attribute": "text"
+              }
+            ]
+          }
+        ]
+      }
     },
-    {
-      "title": "Reactions",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Reactions",
-          "type": "textArea",
-          "attribute": "data.reactions",
-          "placeholder": "**Parry.** The creature adds 2 to its Defense against one melee attack that would hit it."
-        }
-      ]
-    },
+
     {
       "title": "Legendary Creature",
       "type": "group",
@@ -245,18 +121,36 @@
           "attribute": "data.isLegendary"
         },
         {
-          "title": "Legendary Resistance (uses)",
-          "type": "number",
-          "attribute": "data.legendaryResistance",
-          "placeholder": "3",
+          "title": "Saves",
+          "type": "text",
+          "attribute": "data.saves",
+          "placeholder": "e.g., STR +5, DEX +3",
           "visibleIf": "data.isLegendary == true"
         },
         {
           "title": "Legendary Actions",
-          "type": "textArea",
+          "type": "list",
           "attribute": "data.legendaryActions",
-          "placeholder": "The creature can take legendary actions after each hero's turn. Choose from:\n\n**Detect.** The creature makes a Perception check.\n\n**Tail Attack.** The creature makes a tail attack.",
-          "visibleIf": "data.isLegendary == true"
+          "visibleIf": "data.isLegendary == true",
+          "form": {
+            "title": "Legendary Action",
+            "sections": [
+              {
+                "type": "group",
+                "fields": [
+                  {
+                    "placeholder": "Name",
+                    "attribute": "name"
+                  },
+                  {
+                    "title": "Description",
+                    "type": "textArea",
+                    "attribute": "text"
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -301,36 +195,6 @@
       ]
     },
     {
-      "title": "Spellcasting",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Spellcasting Ability",
-          "type": "picker",
-          "attribute": "data.spellcasting.ability",
-          "attributeType": "Ability"
-        },
-        {
-          "title": "Spell Save DC",
-          "type": "number",
-          "attribute": "data.spellcasting.saveDC",
-          "placeholder": "10"
-        },
-        {
-          "title": "Spell Attack Bonus",
-          "type": "number",
-          "attribute": "data.spellcasting.attackBonus",
-          "placeholder": "+2"
-        },
-        {
-          "title": "Spells",
-          "type": "textArea",
-          "attribute": "data.spellcasting.spells",
-          "placeholder": "**Cantrips (at will):** fire bolt, minor illusion\n\n**Tier 1 (3 mana each):** burning hands, shield\n\n**Tier 2 (5 mana each):** scorching ray"
-        }
-      ]
-    },
-    {
       "title": "Loot & Rewards",
       "type": "group",
       "fields": [
@@ -339,24 +203,6 @@
           "type": "textArea",
           "attribute": "data.treasure",
           "placeholder": "25 silver, rusty dagger, mysterious amulet"
-        }
-      ]
-    },
-    {
-      "title": "GM Notes",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Tactics",
-          "type": "textArea",
-          "attribute": "data.tactics",
-          "placeholder": "How does this creature fight? What are its priorities?"
-        },
-        {
-          "title": "Notes",
-          "type": "textArea",
-          "attribute": "notes",
-          "placeholder": "Additional GM notes, lore, or encounter ideas"
         }
       ]
     }

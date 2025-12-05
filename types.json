@@ -282,7 +282,6 @@
     "wyrdling": "Wyrdling"
   },
   "MovementType": {
-    "walk": "Walk",
     "fly": "Fly",
     "swim": "Swim",
     "climb": "Climb",

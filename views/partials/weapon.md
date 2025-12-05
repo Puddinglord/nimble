@@ -1,0 +1,5 @@
+**Damage** {{data.damage.dice|default: '1d6'}} {{data.damage.type|default: 'slashing'}}{% if data.damage.bonus %} + {{data.damage.bonus}}{% endif %} | **Attack** {{data.attackStat|default: 'STR'}}{% if data.magicBonus > 0 %} | **Magic** +{{data.magicBonus}}{% endif %}
+
+{% if data.range > 0 %}**Range** {{data.range}} ft{% endif %}{% if data.value %} | **Value** {{data.value}} sp{% endif %}{% if data.weight %} | **Weight** {{data.weight}} lbs{% endif %}{% if data.rarity %} | **Rarity** {{data.rarity}}{% endif %}
+
+{% if data.properties.light == true %}*Light* {% endif %}{% if data.properties.twoHanded == true %}*Two-Handed* {% endif %}{% if data.properties.versatile == true %}*Versatile ({{data.properties.versatileDamage}})* {% endif %}{% if data.properties.finesse == true %}*Finesse* {% endif %}{% if data.properties.thrown == true %}*Thrown* {% endif %}{% if data.properties.vicious == true %}*Vicious* {% endif %}{% if data.properties.reach == true %}*Reach* {% endif %}{% if data.properties.loading == true %}*Loading* {% endif %}{% if data.properties.mounted == true %}*Mounted* {% endif %}

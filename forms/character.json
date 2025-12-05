@@ -526,48 +526,6 @@
           "placeholder": "List equipment and items (one per line)"
         }
       ]
-    },
-    {
-      "title": "Additional Details",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Alignment",
-          "type": "text",
-          "attribute": "data.alignment",
-          "placeholder": "Lawful Good, Chaotic Neutral, etc."
-        },
-        {
-          "title": "Personality Traits",
-          "type": "textArea",
-          "attribute": "data.personality",
-          "placeholder": "Character personality traits"
-        },
-        {
-          "title": "Ideals",
-          "type": "textArea",
-          "attribute": "data.ideals",
-          "placeholder": "Character ideals"
-        },
-        {
-          "title": "Bonds",
-          "type": "textArea",
-          "attribute": "data.bonds",
-          "placeholder": "Character bonds"
-        },
-        {
-          "title": "Flaws",
-          "type": "textArea",
-          "attribute": "data.flaws",
-          "placeholder": "Character flaws"
-        },
-        {
-          "title": "Notes",
-          "type": "textArea",
-          "attribute": "data.notes",
-          "placeholder": "Additional character notes"
-        }
-      ]
     }
   ]
 }

@@ -1,383 +1,76 @@
 {
-  "type": "vStack",
-  "spacing": 16,
+  "debug": false,
+  "spacing": 12,
+  "padding": [20, 20, 20, 20],
+  "footer": true,
+  "images": true,
   "views": [
     {
-      "type": "hStack",
-      "spacing": 12,
-      "views": [
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "leading",
-          "views": [
-            {
-              "type": "text",
-              "value": "{{name}}",
-              "style": "largeTitle",
-              "weight": "bold"
-            },
-            {
-              "type": "text",
-              "value": "{{data.weaponType|default: 'Weapon'}}",
-              "style": "headline",
-              "color": "secondary"
-            }
-          ]
-        },
-        {
-          "type": "spacer"
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 12,
-          "backgroundColor": "systemRed",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.damage.dice|default: '1d6'}}",
-              "style": "title",
-              "weight": "bold",
-              "color": "white"
-            },
-            {
-              "type": "text",
-              "value": "{{data.damage.type|default: 'Slashing'}}",
-              "style": "caption",
-              "color": "white"
-            }
-          ]
-        }
-      ]
+      "type": "text",
+      "value": "{{name|uppercase}}",
+      "style": "title3",
+      "weight": "black",
+      "alignment": "center",
+      "bgColor": "black",
+      "color": "white",
+      "padding": [8, 12]
     },
     {
-      "type": "hStack",
-      "spacing": 8,
-      "views": [
-        {
-          "type": "text",
-          "value": "{{data.rarity|default: 'Common'}}",
-          "style": "caption",
-          "weight": "semibold",
-          "padding": 6,
-          "backgroundColor": "systemGray",
-          "cornerRadius": 4,
-          "color": "white"
-        },
-        {
-          "type": "text",
-          "value": "+{{data.magicBonus}}",
-          "style": "caption",
-          "weight": "bold",
-          "padding": 6,
-          "backgroundColor": "systemPurple",
-          "cornerRadius": 4,
-          "color": "white",
-          "visibleIf": "data.magicBonus > 0"
-        }
-      ]
+      "type": "text",
+      "value": "{{data.weaponType|default: 'Weapon'}}",
+      "style": "subheadline",
+      "alignment": "center"
     },
     {
-      "type": "divider"
+      "type": "include",
+      "path": "partials/weapon.md"
     },
     {
-      "type": "hStack",
-      "spacing": 12,
-      "distribution": "fillEqually",
-      "views": [
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 10,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.attackStat|default: 'STR'}}",
-              "style": "body",
-              "weight": "semibold"
-            },
-            {
-              "type": "text",
-              "value": "Attack Stat",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 10,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.range|default: 'Melee'}} ft",
-              "style": "body",
-              "weight": "semibold"
-            },
-            {
-              "type": "text",
-              "value": "Range",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ],
-          "visibleIf": "data.range > 0"
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 10,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.weight|default: '0'}} lbs",
-              "style": "body",
-              "weight": "semibold"
-            },
-            {
-              "type": "text",
-              "value": "Weight",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        },
-        {
-          "type": "vStack",
-          "spacing": 4,
-          "alignment": "center",
-          "padding": 10,
-          "backgroundColor": "systemGray6",
-          "cornerRadius": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "{{data.value|default: '0'}} sp",
-              "style": "body",
-              "weight": "semibold"
-            },
-            {
-              "type": "text",
-              "value": "Value",
-              "style": "caption",
-              "color": "secondary"
-            }
-          ]
-        }
-      ]
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
+      "visibleIf": "descr != ''"
     },
     {
-      "type": "divider"
+      "type": "text",
+      "value": "{{descr}}",
+      "style": "body",
+      "visibleIf": "descr != ''"
     },
     {
-      "type": "vStack",
-      "spacing": 8,
-      "views": [
-        {
-          "type": "text",
-          "value": "Properties",
-          "style": "headline",
-          "weight": "bold"
-        },
-        {
-          "type": "hStack",
-          "spacing": 8,
-          "views": [
-            {
-              "type": "text",
-              "value": "Light",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemYellow",
-              "cornerRadius": 4,
-              "color": "black",
-              "visibleIf": "data.properties.light == true"
-            },
-            {
-              "type": "text",
-              "value": "Two-Handed",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemOrange",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.twoHanded == true"
-            },
-            {
-              "type": "text",
-              "value": "Versatile ({{data.properties.versatileDamage}})",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemBlue",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.versatile == true"
-            },
-            {
-              "type": "text",
-              "value": "Finesse",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemGreen",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.finesse == true"
-            },
-            {
-              "type": "text",
-              "value": "Thrown",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemTeal",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.thrown == true"
-            },
-            {
-              "type": "text",
-              "value": "Vicious",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemRed",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.vicious == true"
-            },
-            {
-              "type": "text",
-              "value": "Reach",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemIndigo",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.reach == true"
-            },
-            {
-              "type": "text",
-              "value": "Loading",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemGray",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.loading == true"
-            },
-            {
-              "type": "text",
-              "value": "Mounted",
-              "style": "caption",
-              "weight": "semibold",
-              "padding": 6,
-              "backgroundColor": "systemBrown",
-              "cornerRadius": 4,
-              "color": "white",
-              "visibleIf": "data.properties.mounted == true"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "vStack",
-      "spacing": 8,
-      "views": [
-        {
-          "type": "text",
-          "value": "Bonus Damage",
-          "style": "headline",
-          "weight": "bold"
-        },
-        {
-          "type": "text",
-          "value": "{{data.damage.bonus}}",
-          "style": "body"
-        }
-      ],
-      "visibleIf": "data.damage.bonus != ''"
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "vStack",
-      "spacing": 8,
-      "views": [
-        {
-          "type": "text",
-          "value": "Description",
-          "style": "headline",
-          "weight": "bold"
-        },
-        {
-          "type": "text",
-          "value": "{{descr|default: 'No description provided.'}}",
-          "style": "body"
-        }
-      ]
-    },
-    {
-      "type": "vStack",
-      "spacing": 8,
-      "padding": 12,
-      "backgroundColor": "systemPurple",
-      "cornerRadius": 8,
-      "views": [
-        {
-          "type": "text",
-          "value": "Special Properties",
-          "style": "headline",
-          "weight": "bold",
-          "color": "white"
-        },
-        {
-          "type": "text",
-          "value": "{{data.special}}",
-          "style": "body",
-          "color": "white"
-        }
-      ],
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
       "visibleIf": "data.special != ''"
     },
     {
-      "type": "vStack",
-      "spacing": 8,
-      "views": [
-        {
-          "type": "text",
-          "value": "Notes",
-          "style": "headline",
-          "weight": "bold"
-        },
-        {
-          "type": "text",
-          "value": "{{data.notes}}",
-          "style": "body",
-          "color": "secondary"
-        }
-      ],
-      "visibleIf": "data.notes != ''"
+      "type": "text",
+      "value": "SPECIAL",
+      "style": "caption",
+      "weight": "black",
+      "visibleIf": "data.special != ''"
+    },
+    {
+      "type": "text",
+      "value": "{{data.special}}",
+      "style": "body",
+      "visibleIf": "data.special != ''"
+    },
+    {
+      "type": "text",
+      "value": "{{notes}}",
+      "style": "caption",
+      "visibleIf": "notes != ''"
+    },
+    {
+      "type": "image",
+      "value": "{{image}}",
+      "link": "{{image}}",
+      "visibleIf": "image != ''"
+    },
+    {
+      "type": "tags",
+      "attribute": "tags"
     }
   ]
 }

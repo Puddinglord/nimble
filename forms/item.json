@@ -118,18 +118,6 @@
           "placeholder": "e.g., Action, Bonus Action"
         }
       ]
-    },
-    {
-      "title": "Additional Details",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Notes",
-          "type": "textArea",
-          "attribute": "data.notes",
-          "placeholder": "Additional notes"
-        }
-      ]
     }
   ]
 }

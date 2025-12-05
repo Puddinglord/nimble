@@ -42,13 +42,13 @@
       ]
     },
     "monster": {
-      "detail": "{{data.size|map: 'Size'}} {{data.type|map: 'MonsterType'}} • Lvl {{data.level|default: '1'}}{% if data.armor %} • {{data.armor|uppercase}} Armor{% endif %}",
+      "detail": "{{data.size|map: 'Size'}} • Lvl {{data.level|default: '1'}}{% if data.armor %} • {{data.armor|uppercase}} Armor{% endif %}",
       "tokenImage": "{{image}}",
       "isPlayerControlled": false,
       "defeatedWhenHpDropsToZero": true,
       "role": "hostile",
       "collection": {
-        "detail": "Lvl {{data.level|default: '1'}} • {{data.type|map: 'MonsterType'}}{% if data.armor %} • {{data.armor|uppercase}}{% endif %}"
+        "detail": "Lvl {{data.level|default: '1'}}{% if data.armor %} • {{data.armor|uppercase}}{% endif %}"
       },
       "combatant": {
         "initiative": "{{data.abilities.wil|default: '0'}}",
