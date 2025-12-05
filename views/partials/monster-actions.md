@@ -1,7 +1,3 @@
-{% if data.actions %}
-{% markdown %}
-## Actions
-
 {% for action in data.actions %}
 {% if action.attackBonus %}
 {% include "partials/attack.md" with attack=action %}
@@ -10,5 +6,3 @@
 {% endif %}
 
 {% endfor %}
-{% endmarkdown %}
-{% endif %}

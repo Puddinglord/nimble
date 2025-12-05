@@ -15,7 +15,10 @@
       "senses": "Darkvision 60 ft",
       "languages": "Common, Goblin",
       "traits": "**Nimble Escape.** The goblin can Disengage or Hide as a bonus action.",
-      "actions": "**Scimitar.** 1d6+2 slashing damage.\n\n**Shortbow.** Range 80/320 ft. 1d6+2 piercing damage.",
+      "actions": [
+        { "name": "Scimitar", "text": "1d6+2 slashing damage." },
+        { "name": "Shortbow", "text": "Range 80/320 ft. 1d6+2 piercing damage." }
+      ],
       "actionsPerTurn": 1
     }
   },
@@ -36,7 +39,10 @@
       "vulnerabilities": "Bludgeoning",
       "immunities": "Poison",
       "conditionImmunities": "Poisoned, Exhaustion",
-      "actions": "**Shortsword.** 1d6+2 piercing damage.\n\n**Shortbow.** Range 80/320 ft. 1d6+2 piercing damage.",
+      "actions": [
+        { "name": "Shortsword", "text": "1d6+2 piercing damage." },
+        { "name": "Shortbow", "text": "Range 80/320 ft. 1d6+2 piercing damage." }
+      ],
       "actionsPerTurn": 1
     }
   },
@@ -57,7 +63,9 @@
       "immunities": "Poison",
       "conditionImmunities": "Poisoned",
       "traits": "**Undead Fortitude.** If damage reduces the zombie to 0 HP, it makes a WIL save (DC = 5 + damage taken). On success, it drops to 1 HP instead. Radiant damage bypasses this.",
-      "actions": "**Slam.** 1d6+1 bludgeoning damage.",
+      "actions": [
+        { "name": "Slam", "text": "1d6+1 bludgeoning damage." }
+      ],
       "actionsPerTurn": 1
     }
   },
@@ -76,7 +84,9 @@
       "skills": "Perception +3, Stealth +4",
       "senses": "Keen hearing and smell",
       "traits": "**Pack Tactics.** The wolf has advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 ft of the creature.",
-      "actions": "**Bite.** 2d4+2 piercing damage. Target must succeed on STR save (DC 11) or be knocked prone.",
+      "actions": [
+        { "name": "Bite", "text": "2d4+2 piercing damage. Target must succeed on STR save (DC 11) or be knocked prone." }
+      ],
       "actionsPerTurn": 1
     }
   },
@@ -96,7 +106,10 @@
       "senses": "Darkvision 60 ft",
       "languages": "Common, Orc",
       "traits": "**Aggressive.** As a bonus action, the orc can move up to its speed toward a hostile creature it can see.",
-      "actions": "**Greataxe.** 1d12+3 slashing damage.\n\n**Javelin.** Range 30/120 ft. 1d6+3 piercing damage.",
+      "actions": [
+        { "name": "Greataxe", "text": "1d12+3 slashing damage." },
+        { "name": "Javelin", "text": "Range 30/120 ft. 1d6+3 piercing damage." }
+      ],
       "actionsPerTurn": 1
     }
   },
@@ -115,7 +128,11 @@
       "skills": "Insight +3, Perception +3",
       "languages": "Common, Thieves' Cant",
       "traits": "**Cunning Action.** The captain can Dash, Disengage, or Hide as a bonus action.",
-      "actions": "**Multiattack.** The captain makes two attacks.\n\n**Scimitar.** 1d6+3 slashing damage.\n\n**Dagger.** Range 20/60 ft. 1d4+3 piercing damage.",
+      "actions": [
+        { "name": "Multiattack", "text": "The captain makes two attacks." },
+        { "name": "Scimitar", "text": "1d6+3 slashing damage." },
+        { "name": "Dagger", "text": "Range 20/60 ft. 1d4+3 piercing damage." }
+      ],
       "reactions": "**Parry.** The captain adds 2 to its Defense against one melee attack that would hit it.",
       "actionsPerTurn": 2
     }
@@ -134,7 +151,10 @@
       "movement": { "walk": 40 },
       "senses": "Darkvision 60 ft",
       "languages": "Common, Giant",
-      "actions": "**Greatclub.** 2d8+4 bludgeoning damage.\n\n**Javelin.** Range 30/120 ft. 2d6+4 piercing damage.",
+      "actions": [
+        { "name": "Greatclub", "text": "2d8+4 bludgeoning damage." },
+        { "name": "Javelin", "text": "Range 30/120 ft. 2d6+4 piercing damage." }
+      ],
       "actionsPerTurn": 1
     }
   },
@@ -153,7 +173,11 @@
       "skills": "Insight +4, Perception +4",
       "languages": "Common, one other",
       "traits": "**Brave.** The knight has advantage on saves against being frightened.",
-      "actions": "**Multiattack.** The knight makes two melee attacks.\n\n**Greatsword.** 2d6+3 slashing damage.\n\n**Heavy Crossbow.** Range 100/400 ft. 1d10 piercing damage.",
+      "actions": [
+        { "name": "Multiattack", "text": "The knight makes two melee attacks." },
+        { "name": "Greatsword", "text": "2d6+3 slashing damage." },
+        { "name": "Heavy Crossbow", "text": "Range 100/400 ft. 1d10 piercing damage." }
+      ],
       "reactions": "**Parry.** The knight adds 2 to its Defense against one melee attack that would hit it.",
       "actionsPerTurn": 2
     }
@@ -174,7 +198,11 @@
       "senses": "Darkvision 60 ft",
       "languages": "Giant",
       "traits": "**Regeneration.** The troll regains 10 HP at the start of its turn. If the troll takes fire or acid damage, this trait doesn't function at the start of the troll's next turn. The troll dies only if it starts its turn with 0 HP and doesn't regenerate.\n\n**Keen Smell.** The troll has advantage on Perception checks that rely on smell.",
-      "actions": "**Multiattack.** The troll makes three attacks: one bite and two claws.\n\n**Bite.** 1d6+4 piercing damage.\n\n**Claw.** 2d6+4 slashing damage.",
+      "actions": [
+        { "name": "Multiattack", "text": "The troll makes three attacks: one bite and two claws." },
+        { "name": "Bite", "text": "1d6+4 piercing damage." },
+        { "name": "Claw", "text": "2d6+4 slashing damage." }
+      ],
       "actionsPerTurn": 3
     }
   },
@@ -195,7 +223,12 @@
       "languages": "Common, Draconic",
       "immunities": "Fire",
       "traits": "**Legendary Resistance (1/day).** If the dragon fails a save, it can choose to succeed instead.",
-      "actions": "**Multiattack.** The dragon makes three attacks: one bite and two claws.\n\n**Bite.** 2d10+4 piercing + 1d6 fire damage.\n\n**Claw.** 2d6+4 slashing damage.\n\n**Fire Breath (Recharge 5-6).** The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DEX save (DC 15). A creature takes 12d6 fire damage on a failed save, or half on success.",
+      "actions": [
+        { "name": "Multiattack", "text": "The dragon makes three attacks: one bite and two claws." },
+        { "name": "Bite", "text": "2d10+4 piercing + 1d6 fire damage." },
+        { "name": "Claw", "text": "2d6+4 slashing damage." },
+        { "name": "Fire Breath (Recharge 5-6)", "text": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DEX save (DC 15). A creature takes 12d6 fire damage on a failed save, or half on success." }
+      ],
       "actionsPerTurn": 3,
       "isLegendary": false
     }
@@ -219,8 +252,19 @@
       "isLegendary": true,
       "legendaryResistance": 3,
       "traits": "**Legendary Resistance (3/day).** If the dragon fails a save, it can choose to succeed instead.\n\n**Fire Aura.** Any creature that starts its turn within 10 feet of the dragon takes 2d6 fire damage.",
-      "actions": "**Multiattack.** The dragon makes three attacks: one bite and two claws. It can use Frightful Presence in place of one attack.\n\n**Bite.** 2d10+6 piercing + 4d6 fire damage.\n\n**Claw.** 2d6+6 slashing damage.\n\n**Tail.** 2d8+6 bludgeoning damage.\n\n**Frightful Presence.** Each creature of the dragon's choice within 120 feet must succeed on a WIL save (DC 19) or become frightened for 1 minute.\n\n**Fire Breath (Recharge 5-6).** 60-foot cone. DEX save DC 21. 18d6 fire damage, half on success.",
-      "legendaryActions": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only after another creature's turn.\n\n**Detect.** The dragon makes a Perception check.\n\n**Tail Attack (Costs 1 Action).** The dragon makes a tail attack.\n\n**Wing Attack (Costs 2 Actions).** The dragon beats its wings. Each creature within 15 feet must succeed on a DEX save (DC 22) or take 2d6+6 bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+      "actions": [
+        { "name": "Multiattack", "text": "The dragon makes three attacks: one bite and two claws. It can use Frightful Presence in place of one attack." },
+        { "name": "Bite", "text": "2d10+6 piercing + 4d6 fire damage." },
+        { "name": "Claw", "text": "2d6+6 slashing damage." },
+        { "name": "Tail", "text": "2d8+6 bludgeoning damage." },
+        { "name": "Frightful Presence", "text": "Each creature of the dragon's choice within 120 feet must succeed on a WIL save (DC 19) or become frightened for 1 minute." },
+        { "name": "Fire Breath (Recharge 5-6)", "text": "60-foot cone. DEX save DC 21. 18d6 fire damage, half on success." }
+      ],
+      "legendaryActions": [
+        { "name": "Detect", "text": "The dragon makes a Perception check." },
+        { "name": "Tail Attack (Costs 1 Action)", "text": "The dragon makes a tail attack." },
+        { "name": "Wing Attack (Costs 2 Actions)", "text": "The dragon beats its wings. Each creature within 15 feet must succeed on a DEX save (DC 22) or take 2d6+6 bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed." }
+      ],
       "bloodied": {
         "threshold": 61,
         "abilities": "**Desperate Fury.** When bloodied, the dragon's attacks deal an additional 1d6 fire damage, and its Fire Aura deals 3d6 damage instead of 2d6."

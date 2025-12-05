@@ -30,25 +30,6 @@
       "type": "divider",
       "height": 1,
       "bgColor": "black",
-      "visibleIf": "data.actions.size > 0"
-    },
-    {
-      "type": "text",
-      "value": "ACTIONS",
-      "style": "caption",
-      "weight": "black",
-      "visibleIf": "data.actions.size > 0"
-    },
-    {
-      "type": "text",
-      "value": "{% for action in data.actions %}**{{action.name}}.** {{action.text}}\n\n{% endfor %}",
-      "style": "body",
-      "visibleIf": "data.actions.size > 0"
-    },
-    {
-      "type": "divider",
-      "height": 1,
-      "bgColor": "black",
       "visibleIf": "data.traits"
     },
     {
@@ -63,6 +44,25 @@
       "value": "{{data.traits}}",
       "style": "body",
       "visibleIf": "data.traits"
+    },
+    {
+      "type": "divider",
+      "height": 1,
+      "bgColor": "black",
+      "visibleIf": "data.actions"
+    },
+    {
+      "type": "text",
+      "value": "ACTIONS",
+      "style": "caption",
+      "weight": "black",
+      "visibleIf": "data.actions"
+    },
+    {
+      "type": "text",
+      "value": "{% for action in data.actions %}**{{action.name}}.** {{action.text}}\n\n{% endfor %}",
+      "style": "body",
+      "visibleIf": "data.actions"
     },
 
     {
