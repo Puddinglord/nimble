@@ -1,0 +1,92 @@
+[
+  {
+    "id": "blinded",
+    "name": "Blinded",
+    "descr": "Can't see. Attacks against you have advantage, and your attacks have disadvantage."
+  },
+  {
+    "id": "bloodied",
+    "name": "Bloodied",
+    "descr": "At half HP or less."
+  },
+  {
+    "id": "charmed",
+    "name": "Charmed",
+    "descr": "Sees the charmer as an ally. Charmer has advantage on social interactions with you."
+  },
+  {
+    "id": "dazed",
+    "name": "Dazed",
+    "descr": "Heroes: lose 1 action; monsters: can perform one less action on their next turn."
+  },
+  {
+    "id": "dying",
+    "name": "Dying",
+    "descr": "At 0 HP. Taking damage while dying causes 2 Wounds, a crit causes 3 instead."
+  },
+  {
+    "id": "frightened",
+    "name": "Frightened",
+    "descr": "Disadvantage on rolls when source of fear is nearby; speed halved when moving closer to it."
+  },
+  {
+    "id": "grappled-restrained",
+    "name": "Grappled/Restrained",
+    "descr": "Cannot move. Attacks against you have advantage."
+  },
+  {
+    "id": "hampered",
+    "name": "Hampered",
+    "descr": "Any creature with their actions or movement reduced (e.g., Dazed, Grappled, Prone, Difficult Terrain)."
+  },
+  {
+    "id": "incapacitated",
+    "name": "Incapacitated",
+    "descr": "Can't do anything. Attacks against you have advantage, and melee attacks that hit, crit."
+  },
+  {
+    "id": "invisible",
+    "name": "Invisible",
+    "descr": "Cannot be seen. Your attacks have advantage, and attacks against you have disadvantage."
+  },
+  {
+    "id": "petrified",
+    "name": "Petrified",
+    "descr": "Incapacitated. You have all the benefits and drawbacks of being a rock! Immune to most damage except from large explosions, picks, or similar tools."
+  },
+  {
+    "id": "poisoned",
+    "name": "Poisoned",
+    "descr": "Disadvantage on rolls."
+  },
+  {
+    "id": "prone",
+    "name": "Prone",
+    "descr": "Movement costs twice as much, and disadvantage on attacks. Melee attacks against you have advantage; Ranged have disadvantage. Spend 3 spaces of your Speed to stand up."
+  },
+  {
+    "id": "riding",
+    "name": "Riding",
+    "descr": "You move with the creature you are riding. Any attacks that miss you, strike them."
+  },
+  {
+    "id": "slowed",
+    "name": "Slowed",
+    "descr": "Speed halved during your next turn."
+  },
+  {
+    "id": "taunted",
+    "name": "Taunted",
+    "descr": "Disadvantage on attacks except against the most recent taunter."
+  },
+  {
+    "id": "wounded",
+    "name": "Wounded",
+    "descr": "Has any Wounds (typically 6 Wounds and a hero is dead)."
+  },
+  {
+    "id": "minor-statuses",
+    "name": "Minor Statuses",
+    "descr": "Minor statuses (Smoldering, Charged, Distracted, etc.) do nothing on their own and end whenever combat does. Some spells and abilities have additional effects against such targets."
+  }
+]

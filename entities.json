@@ -3,7 +3,6 @@
     "name": "Character",
     "label": "character",
     "collection": {
-      "name": "Characters",
       "label": "characters"
     },
     "loadable": true,
@@ -13,7 +12,6 @@
     "name": "Monster",
     "label": "monster",
     "collection": {
-      "name": "Monsters",
       "label": "monsters"
     },
     "loadable": true
@@ -23,7 +21,6 @@
     "label": "npc",
     "extends": "Monster",
     "collection": {
-      "name": "NPCs",
       "label": "npcs"
     },
     "loadable": true
@@ -32,7 +29,6 @@
     "name": "Spell",
     "label": "spell",
     "collection": {
-      "name": "Spells",
       "label": "spells"
     },
     "loadable": true
@@ -41,28 +37,7 @@
     "name": "Item",
     "label": "item",
     "collection": {
-      "name": "Items",
       "label": "items"
-    },
-    "loadable": true
-  },
-  {
-    "name": "Weapon",
-    "label": "weapon",
-    "extends": "Item",
-    "collection": {
-      "name": "Weapons",
-      "label": "weapons"
-    },
-    "loadable": true
-  },
-  {
-    "name": "Armor",
-    "label": "armor",
-    "extends": "Item",
-    "collection": {
-      "name": "Armor",
-      "label": "armor"
     },
     "loadable": true
   },
@@ -70,7 +45,6 @@
     "name": "Class",
     "label": "class",
     "collection": {
-      "name": "Classes",
       "label": "classes"
     }
   },
@@ -78,7 +52,6 @@
     "name": "Subclass",
     "label": "subclass",
     "collection": {
-      "name": "Subclasses",
       "label": "subclasses"
     }
   },
@@ -86,7 +59,6 @@
     "name": "Ancestry",
     "label": "ancestry",
     "collection": {
-      "name": "Ancestries",
       "label": "ancestries"
     }
   },
@@ -94,7 +66,6 @@
     "name": "Background",
     "label": "background",
     "collection": {
-      "name": "Backgrounds",
       "label": "backgrounds"
     }
   },
@@ -102,7 +73,6 @@
     "name": "Feature",
     "label": "feature",
     "collection": {
-      "name": "Features",
       "label": "features"
     }
   },
@@ -110,7 +80,6 @@
     "name": "Table",
     "label": "table",
     "collection": {
-      "name": "Tables",
       "label": "tables"
     }
   },
@@ -118,9 +87,15 @@
     "name": "Rule",
     "label": "rule",
     "collection": {
-      "name": "Rules",
       "label": "rules"
     },
     "dynamic": true
+  },
+  {
+    "name": "Condition",
+    "label": "condition",
+    "collection": {
+      "label": "conditions"
+    }
   }
 ]

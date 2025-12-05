@@ -32,6 +32,137 @@
       ]
     },
     {
+      "title": "Weapon Properties",
+      "type": "group",
+      "visibleIf": "data.itemType == 'melee-weapon' || data.itemType == 'ranged-weapon'",
+      "fields": [
+        {
+          "title": "Damage Dice",
+          "type": "text",
+          "attribute": "data.damage.dice",
+          "placeholder": "e.g., 1d8"
+        },
+        {
+          "title": "Damage Type",
+          "type": "picker",
+          "attribute": "data.damage.type",
+          "attributeType": "DamageType"
+        },
+        {
+          "title": "Bonus Damage",
+          "type": "text",
+          "attribute": "data.damage.bonus",
+          "placeholder": "e.g., +1d6 fire"
+        },
+        {
+          "title": "Attack Stat",
+          "type": "picker",
+          "attribute": "data.attackStat",
+          "attributeType": "Ability"
+        },
+        {
+          "title": "Magic Bonus",
+          "type": "number",
+          "attribute": "data.magicBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Range (ft)",
+          "type": "number",
+          "attribute": "data.range",
+          "placeholder": "For ranged/thrown weapons"
+        },
+        {
+          "title": "Light",
+          "type": "toggle",
+          "attribute": "data.properties.light"
+        },
+        {
+          "title": "Two-Handed",
+          "type": "toggle",
+          "attribute": "data.properties.twoHanded"
+        },
+        {
+          "title": "Versatile",
+          "type": "toggle",
+          "attribute": "data.properties.versatile"
+        },
+        {
+          "title": "Versatile Damage",
+          "type": "text",
+          "attribute": "data.properties.versatileDamage",
+          "placeholder": "e.g., 1d10",
+          "visibleIf": "data.properties.versatile == true"
+        },
+        {
+          "title": "Finesse",
+          "type": "toggle",
+          "attribute": "data.properties.finesse"
+        },
+        {
+          "title": "Thrown",
+          "type": "toggle",
+          "attribute": "data.properties.thrown"
+        },
+        {
+          "title": "Vicious",
+          "type": "toggle",
+          "attribute": "data.properties.vicious"
+        },
+        {
+          "title": "Reach",
+          "type": "toggle",
+          "attribute": "data.properties.reach"
+        },
+        {
+          "title": "Loading",
+          "type": "toggle",
+          "attribute": "data.properties.loading"
+        },
+        {
+          "title": "Mounted",
+          "type": "toggle",
+          "attribute": "data.properties.mounted"
+        }
+      ]
+    },
+    {
+      "title": "Armor Properties",
+      "type": "group",
+      "visibleIf": "data.itemType == 'cloth' || data.itemType == 'leather' || data.itemType == 'mail' || data.itemType == 'plate' || data.itemType == 'shield'",
+      "fields": [
+        {
+          "title": "Defense Bonus",
+          "type": "number",
+          "attribute": "data.defenseBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Magic Bonus",
+          "type": "number",
+          "attribute": "data.magicBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "DEX Limit",
+          "type": "picker",
+          "attribute": "data.dexLimit",
+          "attributeType": "DexLimit"
+        },
+        {
+          "title": "Stealth Disadvantage",
+          "type": "toggle",
+          "attribute": "data.stealthDisadvantage"
+        },
+        {
+          "title": "Strength Requirement",
+          "type": "number",
+          "attribute": "data.strRequirement",
+          "placeholder": "0"
+        }
+      ]
+    },
+    {
       "title": "Physical Properties",
       "type": "group",
       "fields": [

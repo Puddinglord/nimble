@@ -108,12 +108,6 @@
     "spell": {
       "detail": "{% if data.tier == '0' %}{{data.school|map: 'SpellSchool'}} Cantrip{% else %}Tier {{data.tier}} {{data.school|map: 'SpellSchool'}}{% endif %}{% if data.manaCost %} • {{data.manaCost}} mana{% endif %}"
     },
-    "weapon": {
-      "detail": "{{data.damage}} {{data.damageType|map: 'DamageType'}} damage"
-    },
-    "armor": {
-      "detail": "+{{data.defenseBonus}} Defense • {{data.category|map: 'ArmorCategory'}}"
-    },
     "item": {
       "detail": "{{data.type|map: 'ItemType'}}{% if data.rarity %} • {{data.rarity|map: 'ItemRarity'}}{% endif %}"
     },
@@ -137,6 +131,9 @@
     },
     "rule": {
       "detail": "{{data.description|truncate: 50}}"
+    },
+    "condition": {
+      "detail": "{{descr|truncate: 50}}"
     }
   },
   "statusEffects": [

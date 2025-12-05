@@ -9,10 +9,6 @@
   "Entity.Spell.many": "Spells",
   "Entity.Item": "Item",
   "Entity.Item.many": "Items",
-  "Entity.Weapon": "Weapon",
-  "Entity.Weapon.many": "Weapons",
-  "Entity.Armor": "Armor",
-  "Entity.Armor.many": "Armor",
   "Entity.Class": "Class",
   "Entity.Class.many": "Classes",
   "Entity.Subclass": "Subclass",
@@ -26,5 +22,7 @@
   "Entity.Table": "Table",
   "Entity.Table.many": "Tables",
   "Entity.Rule": "Rule",
-  "Entity.Rule.many": "Rules"
+  "Entity.Rule.many": "Rules",
+  "Entity.Condition": "Condition",
+  "Entity.Condition.many": "Conditions"
 }

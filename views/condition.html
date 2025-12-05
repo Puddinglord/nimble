@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{name}} - Condition{% endblock %}
+
+{% block styles %}
+<style>
+  .condition-block {
+    background: #f2eddf;
+    padding: 16px 20px;
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .condition-name {
+    font-family: 'Beaufort', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 24px;
+    font-variant: small-caps;
+    margin-bottom: 8px;
+  }
+
+  .condition-description {
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 18px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="container-fluid">
+  <div class="condition-block">
+    <div class="condition-name">{{name}}</div>
+    <div class="condition-description">{{descr|md}}</div>
+  </div>
+</main>
+{% endblock %}

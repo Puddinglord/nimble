@@ -1,0 +1,23 @@
+{
+  "title": "Condition",
+  "sections": [
+    {
+      "title": "Condition",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Condition name"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "What this condition does..."
+        }
+      ]
+    }
+  ]
+}
