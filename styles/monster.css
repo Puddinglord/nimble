@@ -39,35 +39,52 @@
 
 .monster-name {
   font-family: 'Beaufort', Georgia, serif;
-  font-weight: 700;
+  font-weight: 800;
   font-style: italic;
-  font-size: 28px;
-  letter-spacing: 0.01em;
+  font-size: 30px;
   font-variant: small-caps;
 }
 
 .monster-level {
   font-family: 'Avenir Next Condensed', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #000;
+  font-variant: small-caps;
 }
 
 .monster-armor {
-  font-family: 'Avenir Next Condensed', sans-serif;
-  font-weight: bold;
-  font-size: 16px;
+  font-family: 'Beaufort', Georgia, serif;
+  font-weight: 800;
+  font-style: 'italic';
+  font-size: 20px;
+}
+
+/* Icons */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+.icon-shield {
+  color: #C5BFB0;
+  width: 32px;
+  height: 32px;
+  margin-right: -12px;
+  margin-bottom: 2px;
 }
 
 .monster-hp {
   font-family: 'Avenir Next Condensed', sans-serif;
   font-weight: bold;
+  font-style: italic;
   font-size: 18px;
 }
 
 .hp-icon {
-  margin-bottom: -5px;
-  font-size: 30px;
+  font-size: 20px;
   color: #C5BFB0;
   opacity: 0.3px;
 }
@@ -95,6 +112,9 @@
 
 /* Traits - pointed banner style with full-height triangles */
 .monster-traits {
+  padding: 8px 20px;
+  margin: 0;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -103,11 +123,10 @@
   text-align: center;
   background: #CCC7B5;
   color: #000;
+
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-style: italic;
-  font-size: 16px;
-  padding: 8px 20px;
-  margin: 0;
-  line-height: 1.4;
+  font-size: 17px;
 }
 
 /* Remove margin from p tags inside traits, add spacing between multiple traits */
@@ -184,14 +203,17 @@
 }
 
 .monster-action-frequency {
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-weight: normal;
+  font-size: 18px;
   text-transform: none;
   font-style: normal;
 }
 
 /* Actions */
 .monster-actions {
-  font-size: 16px;
+  font-family: 'Avenir Next Condensed', sans-serif;
+  font-size: 18px;
 }
 
 .monster-action {
