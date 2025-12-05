@@ -23,8 +23,8 @@
       "visibleIf": "data.shortDescription != ''"
     },
     {
-      "type": "include",
-      "path": "partials/monster.md"
+      "type": "text",
+      "value": "{% include \"monster.md\" %}"
     },
     {
       "type": "divider",
@@ -49,20 +49,20 @@
       "type": "divider",
       "height": 1,
       "bgColor": "black",
-      "visibleIf": "data.traits != ''"
+      "visibleIf": "data.traits"
     },
     {
       "type": "text",
       "value": "TRAITS",
       "style": "caption",
       "weight": "black",
-      "visibleIf": "data.traits != ''"
+      "visibleIf": "data.traits"
     },
     {
       "type": "text",
       "value": "{{data.traits}}",
       "style": "body",
-      "visibleIf": "data.traits != ''"
+      "visibleIf": "data.traits"
     },
 
     {
@@ -82,7 +82,7 @@
       "type": "text",
       "value": "**Saves** {{data.saves}}",
       "style": "body",
-      "visibleIf": "data.saves != ''"
+      "visibleIf": "data.isLegendary == true and data.saves != ''"
     },
     {
       "type": "text",
@@ -94,39 +94,39 @@
       "type": "divider",
       "height": 1,
       "bgColor": "black",
-      "visibleIf": "data.bloodied.abilities != ''"
+      "visibleIf": "data.isLegendary == true and data.bloodied.abilities != ''"
     },
     {
       "type": "text",
       "value": "BLOODIED ({{data.bloodied.threshold|default: 'half HP'}})",
       "style": "caption",
       "weight": "black",
-      "visibleIf": "data.bloodied.abilities != ''"
+      "visibleIf": "data.isLegendary == true and data.bloodied.abilities != ''"
     },
     {
       "type": "text",
       "value": "{{data.bloodied.abilities}}",
       "style": "body",
-      "visibleIf": "data.bloodied.abilities != ''"
+      "visibleIf": "data.isLegendary == true and data.bloodied.abilities != ''"
     },
     {
       "type": "divider",
       "height": 1,
       "bgColor": "black",
-      "visibleIf": "data.lastStand.hp > 0"
+      "visibleIf": "data.isLegendary == true and data.lastStand.hp > 0"
     },
     {
       "type": "text",
       "value": "LAST STAND ({{data.lastStand.hp}} HP)",
       "style": "caption",
       "weight": "black",
-      "visibleIf": "data.lastStand.hp > 0"
+      "visibleIf": "data.isLegendary == true and data.lastStand.hp > 0"
     },
     {
       "type": "text",
       "value": "{{data.lastStand.behavior}}",
       "style": "body",
-      "visibleIf": "data.lastStand.hp > 0"
+      "visibleIf": "data.isLegendary == true and data.lastStand.hp > 0"
     },
     {
       "type": "divider",

@@ -124,7 +124,7 @@
           "title": "Saves",
           "type": "text",
           "attribute": "data.saves",
-          "placeholder": "e.g., STR +5, DEX +3",
+          "placeholder": "e.g., STR++, WIL-",
           "visibleIf": "data.isLegendary == true"
         },
         {
