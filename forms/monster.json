@@ -24,16 +24,16 @@
           "attributeType": "Size"
         },
         {
-          "title": "Challenge Rating",
+          "title": "Level",
           "type": "picker",
-          "attribute": "data.cr",
-          "attributeType": "ChallengeRating"
+          "attribute": "data.level",
+          "attributeType": "MonsterLevel"
         },
         {
           "title": "XP Value",
           "type": "number",
           "attribute": "data.xp",
-          "placeholder": "0"
+          "placeholder": "Auto from level"
         },
         {
           "title": "Alignment",
@@ -72,7 +72,7 @@
           "placeholder": "0"
         },
         {
-          "title": "Will",
+          "title": "Willpower",
           "type": "number",
           "attribute": "data.abilities.wil",
           "placeholder": "0"
@@ -80,50 +80,283 @@
       ]
     },
     {
-      "title": "Stats",
+      "title": "Armor & Hit Points",
       "type": "group",
       "fields": [
         {
-          "title": "HP",
+          "title": "Armor Type (affects damage taken)",
+          "type": "picker",
+          "attribute": "data.armor",
+          "attributeType": "MonsterArmor"
+        },
+        {
+          "title": "Hit Points",
           "type": "number",
           "attribute": "data.hp.max",
           "placeholder": "0"
         },
         {
-          "title": "Fly Speed (0 = no flight)",
+          "title": "Current HP",
           "type": "number",
-          "attribute": "data.movement.fly",
+          "attribute": "data.hp.current",
           "placeholder": "0"
         }
       ]
     },
     {
-      "title": "Abilities & Actions",
+      "title": "Movement",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Walk Speed",
+          "type": "number",
+          "attribute": "data.movement.walk",
+          "placeholder": "30"
+        },
+        {
+          "title": "Fly Speed",
+          "type": "number",
+          "attribute": "data.movement.fly",
+          "placeholder": "0"
+        },
+        {
+          "title": "Swim Speed",
+          "type": "number",
+          "attribute": "data.movement.swim",
+          "placeholder": "0"
+        },
+        {
+          "title": "Climb Speed",
+          "type": "number",
+          "attribute": "data.movement.climb",
+          "placeholder": "0"
+        },
+        {
+          "title": "Burrow Speed",
+          "type": "number",
+          "attribute": "data.movement.burrow",
+          "placeholder": "0"
+        }
+      ]
+    },
+    {
+      "title": "Skills & Senses",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Skills",
+          "type": "text",
+          "attribute": "data.skills",
+          "placeholder": "Perception +5, Stealth +3"
+        },
+        {
+          "title": "Senses",
+          "type": "text",
+          "attribute": "data.senses",
+          "placeholder": "Darkvision 60ft, Blindsight 30ft"
+        },
+        {
+          "title": "Languages",
+          "type": "text",
+          "attribute": "data.languages",
+          "placeholder": "Common, Goblin"
+        }
+      ]
+    },
+    {
+      "title": "Damage Modifiers",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Damage Vulnerabilities",
+          "type": "text",
+          "attribute": "data.vulnerabilities",
+          "placeholder": "Fire, Radiant"
+        },
+        {
+          "title": "Damage Resistances",
+          "type": "text",
+          "attribute": "data.resistances",
+          "placeholder": "Cold, Necrotic"
+        },
+        {
+          "title": "Damage Immunities",
+          "type": "text",
+          "attribute": "data.immunities",
+          "placeholder": "Poison, Psychic"
+        },
+        {
+          "title": "Condition Immunities",
+          "type": "text",
+          "attribute": "data.conditionImmunities",
+          "placeholder": "Poisoned, Frightened"
+        }
+      ]
+    },
+    {
+      "title": "Traits & Abilities",
       "type": "group",
       "fields": [
         {
           "title": "Special Traits",
           "type": "textArea",
           "attribute": "data.traits",
-          "placeholder": "Bold text for passive abilities (e.g., Brittle Bones. Resistant to piercing, vulnerable to bludgeoning.)"
+          "placeholder": "**Trait Name.** Description of the passive ability.\n\n**Another Trait.** Another description."
+        }
+      ]
+    },
+    {
+      "title": "Actions",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Actions Per Turn",
+          "type": "number",
+          "attribute": "data.actionsPerTurn",
+          "placeholder": "1"
         },
         {
           "title": "Actions",
           "type": "textArea",
           "attribute": "data.actions",
-          "placeholder": "Use bullet points:\n• Action Name. (Type) 1d4+8. Description.\n• Another Action (2×). 1d4+10. Description."
+          "placeholder": "**Bite.** *Melee Attack:* +5 to hit, reach 5ft. *Hit:* 2d6+3 piercing damage.\n\n**Claw (2x).** *Melee Attack:* +5 to hit. *Hit:* 1d6+3 slashing damage."
         }
       ]
     },
     {
-      "title": "Last Stand",
+      "title": "Reactions",
       "type": "group",
       "fields": [
         {
-          "title": "Last Stand Actions",
+          "title": "Reactions",
           "type": "textArea",
-          "attribute": "data.legendary.actions",
-          "placeholder": "Special actions when creature reaches 0 HP. Use bullet points:\n• Action Name. Description of what happens."
+          "attribute": "data.reactions",
+          "placeholder": "**Parry.** The creature adds 2 to its Defense against one melee attack that would hit it."
+        }
+      ]
+    },
+    {
+      "title": "Legendary Creature",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Is Legendary",
+          "type": "toggle",
+          "attribute": "data.isLegendary"
+        },
+        {
+          "title": "Legendary Resistance (uses)",
+          "type": "number",
+          "attribute": "data.legendaryResistance",
+          "placeholder": "3",
+          "visibleIf": "data.isLegendary == true"
+        },
+        {
+          "title": "Legendary Actions",
+          "type": "textArea",
+          "attribute": "data.legendaryActions",
+          "placeholder": "The creature can take legendary actions after each hero's turn. Choose from:\n\n**Detect.** The creature makes a Perception check.\n\n**Tail Attack.** The creature makes a tail attack.",
+          "visibleIf": "data.isLegendary == true"
+        }
+      ]
+    },
+    {
+      "title": "Bloodied State (50% HP)",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Bloodied Threshold",
+          "type": "number",
+          "attribute": "data.bloodied.threshold",
+          "placeholder": "Half of max HP",
+          "visibleIf": "data.isLegendary == true"
+        },
+        {
+          "title": "Bloodied Abilities",
+          "type": "textArea",
+          "attribute": "data.bloodied.abilities",
+          "placeholder": "When bloodied, the creature gains:\n\n**Desperate Fury.** Attack damage increases by 1d6.",
+          "visibleIf": "data.isLegendary == true"
+        }
+      ]
+    },
+    {
+      "title": "Last Stand (0 HP)",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Last Stand HP",
+          "type": "number",
+          "attribute": "data.lastStand.hp",
+          "placeholder": "0",
+          "visibleIf": "data.isLegendary == true"
+        },
+        {
+          "title": "Last Stand Behavior",
+          "type": "textArea",
+          "attribute": "data.lastStand.behavior",
+          "placeholder": "When reduced to 0 HP, the creature enters Last Stand with a separate HP pool. Describe behavior changes:\n\nThe dragon becomes reckless, making all-out attacks regardless of its own safety.",
+          "visibleIf": "data.isLegendary == true"
+        }
+      ]
+    },
+    {
+      "title": "Spellcasting",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Spellcasting Ability",
+          "type": "picker",
+          "attribute": "data.spellcasting.ability",
+          "attributeType": "Ability"
+        },
+        {
+          "title": "Spell Save DC",
+          "type": "number",
+          "attribute": "data.spellcasting.saveDC",
+          "placeholder": "10"
+        },
+        {
+          "title": "Spell Attack Bonus",
+          "type": "number",
+          "attribute": "data.spellcasting.attackBonus",
+          "placeholder": "+2"
+        },
+        {
+          "title": "Spells",
+          "type": "textArea",
+          "attribute": "data.spellcasting.spells",
+          "placeholder": "**Cantrips (at will):** fire bolt, minor illusion\n\n**Tier 1 (3 mana each):** burning hands, shield\n\n**Tier 2 (5 mana each):** scorching ray"
+        }
+      ]
+    },
+    {
+      "title": "Loot & Rewards",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Treasure",
+          "type": "textArea",
+          "attribute": "data.treasure",
+          "placeholder": "25 silver, rusty dagger, mysterious amulet"
+        }
+      ]
+    },
+    {
+      "title": "GM Notes",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Tactics",
+          "type": "textArea",
+          "attribute": "data.tactics",
+          "placeholder": "How does this creature fight? What are its priorities?"
+        },
+        {
+          "title": "Notes",
+          "type": "textArea",
+          "attribute": "notes",
+          "placeholder": "Additional GM notes, lore, or encounter ideas"
         }
       ]
     }

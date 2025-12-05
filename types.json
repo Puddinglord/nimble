@@ -11,7 +11,7 @@
     "str": "Strength",
     "dex": "Dexterity",
     "int": "Intelligence",
-    "wil": "Will"
+    "wil": "Willpower"
   },
   "Skill": {
     "arcana": {
@@ -28,19 +28,19 @@
     },
     "influence": {
       "name": "Influence",
-      "ability": "wil"
+      "ability": "int"
     },
     "insight": {
       "name": "Insight",
       "ability": "wil"
     },
-    "might": {
-      "name": "Might",
-      "ability": "str"
-    },
     "lore": {
       "name": "Lore",
       "ability": "int"
+    },
+    "might": {
+      "name": "Might",
+      "ability": "str"
     },
     "naturecraft": {
       "name": "Naturecraft",
@@ -55,6 +55,20 @@
       "ability": "dex"
     }
   },
+  "MonsterArmor": {
+    "none": {
+      "name": "None",
+      "description": "Full damage (dice + modifiers)"
+    },
+    "medium": {
+      "name": "Medium",
+      "description": "Dice only (no stat modifier)"
+    },
+    "heavy": {
+      "name": "Heavy",
+      "description": "Half dice only (round down)"
+    }
+  },
   "Language": {
     "common": "Common",
     "dwarvish": "Dwarvish",
@@ -64,7 +78,12 @@
     "infernal": "Infernal",
     "celestial": "Celestial",
     "gnomish": "Gnomish",
-    "orcish": "Orcish"
+    "orcish": "Orcish",
+    "abyssal": "Abyssal",
+    "primordial": "Primordial",
+    "sylvan": "Sylvan",
+    "undercommon": "Undercommon",
+    "giant": "Giant"
   },
   "MonsterType": {
     "aberration": "Aberration",
@@ -87,7 +106,7 @@
     "piercing": "Piercing",
     "slashing": "Slashing",
     "fire": "Fire",
-    "ice": "Ice",
+    "cold": "Cold",
     "lightning": "Lightning",
     "radiant": "Radiant",
     "necrotic": "Necrotic",
@@ -95,23 +114,25 @@
     "poison": "Poison",
     "acid": "Acid",
     "force": "Force",
-    "wind": "Wind"
+    "thunder": "Thunder"
   },
   "Condition": {
     "blinded": "Blinded",
     "bloodied": "Bloodied",
+    "charmed": "Charmed",
     "dazed": "Dazed",
-    "deafened": "Deafened",
-    "distracted": "Distracted",
     "dying": "Dying",
     "frightened": "Frightened",
     "grappled": "Grappled",
+    "hidden": "Hidden",
+    "incapacitated": "Incapacitated",
     "invisible": "Invisible",
     "paralyzed": "Paralyzed",
+    "petrified": "Petrified",
+    "poisoned": "Poisoned",
     "prone": "Prone",
     "restrained": "Restrained",
     "stunned": "Stunned",
-    "taunted": "Taunted",
     "unconscious": "Unconscious"
   },
   "SpellSchool": {
@@ -123,13 +144,47 @@
     "necrotic": "Necrotic",
     "utility": "Utility"
   },
-  "SpellLevel": {
+  "SpellTier": {
     "0": "Cantrip",
-    "1": "1st-level",
-    "2": "2nd-level",
-    "3": "3rd-level",
-    "4": "4th-level",
-    "5": "5th-level"
+    "1": "Tier 1",
+    "2": "Tier 2",
+    "3": "Tier 3",
+    "4": "Tier 4",
+    "5": "Tier 5"
+  },
+  "CastingTime": {
+    "1-action": "1 Action",
+    "2-actions": "2 Actions",
+    "3-actions": "3 Actions",
+    "bonus": "Bonus Action",
+    "reaction": "Reaction",
+    "1-minute": "1 Minute",
+    "10-minutes": "10 Minutes",
+    "1-hour": "1 Hour",
+    "ritual": "Ritual (10+ minutes)"
+  },
+  "SpellRange": {
+    "self": "Self",
+    "touch": "Touch",
+    "close": "Close (30 ft)",
+    "near": "Near (60 ft)",
+    "far": "Far (120 ft)",
+    "extreme": "Extreme (300 ft)",
+    "sight": "Line of Sight",
+    "unlimited": "Unlimited",
+    "special": "Special"
+  },
+  "SpellDuration": {
+    "instant": "Instantaneous",
+    "1-round": "1 Round",
+    "1-minute": "1 Minute",
+    "10-minutes": "10 Minutes",
+    "1-hour": "1 Hour",
+    "8-hours": "8 Hours",
+    "24-hours": "24 Hours",
+    "permanent": "Permanent",
+    "until-dispelled": "Until Dispelled",
+    "special": "Special"
   },
   "ItemType": {
     "cloth": "Cloth Armor",
@@ -144,32 +199,48 @@
     "magical-item": "Magical Item",
     "tool": "Tool",
     "wand": "Wand",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "potion": "Potion"
   },
   "ItemRarity": {
     "common": "Common",
     "uncommon": "Uncommon",
     "rare": "Rare",
-    "very rare": "Very Rare",
+    "very-rare": "Very Rare",
     "legendary": "Legendary",
-    "artifact": "Artifact",
-    "unknown": "Unknown"
+    "artifact": "Artifact"
   },
   "WeaponProperty": {
     "light": "Light",
-    "2-handed": "2-Handed",
+    "two-handed": "Two-Handed",
+    "versatile": "Versatile",
+    "finesse": "Finesse",
     "thrown": "Thrown",
     "vicious": "Vicious",
     "reach": "Reach",
-    "range": "Range",
-    "load": "Load"
+    "loading": "Loading",
+    "mounted": "Mounted"
   },
-  "ArmorType": {
+  "WeaponType": {
+    "simple-melee": "Simple Melee",
+    "simple-ranged": "Simple Ranged",
+    "martial-melee": "Martial Melee",
+    "martial-ranged": "Martial Ranged",
+    "exotic": "Exotic"
+  },
+  "ArmorCategory": {
     "cloth": "Cloth",
     "leather": "Leather",
     "mail": "Mail",
     "plate": "Plate",
     "shield": "Shield"
+  },
+  "DexLimit": {
+    "unlimited": "Unlimited",
+    "3": "+3 Max",
+    "2": "+2 Max",
+    "1": "+1 Max",
+    "0": "+0 (No DEX)"
   },
   "Class": {
     "berserker": "Berserker",
@@ -221,8 +292,21 @@
     "6": "d6",
     "8": "d8",
     "10": "d10",
-    "12": "d12",
-    "20": "d20"
+    "12": "d12"
+  },
+  "CasterType": {
+    "none": {
+      "name": "Non-Caster",
+      "manaFormula": "0"
+    },
+    "full": {
+      "name": "Full Caster",
+      "manaFormula": "(casting stat × level) + 5"
+    },
+    "half": {
+      "name": "Half Caster",
+      "manaFormula": "(casting stat × level / 2) + 3"
+    }
   },
   "CharacterSection": {
     "stats": {
@@ -255,119 +339,190 @@
     }
   },
   "ProficiencyLevel": {
-    "proficient": {
-      "name": "Proficient",
-      "icon": "checkmark.circle",
-      "bonus": "+2"
+    "untrained": {
+      "name": "Untrained",
+      "icon": "circle",
+      "bonus": "+0"
     },
-    "expert": {
-      "name": "Expert",
+    "trained": {
+      "name": "Trained",
+      "icon": "checkmark.circle",
+      "bonus": "Prof"
+    },
+    "expertise": {
+      "name": "Expertise",
       "icon": "checkmark.circle.fill",
-      "bonus": "+4"
+      "bonus": "2x Prof"
     }
   },
-  "ChallengeRating": {
-    "0": {
-      "xp": 10
-    },
-    "1/8": {
-      "xp": 25
-    },
+  "MonsterLevel": {
     "1/4": {
-      "xp": 50
+      "xp": 25,
+      "hp": { "none": 12, "medium": 9, "heavy": 7 },
+      "damage": 3,
+      "saveDC": 9
+    },
+    "1/3": {
+      "xp": 35,
+      "hp": { "none": 16, "medium": 12, "heavy": 9 },
+      "damage": 4,
+      "saveDC": 9
     },
     "1/2": {
-      "xp": 100
+      "xp": 50,
+      "hp": { "none": 20, "medium": 15, "heavy": 12 },
+      "damage": 6,
+      "saveDC": 9
     },
     "1": {
-      "xp": 200
+      "xp": 100,
+      "hp": { "none": 26, "medium": 20, "heavy": 16 },
+      "damage": 11,
+      "saveDC": 10
     },
     "2": {
-      "xp": 450
+      "xp": 200,
+      "hp": { "none": 35, "medium": 27, "heavy": 21 },
+      "damage": 14,
+      "saveDC": 10
     },
     "3": {
-      "xp": 700
+      "xp": 450,
+      "hp": { "none": 44, "medium": 34, "heavy": 27 },
+      "damage": 18,
+      "saveDC": 11
     },
     "4": {
-      "xp": 1100
+      "xp": 700,
+      "hp": { "none": 53, "medium": 41, "heavy": 32 },
+      "damage": 21,
+      "saveDC": 11
     },
     "5": {
-      "xp": 1800
+      "xp": 1000,
+      "hp": { "none": 63, "medium": 48, "heavy": 38 },
+      "damage": 25,
+      "saveDC": 12
     },
     "6": {
-      "xp": 2300
+      "xp": 1500,
+      "hp": { "none": 72, "medium": 55, "heavy": 44 },
+      "damage": 28,
+      "saveDC": 12
     },
     "7": {
-      "xp": 2900
+      "xp": 2000,
+      "hp": { "none": 81, "medium": 62, "heavy": 50 },
+      "damage": 32,
+      "saveDC": 13
     },
     "8": {
-      "xp": 3900
+      "xp": 2500,
+      "hp": { "none": 90, "medium": 69, "heavy": 55 },
+      "damage": 35,
+      "saveDC": 13
     },
     "9": {
-      "xp": 5000
+      "xp": 3000,
+      "hp": { "none": 99, "medium": 76, "heavy": 61 },
+      "damage": 39,
+      "saveDC": 14
     },
     "10": {
-      "xp": 5900
+      "xp": 4000,
+      "hp": { "none": 108, "medium": 83, "heavy": 66 },
+      "damage": 42,
+      "saveDC": 14
     },
     "11": {
-      "xp": 7200
+      "xp": 5000,
+      "hp": { "none": 117, "medium": 90, "heavy": 72 },
+      "damage": 46,
+      "saveDC": 15
     },
     "12": {
-      "xp": 8400
+      "xp": 6000,
+      "hp": { "none": 126, "medium": 97, "heavy": 77 },
+      "damage": 49,
+      "saveDC": 15
     },
     "13": {
-      "xp": 10000
+      "xp": 7500,
+      "hp": { "none": 135, "medium": 104, "heavy": 83 },
+      "damage": 53,
+      "saveDC": 16
     },
     "14": {
-      "xp": 11500
+      "xp": 9000,
+      "hp": { "none": 144, "medium": 111, "heavy": 88 },
+      "damage": 56,
+      "saveDC": 16
     },
     "15": {
-      "xp": 13000
+      "xp": 10000,
+      "hp": { "none": 153, "medium": 118, "heavy": 94 },
+      "damage": 60,
+      "saveDC": 17
     },
     "16": {
-      "xp": 15000
+      "xp": 12000,
+      "hp": { "none": 162, "medium": 125, "heavy": 99 },
+      "damage": 63,
+      "saveDC": 17
     },
     "17": {
-      "xp": 18000
+      "xp": 14000,
+      "hp": { "none": 171, "medium": 131, "heavy": 105 },
+      "damage": 67,
+      "saveDC": 18
     },
     "18": {
-      "xp": 20000
+      "xp": 16000,
+      "hp": { "none": 180, "medium": 138, "heavy": 111 },
+      "damage": 70,
+      "saveDC": 18
     },
     "19": {
-      "xp": 22000
+      "xp": 18000,
+      "hp": { "none": 189, "medium": 145, "heavy": 116 },
+      "damage": 74,
+      "saveDC": 19
     },
     "20": {
-      "xp": 25000
+      "xp": 20000,
+      "hp": { "none": 198, "medium": 152, "heavy": 122 },
+      "damage": 77,
+      "saveDC": 19
+    }
+  },
+  "DifficultyClass": {
+    "easy": {
+      "name": "Easy",
+      "dc": 8
     },
-    "21": {
-      "xp": 33000
+    "medium": {
+      "name": "Medium",
+      "dc": 10
     },
-    "22": {
-      "xp": 41000
+    "hard": {
+      "name": "Hard",
+      "dc": 12
     },
-    "23": {
-      "xp": 50000
+    "very-hard": {
+      "name": "Very Hard",
+      "dc": 14
     },
-    "24": {
-      "xp": 62000
+    "extremely-hard": {
+      "name": "Extremely Hard",
+      "dc": 16
     },
-    "25": {
-      "xp": 75000
+    "nearly-impossible": {
+      "name": "Nearly Impossible",
+      "dc": 18
     },
-    "26": {
-      "xp": 90000
-    },
-    "27": {
-      "xp": 105000
-    },
-    "28": {
-      "xp": 120000
-    },
-    "29": {
-      "xp": 135000
-    },
-    "30": {
-      "xp": 155000
+    "legendary": {
+      "name": "Legendary",
+      "dc": 20
     }
   }
 }

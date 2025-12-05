@@ -1,0 +1,171 @@
+{
+  "title": "Weapon",
+  "sections": [
+    {
+      "title": "Basic Information",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Weapon Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Enter weapon name"
+        },
+        {
+          "title": "Weapon Type",
+          "type": "picker",
+          "attribute": "data.weaponType",
+          "attributeType": "WeaponType"
+        },
+        {
+          "title": "Rarity",
+          "type": "picker",
+          "attribute": "data.rarity",
+          "attributeType": "ItemRarity"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "Weapon description and lore"
+        }
+      ]
+    },
+    {
+      "title": "Damage",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Damage Dice",
+          "type": "text",
+          "attribute": "data.damage.dice",
+          "placeholder": "e.g., 1d8"
+        },
+        {
+          "title": "Damage Type",
+          "type": "picker",
+          "attribute": "data.damage.type",
+          "attributeType": "DamageType"
+        },
+        {
+          "title": "Bonus Damage",
+          "type": "text",
+          "attribute": "data.damage.bonus",
+          "placeholder": "e.g., +1d6 fire"
+        }
+      ]
+    },
+    {
+      "title": "Attack Properties",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Attack Stat",
+          "type": "picker",
+          "attribute": "data.attackStat",
+          "attributeType": "Ability"
+        },
+        {
+          "title": "Magic Bonus",
+          "type": "number",
+          "attribute": "data.magicBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Range (ft)",
+          "type": "number",
+          "attribute": "data.range",
+          "placeholder": "For ranged/thrown weapons"
+        }
+      ]
+    },
+    {
+      "title": "Properties",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Light",
+          "type": "toggle",
+          "attribute": "data.properties.light"
+        },
+        {
+          "title": "Two-Handed",
+          "type": "toggle",
+          "attribute": "data.properties.twoHanded"
+        },
+        {
+          "title": "Versatile",
+          "type": "toggle",
+          "attribute": "data.properties.versatile"
+        },
+        {
+          "title": "Versatile Damage",
+          "type": "text",
+          "attribute": "data.properties.versatileDamage",
+          "placeholder": "e.g., 1d10",
+          "visibleIf": "data.properties.versatile == true"
+        },
+        {
+          "title": "Finesse",
+          "type": "toggle",
+          "attribute": "data.properties.finesse"
+        },
+        {
+          "title": "Thrown",
+          "type": "toggle",
+          "attribute": "data.properties.thrown"
+        },
+        {
+          "title": "Vicious",
+          "type": "toggle",
+          "attribute": "data.properties.vicious"
+        },
+        {
+          "title": "Reach",
+          "type": "toggle",
+          "attribute": "data.properties.reach"
+        },
+        {
+          "title": "Loading",
+          "type": "toggle",
+          "attribute": "data.properties.loading"
+        },
+        {
+          "title": "Mounted",
+          "type": "toggle",
+          "attribute": "data.properties.mounted"
+        }
+      ]
+    },
+    {
+      "title": "Additional Details",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Weight (lbs)",
+          "type": "number",
+          "attribute": "data.weight",
+          "placeholder": "0"
+        },
+        {
+          "title": "Value (silver)",
+          "type": "number",
+          "attribute": "data.value",
+          "placeholder": "0"
+        },
+        {
+          "title": "Special Properties",
+          "type": "textArea",
+          "attribute": "data.special",
+          "placeholder": "Any special effects or abilities"
+        },
+        {
+          "title": "Notes",
+          "type": "textArea",
+          "attribute": "data.notes",
+          "placeholder": "Additional notes"
+        }
+      ]
+    }
+  ]
+}

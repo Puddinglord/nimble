@@ -1,0 +1,112 @@
+{
+  "title": "Armor",
+  "sections": [
+    {
+      "title": "Basic Information",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Armor Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Enter armor name"
+        },
+        {
+          "title": "Category",
+          "type": "picker",
+          "attribute": "data.category",
+          "attributeType": "ArmorCategory"
+        },
+        {
+          "title": "Rarity",
+          "type": "picker",
+          "attribute": "data.rarity",
+          "attributeType": "ItemRarity"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "Armor description and lore"
+        }
+      ]
+    },
+    {
+      "title": "Defense Properties",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Defense Bonus",
+          "type": "number",
+          "attribute": "data.defenseBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "Magic Bonus",
+          "type": "number",
+          "attribute": "data.magicBonus",
+          "placeholder": "0"
+        },
+        {
+          "title": "DEX Limit",
+          "type": "picker",
+          "attribute": "data.dexLimit",
+          "attributeType": "DexLimit"
+        },
+        {
+          "title": "Stealth Disadvantage",
+          "type": "toggle",
+          "attribute": "data.stealthDisadvantage"
+        }
+      ]
+    },
+    {
+      "title": "Requirements",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Strength Requirement",
+          "type": "number",
+          "attribute": "data.strRequirement",
+          "placeholder": "0"
+        },
+        {
+          "title": "Required Proficiency",
+          "type": "text",
+          "attribute": "data.requiredProficiency",
+          "placeholder": "e.g., Mail Armor"
+        }
+      ]
+    },
+    {
+      "title": "Additional Details",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Weight (lbs)",
+          "type": "number",
+          "attribute": "data.weight",
+          "placeholder": "0"
+        },
+        {
+          "title": "Value (silver)",
+          "type": "number",
+          "attribute": "data.value",
+          "placeholder": "0"
+        },
+        {
+          "title": "Special Properties",
+          "type": "textArea",
+          "attribute": "data.special",
+          "placeholder": "Any special effects or abilities"
+        },
+        {
+          "title": "Notes",
+          "type": "textArea",
+          "attribute": "data.notes",
+          "placeholder": "Additional notes"
+        }
+      ]
+    }
+  ]
+}

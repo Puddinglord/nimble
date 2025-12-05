@@ -1,0 +1,378 @@
+[
+  {
+    "id": "fire-bolt",
+    "name": "Fire Bolt",
+    "descr": "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes fire damage.",
+    "data": {
+      "school": "fire",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "far",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "1d10 fire",
+      "attackRoll": true,
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "ray-of-frost",
+    "name": "Ray of Frost",
+    "descr": "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
+    "data": {
+      "school": "ice",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "near",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "1d8 cold",
+      "attackRoll": true,
+      "saveEffect": "Speed reduced by 10 ft until start of your next turn",
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "shocking-grasp",
+    "name": "Shocking Grasp",
+    "descr": "Lightning springs from your hand to deliver a shock to a creature you try to touch. You have advantage on the attack roll if the target is wearing metal armor. On a hit, the target takes lightning damage and can't take reactions until the start of its next turn.",
+    "data": {
+      "school": "lightning",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "touch",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "1d8 lightning",
+      "attackRoll": true,
+      "saveEffect": "Target can't take reactions until start of its next turn",
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "gust",
+    "name": "Gust",
+    "descr": "You seize the air and compel it to create one of the following effects: push a creature, push an object, or create a harmless sensory effect.",
+    "data": {
+      "school": "wind",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "close",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "saveType": "str",
+      "saveEffect": "Pushed 5 feet away from you",
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "sacred-flame",
+    "name": "Sacred Flame",
+    "descr": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a DEX save or take radiant damage. The target gains no benefit from cover for this save.",
+    "data": {
+      "school": "radiant",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "near",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "1d8 radiant",
+      "saveType": "dex",
+      "saveEffect": "No damage on success",
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "chill-touch",
+    "name": "Chill Touch",
+    "descr": "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature. On a hit, the target takes necrotic damage and can't regain hit points until the start of your next turn.",
+    "data": {
+      "school": "necrotic",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "far",
+      "duration": "1-round",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "1d8 necrotic",
+      "attackRoll": true,
+      "saveEffect": "Can't regain HP until start of your next turn",
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "mage-hand",
+    "name": "Mage Hand",
+    "descr": "A spectral, floating hand appears at a point you choose within range. The hand can manipulate objects, open doors, retrieve items, and perform other simple tasks.",
+    "data": {
+      "school": "utility",
+      "tier": "0",
+      "manaCost": 0,
+      "castingTime": "1-action",
+      "range": "close",
+      "duration": "1-minute",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "burning-hands",
+    "name": "Burning Hands",
+    "descr": "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in the area must make a DEX save. A creature takes fire damage on a failed save, or half as much on a successful one.",
+    "data": {
+      "school": "fire",
+      "tier": "1",
+      "manaCost": 2,
+      "castingTime": "1-action",
+      "range": "self",
+      "rangeCustom": "15 ft cone",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "3d6 fire",
+      "area": "15 ft cone",
+      "saveType": "dex",
+      "saveEffect": "Half damage on success",
+      "canUpcast": true,
+      "upcastEffect": "+1d6 damage per tier above 1"
+    }
+  },
+  {
+    "id": "ice-knife",
+    "name": "Ice Knife",
+    "descr": "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack. On a hit, the target takes piercing damage. Hit or miss, the shard then explodes. Each creature within 5 feet of the point where the ice exploded must succeed on a DEX save or take cold damage.",
+    "data": {
+      "school": "ice",
+      "tier": "1",
+      "manaCost": 2,
+      "castingTime": "1-action",
+      "range": "near",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "1d10 piercing + 2d6 cold (explosion)",
+      "area": "5 ft radius explosion",
+      "attackRoll": true,
+      "saveType": "dex",
+      "saveEffect": "No cold damage from explosion on success",
+      "canUpcast": true,
+      "upcastEffect": "+1d6 cold damage per tier above 1"
+    }
+  },
+  {
+    "id": "thunderwave",
+    "name": "Thunderwave",
+    "descr": "A wave of thunderous force sweeps out from you. Each creature in the area must make a STR save. On a failed save, a creature takes thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed.",
+    "data": {
+      "school": "wind",
+      "tier": "1",
+      "manaCost": 2,
+      "castingTime": "1-action",
+      "range": "self",
+      "rangeCustom": "15 ft cube",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "2d8 thunder",
+      "area": "15 ft cube",
+      "saveType": "str",
+      "saveEffect": "Half damage and not pushed on success",
+      "canUpcast": true,
+      "upcastEffect": "+1d8 damage per tier above 1"
+    }
+  },
+  {
+    "id": "healing-word",
+    "name": "Healing Word",
+    "descr": "A creature of your choice that you can see within range regains hit points. This spell has no effect on undead or constructs.",
+    "data": {
+      "school": "radiant",
+      "tier": "1",
+      "manaCost": 2,
+      "castingTime": "bonus",
+      "range": "near",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": false,
+        "material": false
+      },
+      "damage": "1d4+casting mod healing",
+      "targets": "1 creature",
+      "canUpcast": true,
+      "upcastEffect": "+1d4 healing per tier above 1"
+    }
+  },
+  {
+    "id": "inflict-wounds",
+    "name": "Inflict Wounds",
+    "descr": "Make a melee spell attack against a creature you can reach. On a hit, the target takes necrotic damage.",
+    "data": {
+      "school": "necrotic",
+      "tier": "1",
+      "manaCost": 2,
+      "castingTime": "1-action",
+      "range": "touch",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "damage": "3d10 necrotic",
+      "attackRoll": true,
+      "canUpcast": true,
+      "upcastEffect": "+1d10 damage per tier above 1"
+    }
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "descr": "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you gain +5 Defense, including against the triggering attack.",
+    "data": {
+      "school": "utility",
+      "tier": "1",
+      "manaCost": 2,
+      "castingTime": "reaction",
+      "range": "self",
+      "duration": "1-round",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false
+      },
+      "canUpcast": false
+    }
+  },
+  {
+    "id": "fireball",
+    "name": "Fireball",
+    "descr": "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere must make a DEX save. A target takes fire damage on a failed save, or half as much on a success.",
+    "data": {
+      "school": "fire",
+      "tier": "3",
+      "manaCost": 6,
+      "castingTime": "1-action",
+      "range": "far",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "materialDescription": "A tiny ball of bat guano and sulfur"
+      },
+      "damage": "8d6 fire",
+      "area": "20 ft radius sphere",
+      "saveType": "dex",
+      "saveEffect": "Half damage on success",
+      "canUpcast": true,
+      "upcastEffect": "+1d6 damage per tier above 3"
+    }
+  },
+  {
+    "id": "lightning-bolt",
+    "name": "Lightning Bolt",
+    "descr": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a DEX save. A creature takes lightning damage on a failed save, or half as much on a success.",
+    "data": {
+      "school": "lightning",
+      "tier": "3",
+      "manaCost": 6,
+      "castingTime": "1-action",
+      "range": "self",
+      "rangeCustom": "100 ft line",
+      "duration": "instant",
+      "concentration": false,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "materialDescription": "A bit of fur and a rod of amber, crystal, or glass"
+      },
+      "damage": "8d6 lightning",
+      "area": "100 ft line, 5 ft wide",
+      "saveType": "dex",
+      "saveEffect": "Half damage on success",
+      "canUpcast": true,
+      "upcastEffect": "+1d6 damage per tier above 3"
+    }
+  },
+  {
+    "id": "fly",
+    "name": "Fly",
+    "descr": "You touch a willing creature. The target gains a flying speed of 60 feet for the duration. When the spell ends, the target falls if it is still aloft.",
+    "data": {
+      "school": "wind",
+      "tier": "3",
+      "manaCost": 6,
+      "castingTime": "1-action",
+      "range": "touch",
+      "duration": "10-minutes",
+      "concentration": true,
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "materialDescription": "A wing feather from any bird"
+      },
+      "targets": "1 willing creature",
+      "canUpcast": true,
+      "upcastEffect": "+1 additional target per tier above 3"
+    }
+  }
+]

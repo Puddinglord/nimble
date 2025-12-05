@@ -1,0 +1,246 @@
+[
+  {
+    "id": "goblin",
+    "name": "Goblin",
+    "descr": "Small, cunning humanoids that prefer ambushes and overwhelming numbers.",
+    "data": {
+      "type": "humanoid",
+      "size": "S",
+      "level": "1/4",
+      "xp": 25,
+      "armor": "none",
+      "hp": { "max": 12, "current": 12 },
+      "abilities": { "str": -1, "dex": 2, "int": 0, "wil": -1 },
+      "movement": { "walk": 30 },
+      "skills": "Stealth +4",
+      "senses": "Darkvision 60 ft",
+      "languages": "Common, Goblin",
+      "traits": "**Nimble Escape.** The goblin can Disengage or Hide as a bonus action.",
+      "actions": "**Scimitar.** 1d6+2 slashing damage.\n\n**Shortbow.** Range 80/320 ft. 1d6+2 piercing damage.",
+      "actionsPerTurn": 1
+    }
+  },
+  {
+    "id": "skeleton",
+    "name": "Skeleton",
+    "descr": "Animated bones of the dead, bound to serve their creator's will.",
+    "data": {
+      "type": "undead",
+      "size": "M",
+      "level": "1/4",
+      "xp": 25,
+      "armor": "medium",
+      "hp": { "max": 9, "current": 9 },
+      "abilities": { "str": 0, "dex": 2, "int": -2, "wil": -2 },
+      "movement": { "walk": 30 },
+      "senses": "Darkvision 60 ft",
+      "languages": "Understands languages it knew in life but can't speak",
+      "vulnerabilities": "Bludgeoning",
+      "immunities": "Poison",
+      "conditionImmunities": "Poisoned, Exhaustion",
+      "actions": "**Shortsword.** 1d6+2 piercing damage.\n\n**Shortbow.** Range 80/320 ft. 1d6+2 piercing damage.",
+      "actionsPerTurn": 1
+    }
+  },
+  {
+    "id": "zombie",
+    "name": "Zombie",
+    "descr": "Slow but relentless undead driven by dark magic.",
+    "data": {
+      "type": "undead",
+      "size": "M",
+      "level": "1/4",
+      "xp": 25,
+      "armor": "none",
+      "hp": { "max": 12, "current": 12 },
+      "abilities": { "str": 1, "dex": -2, "int": -4, "wil": -2 },
+      "movement": { "walk": 20 },
+      "senses": "Darkvision 60 ft",
+      "languages": "Understands languages it knew in life but can't speak",
+      "immunities": "Poison",
+      "conditionImmunities": "Poisoned",
+      "traits": "**Undead Fortitude.** If damage reduces the zombie to 0 HP, it makes a WIL save (DC = 5 + damage taken). On success, it drops to 1 HP instead. Radiant damage bypasses this.",
+      "actions": "**Slam.** 1d6+1 bludgeoning damage.",
+      "actionsPerTurn": 1
+    }
+  },
+  {
+    "id": "wolf",
+    "name": "Wolf",
+    "descr": "A cunning pack hunter that works with allies to bring down prey.",
+    "data": {
+      "type": "beast",
+      "size": "M",
+      "level": "1/4",
+      "xp": 25,
+      "armor": "none",
+      "hp": { "max": 12, "current": 12 },
+      "abilities": { "str": 1, "dex": 2, "int": -4, "wil": 1 },
+      "movement": { "walk": 40 },
+      "skills": "Perception +3, Stealth +4",
+      "senses": "Keen hearing and smell",
+      "traits": "**Pack Tactics.** The wolf has advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 ft of the creature.",
+      "actions": "**Bite.** 2d4+2 piercing damage. Target must succeed on STR save (DC 11) or be knocked prone.",
+      "actionsPerTurn": 1
+    }
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "descr": "Savage warriors who live for battle and conquest.",
+    "data": {
+      "type": "humanoid",
+      "size": "M",
+      "level": "1/2",
+      "xp": 50,
+      "armor": "none",
+      "hp": { "max": 20, "current": 20 },
+      "abilities": { "str": 3, "dex": 1, "int": -2, "wil": 0 },
+      "movement": { "walk": 30 },
+      "skills": "Intimidation +2",
+      "senses": "Darkvision 60 ft",
+      "languages": "Common, Orc",
+      "traits": "**Aggressive.** As a bonus action, the orc can move up to its speed toward a hostile creature it can see.",
+      "actions": "**Greataxe.** 1d12+3 slashing damage.\n\n**Javelin.** Range 30/120 ft. 1d6+3 piercing damage.",
+      "actionsPerTurn": 1
+    }
+  },
+  {
+    "id": "bandit-captain",
+    "name": "Bandit Captain",
+    "descr": "A cunning leader who commands through a mix of skill and intimidation.",
+    "data": {
+      "type": "humanoid",
+      "size": "M",
+      "level": "2",
+      "xp": 200,
+      "armor": "medium",
+      "hp": { "max": 27, "current": 27 },
+      "abilities": { "str": 2, "dex": 3, "int": 1, "wil": 1 },
+      "movement": { "walk": 30 },
+      "skills": "Insight +3, Perception +3",
+      "languages": "Common, Thieves' Cant",
+      "traits": "**Cunning Action.** The captain can Dash, Disengage, or Hide as a bonus action.",
+      "actions": "**Multiattack.** The captain makes two attacks.\n\n**Scimitar.** 1d6+3 slashing damage.\n\n**Dagger.** Range 20/60 ft. 1d4+3 piercing damage.",
+      "reactions": "**Parry.** The captain adds 2 to its Defense against one melee attack that would hit it.",
+      "actionsPerTurn": 2
+    }
+  },
+  {
+    "id": "ogre",
+    "name": "Ogre",
+    "descr": "A hulking brute that solves most problems with violence.",
+    "data": {
+      "type": "giant",
+      "size": "L",
+      "level": "2",
+      "xp": 200,
+      "armor": "none",
+      "hp": { "max": 35, "current": 35 },
+      "abilities": { "str": 4, "dex": -1, "int": -3, "wil": -2 },
+      "movement": { "walk": 40 },
+      "senses": "Darkvision 60 ft",
+      "languages": "Common, Giant",
+      "actions": "**Greatclub.** 2d8+4 bludgeoning damage.\n\n**Javelin.** Range 30/120 ft. 2d6+4 piercing damage.",
+      "actionsPerTurn": 1
+    }
+  },
+  {
+    "id": "knight",
+    "name": "Knight",
+    "descr": "A trained warrior clad in heavy armor, sworn to a noble cause.",
+    "data": {
+      "type": "humanoid",
+      "size": "M",
+      "level": "3",
+      "xp": 450,
+      "armor": "heavy",
+      "hp": { "max": 27, "current": 27 },
+      "abilities": { "str": 3, "dex": 0, "int": 0, "wil": 2 },
+      "movement": { "walk": 30 },
+      "skills": "Insight +4, Perception +4",
+      "languages": "Common, one other",
+      "traits": "**Brave.** The knight has advantage on saves against being frightened.",
+      "actions": "**Multiattack.** The knight makes two melee attacks.\n\n**Greatsword.** 2d6+3 slashing damage.\n\n**Heavy Crossbow.** Range 100/400 ft. 1d10 piercing damage.",
+      "reactions": "**Parry.** The knight adds 2 to its Defense against one melee attack that would hit it.",
+      "actionsPerTurn": 2
+    }
+  },
+  {
+    "id": "troll",
+    "name": "Troll",
+    "descr": "A fearsome regenerating monster with an insatiable hunger.",
+    "data": {
+      "type": "giant",
+      "size": "L",
+      "level": "5",
+      "xp": 1000,
+      "armor": "none",
+      "hp": { "max": 63, "current": 63 },
+      "abilities": { "str": 4, "dex": 1, "int": -2, "wil": -1 },
+      "movement": { "walk": 30 },
+      "skills": "Perception +2",
+      "senses": "Darkvision 60 ft",
+      "languages": "Giant",
+      "traits": "**Regeneration.** The troll regains 10 HP at the start of its turn. If the troll takes fire or acid damage, this trait doesn't function at the start of the troll's next turn. The troll dies only if it starts its turn with 0 HP and doesn't regenerate.\n\n**Keen Smell.** The troll has advantage on Perception checks that rely on smell.",
+      "actions": "**Multiattack.** The troll makes three attacks: one bite and two claws.\n\n**Bite.** 1d6+4 piercing damage.\n\n**Claw.** 2d6+4 slashing damage.",
+      "actionsPerTurn": 3
+    }
+  },
+  {
+    "id": "young-dragon-fire",
+    "name": "Young Fire Dragon",
+    "descr": "A young but still deadly dragon with scales like burning coals.",
+    "data": {
+      "type": "dragon",
+      "size": "L",
+      "level": "10",
+      "xp": 4000,
+      "armor": "heavy",
+      "hp": { "max": 66, "current": 66 },
+      "abilities": { "str": 4, "dex": 0, "int": 2, "wil": 3 },
+      "movement": { "walk": 40, "fly": 80 },
+      "skills": "Perception +6, Stealth +4",
+      "senses": "Blindsight 30 ft, Darkvision 120 ft",
+      "languages": "Common, Draconic",
+      "immunities": "Fire",
+      "traits": "**Legendary Resistance (1/day).** If the dragon fails a save, it can choose to succeed instead.",
+      "actions": "**Multiattack.** The dragon makes three attacks: one bite and two claws.\n\n**Bite.** 2d10+4 piercing + 1d6 fire damage.\n\n**Claw.** 2d6+4 slashing damage.\n\n**Fire Breath (Recharge 5-6).** The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DEX save (DC 15). A creature takes 12d6 fire damage on a failed save, or half on success.",
+      "actionsPerTurn": 3,
+      "isLegendary": false
+    }
+  },
+  {
+    "id": "ancient-dragon-fire",
+    "name": "Ancient Fire Dragon",
+    "descr": "A legendary wyrm whose very presence causes the air to shimmer with heat. Its scales are impenetrable and its flames have consumed kingdoms.",
+    "data": {
+      "type": "dragon",
+      "size": "G",
+      "level": "20",
+      "xp": 20000,
+      "armor": "heavy",
+      "hp": { "max": 122, "current": 122 },
+      "abilities": { "str": 6, "dex": 0, "int": 4, "wil": 5 },
+      "movement": { "walk": 40, "fly": 80, "climb": 40 },
+      "skills": "Perception +10, Stealth +6",
+      "senses": "Blindsight 60 ft, Darkvision 120 ft",
+      "languages": "Common, Draconic",
+      "immunities": "Fire",
+      "isLegendary": true,
+      "legendaryResistance": 3,
+      "traits": "**Legendary Resistance (3/day).** If the dragon fails a save, it can choose to succeed instead.\n\n**Fire Aura.** Any creature that starts its turn within 10 feet of the dragon takes 2d6 fire damage.",
+      "actions": "**Multiattack.** The dragon makes three attacks: one bite and two claws. It can use Frightful Presence in place of one attack.\n\n**Bite.** 2d10+6 piercing + 4d6 fire damage.\n\n**Claw.** 2d6+6 slashing damage.\n\n**Tail.** 2d8+6 bludgeoning damage.\n\n**Frightful Presence.** Each creature of the dragon's choice within 120 feet must succeed on a WIL save (DC 19) or become frightened for 1 minute.\n\n**Fire Breath (Recharge 5-6).** 60-foot cone. DEX save DC 21. 18d6 fire damage, half on success.",
+      "legendaryActions": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only after another creature's turn.\n\n**Detect.** The dragon makes a Perception check.\n\n**Tail Attack (Costs 1 Action).** The dragon makes a tail attack.\n\n**Wing Attack (Costs 2 Actions).** The dragon beats its wings. Each creature within 15 feet must succeed on a DEX save (DC 22) or take 2d6+6 bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+      "bloodied": {
+        "threshold": 61,
+        "abilities": "**Desperate Fury.** When bloodied, the dragon's attacks deal an additional 1d6 fire damage, and its Fire Aura deals 3d6 damage instead of 2d6."
+      },
+      "lastStand": {
+        "hp": 50,
+        "behavior": "In its Last Stand, the ancient dragon becomes reckless and suicidal. It uses its Fire Breath every turn regardless of recharge, potentially burning itself in the process. It focuses entirely on the creature that reduced it to 0 HP, ignoring all other threats."
+      },
+      "actionsPerTurn": 3
+    }
+  }
+]

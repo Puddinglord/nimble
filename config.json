@@ -23,8 +23,8 @@
         "detail": "Level {{data.level|default: '1'}} • {{data.class.name|default: 'Unknown Class'}}"
       },
       "combatant": {
-        "initiative": "{{data.initiative|default: '0'}}",
-        "ac": "{{data.ac.value|default: '10'}}",
+        "initiative": "{{data.abilities.wil.modifier|default: '0'}}",
+        "ac": "{{data.defense|default: '10'}}",
         "bars": [
           {
             "attribute": "data.hp",
@@ -42,17 +42,16 @@
       ]
     },
     "monster": {
-      "detail": "{{data.size|default: 'Medium'|map: 'Size'}} {{data.type|default: 'Humanoid'|map: 'MonsterType'}} • CR {{data.cr|default: '1'}}",
+      "detail": "{{data.size|map: 'Size'}} {{data.type|map: 'MonsterType'}} • Lvl {{data.level|default: '1'}}{% if data.armor %} • {{data.armor|uppercase}} Armor{% endif %}",
       "tokenImage": "{{image}}",
       "isPlayerControlled": false,
       "defeatedWhenHpDropsToZero": true,
       "role": "hostile",
       "collection": {
-        "detail": "CR {{data.cr|default: '1'}} • {{data.type|default: 'Humanoid'|map: 'MonsterType'}}"
+        "detail": "Lvl {{data.level|default: '1'}} • {{data.type|map: 'MonsterType'}}{% if data.armor %} • {{data.armor|uppercase}}{% endif %}"
       },
       "combatant": {
-        "initiative": "{{data.abilities.dex|default: '0'}}",
-        "ac": "{{data.ac.value|default: '10'}}",
+        "initiative": "{{data.abilities.wil|default: '0'}}",
         "bars": [
           {
             "attribute": "data.hp",
@@ -66,21 +65,24 @@
           "label": "HP",
           "maxValue": "{{data.hp.max}}",
           "value": "{{data.hp.current}}"
+        },
+        {
+          "label": "Armor",
+          "value": "{{data.armor|uppercase|default: '-'}}"
         }
       ]
     },
     "npc": {
-      "detail": "{{data.size|default: 'Medium'|map: 'Size'}} {{data.type|default: 'Humanoid'|map: 'MonsterType'}}",
+      "detail": "{{data.size|map: 'Size'}} {{data.type|map: 'MonsterType'}}{% if data.armor %} • {{data.armor|uppercase}} Armor{% endif %}",
       "tokenImage": "{{image}}",
       "isPlayerControlled": false,
       "defeatedWhenHpDropsToZero": true,
       "role": "neutral",
       "collection": {
-        "detail": "{{data.type|default: 'Humanoid'|map: 'MonsterType'}}"
+        "detail": "{{data.type|map: 'MonsterType'}}{% if data.armor %} • {{data.armor|uppercase}}{% endif %}"
       },
       "combatant": {
-        "initiative": "{{data.abilities.dex|default: '0'}}",
-        "ac": "{{data.ac.value|default: '10'}}",
+        "initiative": "{{data.abilities.wil|default: '0'}}",
         "bars": [
           {
             "attribute": "data.hp",
@@ -94,20 +96,45 @@
           "label": "HP",
           "maxValue": "{{data.hp.max}}",
           "value": "{{data.hp.current}}"
+        },
+        {
+          "label": "Armor",
+          "value": "{{data.armor|uppercase|default: '-'}}"
         }
       ]
     },
     "spell": {
-      "detail": "{% if data.level == '0' %}{{data.school|map: 'SpellSchool'}} cantrip{% else %}{{data.level|map: 'SpellLevel'}} {{data.school|map: 'SpellSchool'}}{% endif %}"
+      "detail": "{% if data.tier == '0' %}{{data.school|map: 'SpellSchool'}} Cantrip{% else %}Tier {{data.tier}} {{data.school|map: 'SpellSchool'}}{% endif %}{% if data.manaCost %} • {{data.manaCost}} mana{% endif %}"
     },
     "weapon": {
-      "detail": "{{data.damage}} {{data.damageType|titlecase}} damage"
+      "detail": "{{data.damage}} {{data.damageType|map: 'DamageType'}} damage"
     },
     "armor": {
-      "detail": "Armor {{data.armor}}"
+      "detail": "+{{data.defenseBonus}} Defense • {{data.category|map: 'ArmorCategory'}}"
     },
     "item": {
-      "detail": "{{data.type|titlecase}}"
+      "detail": "{{data.type|map: 'ItemType'}}{% if data.rarity %} • {{data.rarity|map: 'ItemRarity'}}{% endif %}"
+    },
+    "class": {
+      "detail": "{{data.description|truncate: 50}}"
+    },
+    "subclass": {
+      "detail": "{{data.class.name|default: 'Class'}} subclass"
+    },
+    "ancestry": {
+      "detail": "{{data.description|truncate: 50}}"
+    },
+    "background": {
+      "detail": "{{data.description|truncate: 50}}"
+    },
+    "feature": {
+      "detail": "{{data.type|default: 'Feature'}}{% if data.level %} • Level {{data.level}}{% endif %}"
+    },
+    "table": {
+      "detail": "{{data.description|truncate: 50}}"
+    },
+    "rule": {
+      "detail": "{{data.description|truncate: 50}}"
     }
   },
   "statusEffects": [
@@ -118,15 +145,15 @@
   "measurements": {
     "default": {
       "distance": {
-        "unit": "spaces",
+        "unit": "ft",
         "format": "@value @unit"
       },
       "weight": {
         "unit": "lb",
-        "format": "@value @unit."
+        "format": "@value @unit"
       },
       "speed": {
-        "unit": "spaces",
+        "unit": "ft",
         "format": "@value"
       }
     },
@@ -135,21 +162,21 @@
         "unit": "m",
         "format": "@value @unit",
         "convert": {
-          "spaces": "@value * 1.5"
+          "ft": "@value * 0.3"
         }
       },
       "weight": {
         "unit": "kg",
         "format": "@value @unit",
         "convert": {
-          "lb": "@value * 0.5"
+          "lb": "@value * 0.45"
         }
       },
       "speed": {
         "unit": "m",
         "format": "@value",
         "convert": {
-          "spaces": "@value * 1.5"
+          "ft": "@value * 0.3"
         }
       }
     }

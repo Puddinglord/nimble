@@ -1,0 +1,60 @@
+{
+  "type": "vStack",
+  "spacing": 16,
+  "views": [
+    {
+      "type": "text",
+      "value": "{{name|uppercase}}",
+      "style": "largeTitle",
+      "weight": "bold"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": "{{descr}}",
+      "style": "body"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "padding": 12,
+      "backgroundColor": "systemGray6",
+      "cornerRadius": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Quick Reference",
+          "style": "headline",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{data.summary}}",
+          "style": "body"
+        }
+      ],
+      "visibleIf": "data.summary != ''"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Related Rules",
+          "style": "headline",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{data.related}}",
+          "style": "body",
+          "color": "secondary"
+        }
+      ],
+      "visibleIf": "data.related != ''"
+    }
+  ]
+}

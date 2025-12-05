@@ -2,7 +2,7 @@
   "id": "nimble",
   "name": "Nimble RPG",
   "type": "system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A fast-paced fantasy tabletop RPG emphasizing tactical combat, heroic actions, and streamlined mechanics.",
   "download": "https://github.com/encounterplus/nimble/releases/download/0.1.0/nimble.system",
   "compatibility": {

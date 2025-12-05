@@ -1,0 +1,135 @@
+{
+  "title": "Item",
+  "sections": [
+    {
+      "title": "Basic Information",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Item Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Enter item name"
+        },
+        {
+          "title": "Item Type",
+          "type": "picker",
+          "attribute": "data.itemType",
+          "attributeType": "ItemType"
+        },
+        {
+          "title": "Rarity",
+          "type": "picker",
+          "attribute": "data.rarity",
+          "attributeType": "ItemRarity"
+        },
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "Item description"
+        }
+      ]
+    },
+    {
+      "title": "Physical Properties",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Weight (lbs)",
+          "type": "number",
+          "attribute": "data.weight",
+          "placeholder": "0"
+        },
+        {
+          "title": "Value (silver)",
+          "type": "number",
+          "attribute": "data.value",
+          "placeholder": "0"
+        },
+        {
+          "title": "Quantity",
+          "type": "number",
+          "attribute": "data.quantity",
+          "placeholder": "1"
+        },
+        {
+          "title": "Stackable",
+          "type": "toggle",
+          "attribute": "data.stackable"
+        }
+      ]
+    },
+    {
+      "title": "Usage",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Consumable",
+          "type": "toggle",
+          "attribute": "data.consumable"
+        },
+        {
+          "title": "Charges",
+          "type": "number",
+          "attribute": "data.charges.current",
+          "placeholder": "0"
+        },
+        {
+          "title": "Max Charges",
+          "type": "number",
+          "attribute": "data.charges.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Recharge",
+          "type": "text",
+          "attribute": "data.recharge",
+          "placeholder": "e.g., Dawn, Short Rest"
+        },
+        {
+          "title": "Attunement Required",
+          "type": "toggle",
+          "attribute": "data.attunement"
+        },
+        {
+          "title": "Attunement Requirements",
+          "type": "text",
+          "attribute": "data.attunementRequirements",
+          "placeholder": "e.g., Spellcaster",
+          "visibleIf": "data.attunement == true"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Effect",
+          "type": "textArea",
+          "attribute": "data.effect",
+          "placeholder": "What does this item do when used?"
+        },
+        {
+          "title": "Activation",
+          "type": "text",
+          "attribute": "data.activation",
+          "placeholder": "e.g., Action, Bonus Action"
+        }
+      ]
+    },
+    {
+      "title": "Additional Details",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Notes",
+          "type": "textArea",
+          "attribute": "data.notes",
+          "placeholder": "Additional notes"
+        }
+      ]
+    }
+  ]
+}

@@ -9,10 +9,13 @@ Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, her
 **Key Features:**
 - 11 unique character classes with distinct playstyles
 - 24 diverse ancestries (5 common, 19 exotic)
-- Tactical combat with heroic actions and reactions
-- Streamlined d20-based skill system
+- Tactical combat with 3 actions per turn for heroes
+- Streamlined d20-based skill system (10 skills)
 - Four core stats: STR, DEX, INT, WIL (instead of the traditional six)
-- Dynamic magic system with multiple spell schools
+- Mana-based magic system (replaces spell slots)
+- Wounds system for tracking serious injuries
+- Monster armor system (None/Medium/Heavy) that affects damage taken
+- Legendary monsters with Bloodied abilities and Last Stand mechanics
 - Based on 5e SRD mechanics with Nimble innovations
 
 ## Installation
@@ -51,6 +54,9 @@ Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, her
 - `weapons.json` - 22 weapons (melee and ranged)
 - `armor.json` - 20 armor types
 - `items.json` - Equipment and consumables
+- `spells.json` - Sample spells (16 spells across all 7 schools)
+- `monsters.json` - Sample monsters (11 creatures, levels 1/4 to 20)
+- `backgrounds.json` - Character backgrounds (10 options)
 
 ### Classes (11)
 1. **Berserker** - Unstoppable force of wrath (d12 Hit Die)
@@ -78,10 +84,10 @@ Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, her
 - **Will (WIL)** - Force of personality, spellcasting, insight
 
 **10 Skills:**
-- Arcana (INT), Examination (INT), Lore (INT)
+- Arcana (INT), Examination (INT), Influence (INT), Lore (INT)
 - Finesse (DEX), Stealth (DEX)
 - Might (STR)
-- Influence (WIL), Insight (WIL), Naturecraft (WIL), Perception (WIL)
+- Insight (WIL), Naturecraft (WIL), Perception (WIL)
 
 ### Magic System
 **7 Spell Schools:**
@@ -89,7 +95,29 @@ Nimble is a fast-paced fantasy tabletop RPG that emphasizes tactical combat, her
 - Wind, Radiant, Necrotic
 - Utility
 
-**Spell Levels:** Cantrips (0) through 5th-level
+**Spell Tiers:** Cantrips (Tier 0) through Tier 5
+
+**Mana System:**
+- Full Casters: (casting stat × level) + 5
+- Half Casters: (casting stat × level / 2) + 3
+
+### Combat System
+- **Heroes:** 3 actions per turn
+- **Monsters:** Variable actions (typically 1-3)
+- **No attack rolls vs monsters** - attacks always hit, damage modified by armor
+- **Monster Armor Types:**
+  - None: Full damage (dice + modifiers)
+  - Medium (M): Dice only (no stat modifier)
+  - Heavy (H): Half dice only (round down)
+- **Defense:** Used when monsters attack heroes (10 + DEX + Armor)
+- **Initiative:** Based on WIL modifier
+
+### Wounds System
+Separate from HP - represents serious injuries:
+- 1-2 Wounds: Minor injuries
+- 3-4 Wounds: Moderate injuries
+- 5 Wounds: Severe - functional but critical
+- 6 Wounds: Death
 
 ## File Structure
 
@@ -134,10 +162,13 @@ While Nimble is built on 5e-compatible mechanics, it includes these key differen
 1. **Four Stats** instead of six (STR, DEX, INT, WIL vs STR, DEX, CON, INT, WIS, CHA)
 2. **Simplified Skills** - 10 skills instead of 18
 3. **Unique Classes** - 11 original classes, no traditional D&D classes
-4. **Heroic Actions** - Special combat mechanics for dynamic encounters
-5. **Streamlined Magic** - Focused spell schools with cantrips and tiered spells
-6. **Wounds System** - Alternative to death saves
-7. **Different Ancestries** - Includes unique options like Bunbun, Crystalborn, etc.
+4. **3 Actions Per Turn** - Heroes get 3 actions instead of action/bonus action/movement
+5. **Mana System** - Replaces spell slots with a mana pool
+6. **No Attack Rolls vs Monsters** - Attacks always hit; monster armor reduces damage
+7. **Wounds System** - Separate from HP, tracks serious injuries (death at 6 wounds)
+8. **Initiative Uses WIL** - Not DEX like in 5e
+9. **Different Ancestries** - Includes unique options like Bunbun, Crystalborn, etc.
+10. **Legendary Monsters** - Bloodied abilities and Last Stand mechanics
 
 ## Credits
 
@@ -165,6 +196,17 @@ This work includes material taken from the System Reference Document 5.1 ("SRD 5
 - **Encounter+ Help:** [help.encounter.plus](https://help.encounter.plus)
 
 ## Version History
+
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
+
+### v0.2.0 (Current)
+- Complete Nimble RPG implementation with all core mechanics
+- Mana-based spellcasting system (replaces spell slots)
+- Wounds system for tracking serious injuries
+- Monster armor system (None/Medium/Heavy)
+- Legendary monster support (Bloodied, Last Stand)
+- Full form and view support for all entity types
+- Sample content: 16 spells, 11 monsters, 10 backgrounds
 
 ### v0.1.0 (Initial Release)
 - Complete system definition based on D&D 5e structure

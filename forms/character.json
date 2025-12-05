@@ -110,7 +110,7 @@
       ]
     },
     {
-      "title": "Hit Points",
+      "title": "Hit Points & Wounds",
       "type": "group",
       "fields": [
         {
@@ -132,34 +132,58 @@
           "placeholder": "0"
         },
         {
-          "title": "Hit Die",
+          "title": "Wounds (0-6, death at 6)",
+          "type": "number",
+          "attribute": "data.wounds",
+          "placeholder": "0"
+        },
+        {
+          "title": "Hit Die Type",
           "type": "picker",
           "attribute": "data.hitDie",
           "attributeType": "HitDie"
+        },
+        {
+          "title": "Hit Dice Current",
+          "type": "number",
+          "attribute": "data.hitDice.current",
+          "placeholder": "Equal to level"
+        },
+        {
+          "title": "Hit Dice Max",
+          "type": "number",
+          "attribute": "data.hitDice.max",
+          "placeholder": "Equal to level"
         }
       ]
     },
     {
-      "title": "Defense",
+      "title": "Defense & Combat",
       "type": "group",
       "fields": [
         {
-          "title": "Armor Class",
+          "title": "Defense (10 + DEX + Armor)",
           "type": "number",
-          "attribute": "data.ac.value",
+          "attribute": "data.defense",
           "placeholder": "10"
         },
         {
-          "title": "AC Notes",
+          "title": "Defense Notes",
           "type": "text",
-          "attribute": "data.ac.notes",
+          "attribute": "data.defenseNotes",
           "placeholder": "Armor type, shield, etc."
         },
         {
-          "title": "Initiative",
+          "title": "Initiative (WIL modifier)",
           "type": "number",
           "attribute": "data.initiative",
           "placeholder": "0"
+        },
+        {
+          "title": "Actions Per Turn",
+          "type": "number",
+          "attribute": "data.actionsPerTurn",
+          "placeholder": "3"
         }
       ]
     },
@@ -372,7 +396,7 @@
       ]
     },
     {
-      "title": "Spellcasting",
+      "title": "Spellcasting & Mana",
       "type": "group",
       "fields": [
         {
@@ -394,6 +418,24 @@
           "placeholder": "0"
         },
         {
+          "title": "Current Mana",
+          "type": "number",
+          "attribute": "data.mana.current",
+          "placeholder": "0"
+        },
+        {
+          "title": "Maximum Mana",
+          "type": "number",
+          "attribute": "data.mana.max",
+          "placeholder": "0"
+        },
+        {
+          "title": "Caster Type",
+          "type": "picker",
+          "attribute": "data.casterType",
+          "attributeType": "CasterType"
+        },
+        {
           "title": "Cantrips Known",
           "type": "number",
           "attribute": "data.spellcasting.cantripsKnown",
@@ -403,66 +445,6 @@
           "title": "Spells Known",
           "type": "number",
           "attribute": "data.spellcasting.spellsKnown",
-          "placeholder": "0"
-        },
-        {
-          "title": "Spell Slots (Level 1)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.1.max",
-          "placeholder": "0"
-        },
-        {
-          "title": "Used Slots (Level 1)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.1.used",
-          "placeholder": "0"
-        },
-        {
-          "title": "Spell Slots (Level 2)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.2.max",
-          "placeholder": "0"
-        },
-        {
-          "title": "Used Slots (Level 2)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.2.used",
-          "placeholder": "0"
-        },
-        {
-          "title": "Spell Slots (Level 3)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.3.max",
-          "placeholder": "0"
-        },
-        {
-          "title": "Used Slots (Level 3)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.3.used",
-          "placeholder": "0"
-        },
-        {
-          "title": "Spell Slots (Level 4)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.4.max",
-          "placeholder": "0"
-        },
-        {
-          "title": "Used Slots (Level 4)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.4.used",
-          "placeholder": "0"
-        },
-        {
-          "title": "Spell Slots (Level 5)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.5.max",
-          "placeholder": "0"
-        },
-        {
-          "title": "Used Slots (Level 5)",
-          "type": "number",
-          "attribute": "data.spellcasting.slots.5.used",
           "placeholder": "0"
         },
         {

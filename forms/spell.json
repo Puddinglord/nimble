@@ -1,0 +1,186 @@
+{
+  "title": "Spell",
+  "sections": [
+    {
+      "title": "Basic Information",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Spell Name",
+          "type": "text",
+          "attribute": "name",
+          "placeholder": "Enter spell name"
+        },
+        {
+          "title": "School",
+          "type": "picker",
+          "attribute": "data.school",
+          "attributeType": "SpellSchool"
+        },
+        {
+          "title": "Tier (0 = Cantrip)",
+          "type": "picker",
+          "attribute": "data.tier",
+          "attributeType": "SpellTier"
+        },
+        {
+          "title": "Mana Cost",
+          "type": "number",
+          "attribute": "data.manaCost",
+          "placeholder": "0 for cantrips"
+        }
+      ]
+    },
+    {
+      "title": "Casting Details",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Casting Time",
+          "type": "picker",
+          "attribute": "data.castingTime",
+          "attributeType": "CastingTime"
+        },
+        {
+          "title": "Range",
+          "type": "picker",
+          "attribute": "data.range",
+          "attributeType": "SpellRange"
+        },
+        {
+          "title": "Range (Custom)",
+          "type": "text",
+          "attribute": "data.rangeCustom",
+          "placeholder": "e.g., 60 ft cone"
+        },
+        {
+          "title": "Duration",
+          "type": "picker",
+          "attribute": "data.duration",
+          "attributeType": "SpellDuration"
+        },
+        {
+          "title": "Duration (Custom)",
+          "type": "text",
+          "attribute": "data.durationCustom",
+          "placeholder": "e.g., 1 hour"
+        },
+        {
+          "title": "Concentration",
+          "type": "toggle",
+          "attribute": "data.concentration"
+        }
+      ]
+    },
+    {
+      "title": "Components",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Verbal (V)",
+          "type": "toggle",
+          "attribute": "data.components.verbal"
+        },
+        {
+          "title": "Somatic (S)",
+          "type": "toggle",
+          "attribute": "data.components.somatic"
+        },
+        {
+          "title": "Material (M)",
+          "type": "toggle",
+          "attribute": "data.components.material"
+        },
+        {
+          "title": "Material Description",
+          "type": "text",
+          "attribute": "data.components.materialDescription",
+          "placeholder": "Required materials",
+          "visibleIf": "data.components.material == true"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Description",
+          "type": "textArea",
+          "attribute": "descr",
+          "placeholder": "Full spell description and effects"
+        },
+        {
+          "title": "Damage/Healing Dice",
+          "type": "text",
+          "attribute": "data.damage",
+          "placeholder": "e.g., 3d6 fire"
+        },
+        {
+          "title": "Save Type",
+          "type": "picker",
+          "attribute": "data.saveType",
+          "attributeType": "Ability"
+        },
+        {
+          "title": "Save Effect",
+          "type": "text",
+          "attribute": "data.saveEffect",
+          "placeholder": "e.g., half damage on success"
+        },
+        {
+          "title": "Attack Roll",
+          "type": "toggle",
+          "attribute": "data.attackRoll"
+        }
+      ]
+    },
+    {
+      "title": "Upcast Effects",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Can Upcast",
+          "type": "toggle",
+          "attribute": "data.canUpcast"
+        },
+        {
+          "title": "Upcast Effect",
+          "type": "textArea",
+          "attribute": "data.upcastEffect",
+          "placeholder": "Effect when cast at higher tier (e.g., +1d6 damage per tier above base)",
+          "visibleIf": "data.canUpcast == true"
+        }
+      ]
+    },
+    {
+      "title": "Additional Details",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Area of Effect",
+          "type": "text",
+          "attribute": "data.area",
+          "placeholder": "e.g., 20 ft radius sphere"
+        },
+        {
+          "title": "Targets",
+          "type": "text",
+          "attribute": "data.targets",
+          "placeholder": "e.g., up to 3 creatures"
+        },
+        {
+          "title": "Ritual",
+          "type": "toggle",
+          "attribute": "data.ritual"
+        },
+        {
+          "title": "Notes",
+          "type": "textArea",
+          "attribute": "data.notes",
+          "placeholder": "Additional notes or rulings"
+        }
+      ]
+    }
+  ]
+}

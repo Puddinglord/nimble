@@ -1,0 +1,368 @@
+{
+  "type": "vStack",
+  "spacing": 16,
+  "views": [
+    {
+      "type": "hStack",
+      "spacing": 12,
+      "views": [
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "leading",
+          "views": [
+            {
+              "type": "text",
+              "value": "{{name}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            },
+            {
+              "type": "hStack",
+              "spacing": 8,
+              "views": [
+                {
+                  "type": "text",
+                  "value": "{{data.school|default: 'Unknown'}}",
+                  "style": "headline",
+                  "weight": "semibold",
+                  "color": "secondary"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.tier|default: 'Cantrip'}}",
+                  "style": "headline",
+                  "color": "secondary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "spacer"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 12,
+          "backgroundColor": "systemBlue",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.manaCost|default: '0'}}",
+              "style": "largeTitle",
+              "weight": "bold",
+              "color": "white"
+            },
+            {
+              "type": "text",
+              "value": "Mana",
+              "style": "caption",
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "hStack",
+      "spacing": 12,
+      "distribution": "fillEqually",
+      "views": [
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.castingTime|default: '1 Action'}}",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "Casting Time",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.range|default: 'Self'}}{{data.rangeCustom}}",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "Range",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.duration|default: 'Instant'}}{{data.durationCustom}}",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "Duration",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "hStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "V",
+          "style": "caption",
+          "weight": "bold",
+          "padding": 6,
+          "backgroundColor": "systemGreen",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.components.verbal == true"
+        },
+        {
+          "type": "text",
+          "value": "S",
+          "style": "caption",
+          "weight": "bold",
+          "padding": 6,
+          "backgroundColor": "systemOrange",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.components.somatic == true"
+        },
+        {
+          "type": "text",
+          "value": "M",
+          "style": "caption",
+          "weight": "bold",
+          "padding": 6,
+          "backgroundColor": "systemPurple",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.components.material == true"
+        },
+        {
+          "type": "text",
+          "value": "Concentration",
+          "style": "caption",
+          "weight": "semibold",
+          "padding": 6,
+          "backgroundColor": "systemRed",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.concentration == true"
+        },
+        {
+          "type": "text",
+          "value": "Ritual",
+          "style": "caption",
+          "weight": "semibold",
+          "padding": 6,
+          "backgroundColor": "systemTeal",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.ritual == true"
+        },
+        {
+          "type": "text",
+          "value": "Attack Roll",
+          "style": "caption",
+          "weight": "semibold",
+          "padding": 6,
+          "backgroundColor": "systemIndigo",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.attackRoll == true"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Materials: {{data.components.materialDescription}}",
+      "style": "caption",
+      "color": "secondary",
+      "visibleIf": "data.components.material == true"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "hStack",
+          "spacing": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "Damage/Healing:",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.damage}}",
+              "style": "body"
+            }
+          ],
+          "visibleIf": "data.damage != ''"
+        },
+        {
+          "type": "hStack",
+          "spacing": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "Save:",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.saveType}} - {{data.saveEffect}}",
+              "style": "body"
+            }
+          ],
+          "visibleIf": "data.saveType != ''"
+        },
+        {
+          "type": "hStack",
+          "spacing": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "Area:",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.area}}",
+              "style": "body"
+            }
+          ],
+          "visibleIf": "data.area != ''"
+        },
+        {
+          "type": "hStack",
+          "spacing": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "Targets:",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.targets}}",
+              "style": "body"
+            }
+          ],
+          "visibleIf": "data.targets != ''"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Description",
+          "style": "headline",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{descr|default: 'No description provided.'}}",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "padding": 12,
+      "backgroundColor": "systemIndigo",
+      "cornerRadius": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Upcast",
+          "style": "headline",
+          "weight": "bold",
+          "color": "white"
+        },
+        {
+          "type": "text",
+          "value": "{{data.upcastEffect}}",
+          "style": "body",
+          "color": "white"
+        }
+      ],
+      "visibleIf": "data.canUpcast == true"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Notes",
+          "style": "headline",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{data.notes}}",
+          "style": "body",
+          "color": "secondary"
+        }
+      ],
+      "visibleIf": "data.notes != ''"
+    }
+  ]
+}

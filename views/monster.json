@@ -24,7 +24,7 @@
             },
             {
               "type": "text",
-              "value": "CREATURE {{data.cr|default: '1'}}",
+              "value": "LEVEL {{data.level|default: '1'}}",
               "style": "headline",
               "weight": "bold",
               "color": "#2B2622",
@@ -65,6 +65,19 @@
               "borderColor": "#d8c384",
               "borderWidth": 2,
               "borderRadius": 4
+            },
+            {
+              "type": "label",
+              "value": "{{data.armor|map: 'MonsterArmor'|uppercase}} ARMOR",
+              "style": "caption",
+              "weight": "bold",
+              "bgColor": "#8F5441",
+              "color": "#F5F1E8",
+              "padding": [4, 8],
+              "borderColor": "#d8c384",
+              "borderWidth": 2,
+              "borderRadius": 4,
+              "visibleIf": "data.armor != ''"
             }
           ]
         },
@@ -237,7 +250,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "{{data.movement.walk|default: '30'}} ft{% if data.movement.fly > 0 %}, fly {{data.movement.fly}} ft{% endif %}",
+                      "value": "{{data.movement.walk|default: '30'}} ft{% if data.movement.fly > 0 %}, fly {{data.movement.fly}} ft{% endif %}{% if data.movement.swim > 0 %}, swim {{data.movement.swim}} ft{% endif %}{% if data.movement.climb > 0 %}, climb {{data.movement.climb}} ft{% endif %}{% if data.movement.burrow > 0 %}, burrow {{data.movement.burrow}} ft{% endif %}",
                       "style": "body",
                       "weight": "semibold",
                       "color": "#2B2622"
@@ -253,6 +266,82 @@
           "height": 1.5,
           "bgColor": "#8F5441",
           "padding": [12, 0, 8, 0],
+          "visibleIf": "data.skills != '' || data.senses != '' || data.languages != ''"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "visibleIf": "data.skills != '' || data.senses != '' || data.languages != ''",
+          "views": [
+            {
+              "type": "text",
+              "value": "**Skills** {{data.skills}}",
+              "style": "body",
+              "color": "#3d2817",
+              "visibleIf": "data.skills != ''"
+            },
+            {
+              "type": "text",
+              "value": "**Senses** {{data.senses}}",
+              "style": "body",
+              "color": "#3d2817",
+              "visibleIf": "data.senses != ''"
+            },
+            {
+              "type": "text",
+              "value": "**Languages** {{data.languages|default: 'None'}}",
+              "style": "body",
+              "color": "#3d2817"
+            }
+          ]
+        },
+        {
+          "type": "divider",
+          "height": 1.5,
+          "bgColor": "#8F5441",
+          "padding": [8, 0, 8, 0],
+          "visibleIf": "data.vulnerabilities != '' || data.resistances != '' || data.immunities != ''"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "visibleIf": "data.vulnerabilities != '' || data.resistances != '' || data.immunities != ''",
+          "views": [
+            {
+              "type": "text",
+              "value": "**Vulnerabilities** {{data.vulnerabilities}}",
+              "style": "body",
+              "color": "#58180D",
+              "visibleIf": "data.vulnerabilities != ''"
+            },
+            {
+              "type": "text",
+              "value": "**Resistances** {{data.resistances}}",
+              "style": "body",
+              "color": "#3a7a58",
+              "visibleIf": "data.resistances != ''"
+            },
+            {
+              "type": "text",
+              "value": "**Immunities** {{data.immunities}}",
+              "style": "body",
+              "color": "#8F5441",
+              "visibleIf": "data.immunities != ''"
+            },
+            {
+              "type": "text",
+              "value": "**Condition Immunities** {{data.conditionImmunities}}",
+              "style": "body",
+              "color": "#8F5441",
+              "visibleIf": "data.conditionImmunities != ''"
+            }
+          ]
+        },
+        {
+          "type": "divider",
+          "height": 1.5,
+          "bgColor": "#8F5441",
+          "padding": [8, 0, 8, 0],
           "visibleIf": "data.traits != ''"
         },
         {
@@ -263,10 +352,10 @@
           "views": [
             {
               "type": "text",
-              "value": "**TRAITS**",
+              "value": "TRAITS",
               "style": "headline",
               "weight": "bold",
-              "color": "#2B2622"
+              "color": "#58180D"
             },
             {
               "type": "text",
@@ -291,17 +380,10 @@
           "views": [
             {
               "type": "text",
-              "value": "**ACTIONS**",
+              "value": "ACTIONS{% if data.actionsPerTurn > 0 %} ({{data.actionsPerTurn}}/turn){% endif %}",
               "style": "headline",
               "weight": "bold",
-              "color": "#2B2622"
-            },
-            {
-              "type": "text",
-              "value": "After each hero's turn, choose 1:",
-              "style": "body",
-              "color": "#3d2817",
-              "style": "italic"
+              "color": "#58180D"
             },
             {
               "type": "text",
@@ -316,26 +398,207 @@
           "height": 1.5,
           "bgColor": "#8F5441",
           "padding": [0, 0, 8, 0],
-          "visibleIf": "data.legendary.actions != ''"
+          "visibleIf": "data.reactions != ''"
         },
         {
           "type": "vStack",
           "spacing": 4,
           "padding": [0, 0, 8, 0],
-          "visibleIf": "data.legendary.actions != ''",
+          "visibleIf": "data.reactions != ''",
           "views": [
             {
               "type": "text",
-              "value": "**LAST STAND**",
+              "value": "REACTIONS",
               "style": "headline",
               "weight": "bold",
-              "color": "#4E1B0E"
+              "color": "#58180D"
             },
             {
               "type": "text",
-              "value": "At 0 HP {{name}} {{data.legendary.actions}}",
+              "value": "{{data.reactions}}",
               "style": "body",
               "color": "#3d2817"
+            }
+          ]
+        },
+        {
+          "type": "divider",
+          "height": 2,
+          "bgColor": "#d8c384",
+          "padding": [8, 0, 8, 0],
+          "visibleIf": "data.isLegendary == true"
+        },
+        {
+          "type": "vStack",
+          "spacing": 8,
+          "padding": [0, 0, 8, 0],
+          "visibleIf": "data.isLegendary == true",
+          "views": [
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "LEGENDARY CREATURE",
+                  "style": "headline",
+                  "weight": "bold",
+                  "color": "#d8c384"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "Resistance: {{data.legendaryResistance|default: '3'}}/day",
+                  "style": "caption",
+                  "weight": "bold",
+                  "color": "#8F5441"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "Acts after each hero's turn. Choose one action:",
+              "style": "caption",
+              "color": "#8F5441",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.legendaryActions}}",
+              "style": "body",
+              "color": "#3d2817"
+            }
+          ]
+        },
+        {
+          "type": "divider",
+          "height": 1.5,
+          "bgColor": "#8F5441",
+          "padding": [0, 0, 8, 0],
+          "visibleIf": "data.bloodied.abilities != ''"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "padding": [0, 0, 8, 0],
+          "bgColor": "#FFEEDD",
+          "visibleIf": "data.bloodied.abilities != ''",
+          "views": [
+            {
+              "type": "text",
+              "value": "BLOODIED ({{data.bloodied.threshold|default: 'half HP'}})",
+              "style": "headline",
+              "weight": "bold",
+              "color": "#58180D"
+            },
+            {
+              "type": "text",
+              "value": "{{data.bloodied.abilities}}",
+              "style": "body",
+              "color": "#3d2817"
+            }
+          ]
+        },
+        {
+          "type": "divider",
+          "height": 1.5,
+          "bgColor": "#4E1B0E",
+          "padding": [0, 0, 8, 0],
+          "visibleIf": "data.lastStand.hp > 0"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "padding": [8, 8, 8, 8],
+          "bgColor": "#4E1B0E",
+          "borderRadius": 6,
+          "visibleIf": "data.lastStand.hp > 0",
+          "views": [
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "LAST STAND",
+                  "style": "headline",
+                  "weight": "bold",
+                  "color": "#d8c384"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.lastStand.hp}} HP",
+                  "style": "headline",
+                  "weight": "bold",
+                  "color": "#F5F1E8"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "{{data.lastStand.behavior}}",
+              "style": "body",
+              "color": "#F5F1E8"
+            }
+          ]
+        },
+        {
+          "type": "divider",
+          "height": 1.5,
+          "bgColor": "#8F5441",
+          "padding": [8, 0, 8, 0],
+          "visibleIf": "data.spellcasting.spells != ''"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "padding": [0, 0, 8, 0],
+          "visibleIf": "data.spellcasting.spells != ''",
+          "views": [
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "SPELLCASTING",
+                  "style": "headline",
+                  "weight": "bold",
+                  "color": "#58180D"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "DC {{data.spellcasting.saveDC|default: '10'}} | +{{data.spellcasting.attackBonus|default: '2'}} to hit",
+                  "style": "caption",
+                  "weight": "bold",
+                  "color": "#8F5441"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "{{data.spellcasting.spells}}",
+              "style": "body",
+              "color": "#3d2817"
+            }
+          ]
+        },
+        {
+          "type": "hStack",
+          "spacing": 8,
+          "padding": [12, 0, 0, 0],
+          "views": [
+            {
+              "type": "text",
+              "value": "**XP** {{data.xp|default: '0'}}",
+              "style": "caption",
+              "weight": "bold",
+              "color": "#8F5441"
             }
           ]
         },

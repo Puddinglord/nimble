@@ -59,13 +59,13 @@
           "views": [
             {
               "type": "text",
-              "value": "{{data.ac.value|default: '10'}}",
+              "value": "{{data.defense|default: '10'}}",
               "style": "largeTitle",
               "weight": "bold"
             },
             {
               "type": "text",
-              "value": "Armor Class",
+              "value": "Defense",
               "style": "caption",
               "color": "secondary"
             }
@@ -87,7 +87,7 @@
             },
             {
               "type": "text",
-              "value": "Initiative",
+              "value": "Initiative (WIL)",
               "style": "caption",
               "color": "secondary"
             }
@@ -103,13 +103,35 @@
           "views": [
             {
               "type": "text",
-              "value": "{{data.movement.walk|default: '6'}}",
+              "value": "{{data.movement.walk|default: '30'}} ft",
               "style": "largeTitle",
               "weight": "bold"
             },
             {
               "type": "text",
               "value": "Speed",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 12,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.actionsPerTurn|default: '3'}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "Actions",
               "style": "caption",
               "color": "secondary"
             }
@@ -161,6 +183,132 @@
           "visibleIf": "data.hp.temp > 0"
         }
       ]
+    },
+    {
+      "type": "hStack",
+      "spacing": 12,
+      "distribution": "fillEqually",
+      "views": [
+        {
+          "type": "vStack",
+          "spacing": 8,
+          "padding": 12,
+          "backgroundColor": "systemOrange",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "Wounds",
+                  "style": "headline",
+                  "weight": "semibold",
+                  "color": "white"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.wounds|default: '0'}} / 6",
+                  "style": "title2",
+                  "weight": "bold",
+                  "color": "white"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "Death at 6 wounds",
+              "style": "caption",
+              "color": "white"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 8,
+          "padding": 12,
+          "backgroundColor": "systemGreen",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "hStack",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "Hit Dice",
+                  "style": "headline",
+                  "weight": "semibold",
+                  "color": "white"
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "value": "{{data.hitDice.current|default: '0'}} / {{data.hitDice.max|default: '0'}}",
+                  "style": "title2",
+                  "weight": "bold",
+                  "color": "white"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "{{data.hitDie|default: 'd8'}} per die",
+              "style": "caption",
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "padding": 12,
+      "backgroundColor": "systemBlue",
+      "cornerRadius": 8,
+      "views": [
+        {
+          "type": "hStack",
+          "views": [
+            {
+              "type": "text",
+              "value": "Mana",
+              "style": "headline",
+              "weight": "semibold",
+              "color": "white"
+            },
+            {
+              "type": "spacer"
+            },
+            {
+              "type": "text",
+              "value": "{{data.mana.current|default: '0'}} / {{data.mana.max|default: '0'}}",
+              "style": "title2",
+              "weight": "bold",
+              "color": "white"
+            }
+          ]
+        },
+        {
+          "type": "progressBar",
+          "value": "{{data.mana.current}}",
+          "maxValue": "{{data.mana.max}}",
+          "color": "white",
+          "backgroundColor": "systemBlue"
+        },
+        {
+          "type": "text",
+          "value": "Full Caster: (stat × level) + 5 | Half Caster: (stat × level / 2) + 3",
+          "style": "caption",
+          "color": "white"
+        }
+      ],
+      "visibleIf": "data.mana.max > 0"
     },
     {
       "type": "divider"
@@ -379,7 +527,7 @@
               "views": [
                 {
                   "type": "text",
-                  "value": "Influence (WIL)",
+                  "value": "Influence (INT)",
                   "style": "body"
                 },
                 {

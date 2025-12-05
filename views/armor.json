@@ -1,0 +1,261 @@
+{
+  "type": "vStack",
+  "spacing": 16,
+  "views": [
+    {
+      "type": "hStack",
+      "spacing": 12,
+      "views": [
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "leading",
+          "views": [
+            {
+              "type": "text",
+              "value": "{{name}}",
+              "style": "largeTitle",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "value": "{{data.category|default: 'Armor'}}",
+              "style": "headline",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "spacer"
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 12,
+          "backgroundColor": "systemBlue",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "+{{data.defenseBonus|default: '0'}}",
+              "style": "largeTitle",
+              "weight": "bold",
+              "color": "white"
+            },
+            {
+              "type": "text",
+              "value": "Defense",
+              "style": "caption",
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "hStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "{{data.rarity|default: 'Common'}}",
+          "style": "caption",
+          "weight": "semibold",
+          "padding": 6,
+          "backgroundColor": "systemGray",
+          "cornerRadius": 4,
+          "color": "white"
+        },
+        {
+          "type": "text",
+          "value": "+{{data.magicBonus}} Magic",
+          "style": "caption",
+          "weight": "bold",
+          "padding": 6,
+          "backgroundColor": "systemPurple",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.magicBonus > 0"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "hStack",
+      "spacing": 12,
+      "distribution": "fillEqually",
+      "views": [
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.dexLimit|default: 'Unlimited'}}",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "DEX Limit",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.strRequirement|default: '0'}}",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "STR Required",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.weight|default: '0'}} lbs",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "Weight",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "vStack",
+          "spacing": 4,
+          "alignment": "center",
+          "padding": 10,
+          "backgroundColor": "systemGray6",
+          "cornerRadius": 8,
+          "views": [
+            {
+              "type": "text",
+              "value": "{{data.value|default: '0'}} sp",
+              "style": "body",
+              "weight": "semibold"
+            },
+            {
+              "type": "text",
+              "value": "Value",
+              "style": "caption",
+              "color": "secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "hStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Stealth Disadvantage",
+          "style": "caption",
+          "weight": "semibold",
+          "padding": 6,
+          "backgroundColor": "systemRed",
+          "cornerRadius": 4,
+          "color": "white",
+          "visibleIf": "data.stealthDisadvantage == true"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Description",
+          "style": "headline",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{descr|default: 'No description provided.'}}",
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "padding": 12,
+      "backgroundColor": "systemPurple",
+      "cornerRadius": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Special Properties",
+          "style": "headline",
+          "weight": "bold",
+          "color": "white"
+        },
+        {
+          "type": "text",
+          "value": "{{data.special}}",
+          "style": "body",
+          "color": "white"
+        }
+      ],
+      "visibleIf": "data.special != ''"
+    },
+    {
+      "type": "vStack",
+      "spacing": 8,
+      "views": [
+        {
+          "type": "text",
+          "value": "Notes",
+          "style": "headline",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "value": "{{data.notes}}",
+          "style": "body",
+          "color": "secondary"
+        }
+      ],
+      "visibleIf": "data.notes != ''"
+    }
+  ]
+}
