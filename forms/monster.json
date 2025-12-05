@@ -6,12 +6,6 @@
       "type": "group",
       "fields": [
         {
-          "title": "Name",
-          "type": "text",
-          "attribute": "name",
-          "placeholder": "Monster or NPC name"
-        },
-        {
           "title": "Size",
           "type": "picker",
           "attribute": "data.size",
