@@ -55,17 +55,19 @@
 .monster-armor {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
+  font-style: italic;
   font-size: 16px;
 }
 
 .monster-hp {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
+  font-style: italic;
   font-size: 18px;
 }
 
 .hp-icon {
-  margin-top: 5px;
+  margin-bottom: -5px;
   font-size: 30px;
   color: #C5BFB0;
   opacity: 0.3px;

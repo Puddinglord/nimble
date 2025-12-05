@@ -16,7 +16,7 @@
         <span class="monster-level">LVL {{data.level|default: '1'}}{% if data.size %}, {{data.size|map: 'Size'|uppercase}}{% endif %}</span>
       </div>
       <div class="monster-header-right">
-        <span class="monster-armor">🛡 {{data.defense|default: '—'}}</span>
+        {% if data.armor %}<span class="monster-armor">🛡 {{data.armor}}</span>{% endif %}
         <span class="monster-hp"><span class="hp-icon">♥</span> {{data.hp.max|default: '—'}}</span>
         {% if data.movement.fly > 0 %}<span class="monster-fly">FLY</span>{% endif %}
       </div>
