@@ -275,5 +275,42 @@
       },
       "actionsPerTurn": 3
     }
+  },
+  {
+    "data" : {
+      "actionFrequency" : "After each hero’s turn, choose one:",
+      "actions" : [
+        {
+          "name" : "Inferno Cleave",
+          "text" : "Move 8 then strike a 2 × 2 square area for 2d10+10 fire damage."
+        },
+        {
+          "name" : "Molten Fury",
+          "text" : "Lob a molten fireball at the furthest hero not already in the flames, igniting a 2 × 2 square area. Creatures there take 2d10+10 damage; and another 10 damage at the end of each of their turns if they remain in the area."
+        }
+      ],
+      "armor" : "H",
+      "bloodied" : {
+        "abilities" : "At **87 HP**, on his next turn, he uses Molten Fury a number of times equal to half the number of heroes (rounded up)."
+      },
+      "hp" : {
+        "current" : 175,
+        "max" : 175
+      },
+      "isLegendary" : true,
+      "lastStand" : {
+        "behavior" : "Flameheart is dying! **80** more damage and he dies. Until then, the area of his attacks increases to a 3 × 3 square area."
+      },
+      "level" : "8 Solo",
+      "movement" : {
+
+      },
+      "saves" : "STR+ WIL+",
+      "size" : "H",
+      "traits" : "***CInder Armor.*** Immune to fire. When damaged, deal **5** fire damage to all adjacent creatures.\n\n***Extinguish Flame.*** Cold or radiant crits extinguish all areas ignited by Molten Fury and suppress Cinder Armor for 1 turn."
+    },
+    "id" : "B1BDA562-9E57-4866-AF20-A8F0A9E43E2A",
+    "name" : "General Flameheart",
+    "slug" : "general-flameheart"
   }
 ]

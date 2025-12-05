@@ -68,41 +68,22 @@
     </div>
     {% endif %}
 
-    <!-- Legendary Section -->
-    {% if data.isLegendary == true %}
-    <hr class="monster-divider">
-    <div class="monster-section monster-legendary">
-      <div class="monster-section-title">Legendary</div>
-
-      {% if data.saves %}
-      <div class="monster-action">
-        <strong>Saves</strong> {{data.saves}}
-      </div>
-      {% endif %}
-
-      {% for action in data.legendaryActions %}
-      <span class="monster-action">
-        <strong>{{action.name}}.</strong> {{action.text|md}}
-      </>
-      {% endfor %}
-    </div>
-    {% endif %}
-
     <!-- Bloodied -->
     {% if data.isLegendary == true and data.bloodied.abilities %}
     <hr class="monster-divider">
     <div class="monster-section">
-      <div class="monster-section-title">Bloodied{% if data.bloodied.threshold %} ({{data.bloodied.threshold}}){% endif %}</div>
-      <div class="monster-action">{{data.bloodied.abilities|md}}</div>
+      <span class="monster-action">
+        <strong>Bloodied:</strong> {{data.bloodied.abilities|md}}
+      </span>
     </div>
     {% endif %}
 
     <!-- Last Stand -->
-    {% if data.isLegendary == true and data.lastStand.hp > 0 %}
-    <hr class="monster-divider">
+    {% if data.isLegendary == true and data.lastStand.behavior %}
     <div class="monster-section">
-      <div class="monster-section-title">Last Stand ({{data.lastStand.hp}} HP)</div>
-      <div class="monster-action">{{data.lastStand.behavior|md}}</div>
+      <span class="monster-action">
+        <strong>Last Stand:</strong> {{data.lastStand.behavior|md}}
+      </span>
     </div>
     {% endif %}
 

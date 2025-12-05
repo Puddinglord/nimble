@@ -56,7 +56,7 @@
 .monster-armor {
   font-family: 'Beaufort', Georgia, serif;
   font-weight: 800;
-  font-style: 'italic';
+  font-style: italic;
   font-size: 20px;
 }
 
@@ -73,7 +73,7 @@
   width: 32px;
   height: 32px;
   margin-right: -12px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .monster-hp {
@@ -81,8 +81,6 @@
   font-weight: 800;
   font-style: italic;
   font-size: 20px;
-  display: flex;
-  align-items: center;
 }
 
 .icon-heart {
@@ -90,6 +88,7 @@
   width: 32px;
   height: 32px;
   margin-right: -12px;
+  margin-bottom: 4px;
 }
 
 .monster-movement {
@@ -98,15 +97,15 @@
   font-style: italic;
   font-size: 20px;
   font-variant: small-caps;
-  display: flex;
-  align-items: center;
+  margin-bottom: 2px;
 }
 
 .icon-arrow {
   color: #C5BFB0;
   width: 24px;
   height: 24px;
-  margin-right: -6px;
+  margin-right: -8px;
+  margin-bottom: 5px;
 }
 
 .monster-saves {
@@ -115,8 +114,6 @@
   font-style: italic;
   font-size: 20px;
   font-variant: small-caps;
-  display: flex;
-  align-items: center;
 }
 
 .icon-star {
@@ -124,6 +121,7 @@
   width: 28px;
   height: 28px;
   margin-right: -8px;
+  margin-bottom: 4px;
 }
 
 /* Short Description (italic subtitle) */
@@ -249,6 +247,8 @@
 .monster-action {
   display: block;
   margin-bottom: 6px;
+  font-family: 'Avenir Next Condensed', sans-serif;
+  font-size: 18px;
 }
 
 .monster-action strong {

@@ -134,61 +134,10 @@
           "visibleIf": "data.isLegendary == true"
         },
         {
-          "title": "Legendary Actions",
-          "type": "list",
-          "attribute": "data.legendaryActions",
-          "visibleIf": "data.isLegendary == true",
-          "form": {
-            "title": "Legendary Action",
-            "sections": [
-              {
-                "type": "group",
-                "fields": [
-                  {
-                    "placeholder": "Name",
-                    "attribute": "name"
-                  },
-                  {
-                    "title": "Description",
-                    "type": "textArea",
-                    "attribute": "text"
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "title": "Bloodied State (50% HP)",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Bloodied Threshold",
-          "type": "number",
-          "attribute": "data.bloodied.threshold",
-          "placeholder": "Half of max HP",
-          "visibleIf": "data.isLegendary == true"
-        },
-        {
           "title": "Bloodied Abilities",
           "type": "textArea",
           "attribute": "data.bloodied.abilities",
           "placeholder": "When bloodied, the creature gains:\n\n**Desperate Fury.** Attack damage increases by 1d6.",
-          "visibleIf": "data.isLegendary == true"
-        }
-      ]
-    },
-    {
-      "title": "Last Stand (0 HP)",
-      "type": "group",
-      "fields": [
-        {
-          "title": "Last Stand HP",
-          "type": "number",
-          "attribute": "data.lastStand.hp",
-          "placeholder": "0",
           "visibleIf": "data.isLegendary == true"
         },
         {
