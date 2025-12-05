@@ -33,7 +33,7 @@
         float: right;
         font-size: 1.1em;
         font-weight: bold;
-        color: #2B2622;
+        color: #ff0000;
         margin-left: 12px;
     }
 
@@ -41,13 +41,13 @@
         font-size: 0.95em;
         font-weight: 600;
         margin: 4px 0 0 0;
-        color: #2B2622;
+        color: #00ff00;
     }
 
     .creature-content {
         font-size: 0.95em;
         line-height: 1.4;
-        color: #2B2622;
+        color: #0000ff;
     }
 
     .stat-line {
@@ -60,7 +60,7 @@
 
     .divider {
         height: 1px;
-        background: #2B2622;
+        background: #33eeff;
         margin: 10px 0;
         border: none;
     }
@@ -69,7 +69,7 @@
         font-size: 1em;
         font-weight: bold;
         text-transform: uppercase;
-        color: #2B2622;
+        color: #ff33ee;
         margin: 12px 0 6px 0;
         letter-spacing: 0.5px;
     }
@@ -124,16 +124,16 @@
         <hr class="divider">
         {% endif %}
 
-        {% if data.traits %}
-        <div class="stat-line"><strong>{{data.traits}}</strong></div>
-        <hr class="divider">
-        {% endif %}
-
         <div class="section-title">Actions:</div>
         {% if data.actions %}
         {{data.actions}}
         {% else %}
         <em>No actions defined</em>
+        {% endif %}
+
+        {% if data.traits %}
+        <div class="stat-line"><strong>{{data.traits}}</strong></div>
+        <hr class="divider">
         {% endif %}
 
         {% if data.legendary.actions %}
