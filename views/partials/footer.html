@@ -1,0 +1,16 @@
+<footer>
+  {% if sourceFormatted or locationFormatted %}
+  <div class="source-info">
+    {% if sourceFormatted %}<strong>Source:</strong> {{sourceFormatted}}{% endif %}
+    {% if locationFormatted %}<strong>Location:</strong> {{locationFormatted}}{% endif %}
+  </div>
+  {% endif %}
+
+  {% if tags %}
+  <div class="tags">
+    {% for tag in tags %}
+    <span class="tag">{{tag}}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</footer>

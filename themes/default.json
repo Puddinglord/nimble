@@ -1,0 +1,162 @@
+{
+  "debug": false,
+  "tintColor": "#000000",
+  "primaryColor": "#000000",
+  "textColor": "#000000",
+  "dividerColor": "#000000",
+  "bgColor": "#f2eddf",
+  "tableStyles": {
+    "default": {
+      "rowStyle": "underline",
+      "rowColor": "#000000"
+    }
+  },
+  "blockQuoteStyles": {
+    "default": {
+      "padding": [8, 12],
+      "bgColor": "#e6e0d0",
+      "body": {
+        "font": "Georgia",
+        "color": "#000000",
+        "size": 14,
+        "lineSpacing": 3
+      }
+    }
+  },
+  "textStyles": {
+    "body": {
+      "font": "Georgia",
+      "color": "#000000",
+      "size": 14,
+      "lineSpacing": 3
+    },
+    "label": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 12
+    },
+    "title": {
+      "font": "Georgia Bold",
+      "color": "#000000",
+      "size": 32
+    },
+    "title2": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "style": "bold",
+      "size": 24
+    },
+    "title3": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "alignment": "left",
+      "size": 22
+    },
+    "title4": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 16
+    },
+    "subtitle": {
+      "font": "Georgia Italic",
+      "color": "#000000",
+      "size": 14,
+      "lineSpacing": 3
+    },
+    "heading": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000"
+    },
+    "heading1": {
+      "font": "Georgia Bold",
+      "color": "#000000",
+      "size": 28
+    },
+    "heading2": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 20
+    },
+    "heading3": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 16
+    },
+    "heading4": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "size": 14
+    },
+    "heading5": {
+      "font": "Georgia",
+      "color": "#000000",
+      "size": 14
+    },
+    "heading6": {
+      "font": "Georgia",
+      "color": "#000000",
+      "size": 12
+    },
+    "caption": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 12
+    },
+    "caption2": {
+      "font": "Helvetica Neue",
+      "color": "#000000",
+      "size": 11
+    },
+    "headline": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "size": 18
+    },
+    "subheadline": {
+      "font": "Georgia Italic",
+      "color": "#000000",
+      "alignment": "center",
+      "size": 14
+    },
+    "stats-title": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 16
+    },
+    "stats-body": {
+      "font": "Georgia",
+      "color": "#000000",
+      "size": 14
+    },
+    "trait": {
+      "font": "Georgia Bold Italic",
+      "color": "#000000",
+      "size": 13
+    },
+    "monster-name": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 16
+    },
+    "monster-level": {
+      "font": "Helvetica Neue",
+      "color": "#000000",
+      "case": "uppercase",
+      "size": 11
+    },
+    "monster-hp": {
+      "font": "Helvetica Neue Bold",
+      "color": "#000000",
+      "size": 16
+    }
+  }
+}

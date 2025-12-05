@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}{{name}} - Monster{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="styles/monster.css">
+{% endblock %}
+
+{% block content %}
+<main id="monster" class="container-fluid">
+  <section class="stat-block">
+    <!-- Header: Name, Level/Size, Armor, HP -->
+    <div class="monster-header">
+      <div class="monster-header-left">
+        <span class="monster-name">{{name}}</span>
+        <span class="monster-level">LVL {{data.level|default: '1'}}{% if data.size %}, {{data.size|map: 'Size'|uppercase}}{% endif %}</span>
+      </div>
+      <div class="monster-header-right">
+        {% if data.defense %}<span class="monster-armor">🛡 {{data.defense}}</span>{% endif %}
+        <span class="monster-hp">♥ {{data.hp.max|default: '10'}}</span>
+        {% if data.movement.fly > 0 %}<span class="monster-fly">FLY</span>{% endif %}
+      </div>
+    </div>
+
+    <!-- Short Description (italic) -->
+    {% if data.shortDescription %}
+    <div class="monster-description">{{data.shortDescription}}</div>
+    {% endif %}
+
+    <!-- Traits -->
+    {% if data.traits %}
+    <div class="monster-traits">
+      {{data.traits|md}}
+    </div>
+    {% endif %}
+
+    <hr class="monster-divider">
+
+    <!-- Core Stats (Speed only - armor/size moved to header) -->
+    {% if data.movement.speed %}
+    <div class="monster-stats">
+      <span><strong>Speed</strong> {{data.movement.speed}}{% if data.movement.type %} ({{data.movement.type|map: 'MovementType'}}){% endif %}</span>
+    </div>
+    <hr class="monster-divider">
+    {% endif %}
+
+    <!-- Actions -->
+    {% if data.actions %}
+    <div class="monster-section">
+      <div class="monster-section-title">Actions</div>
+      <div class="monster-actions">
+        {% for action in data.actions %}
+        <p class="monster-action">
+          <strong>{{action.name}}.</strong> {{action.text|md}}
+        </p>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Legendary Section -->
+    {% if data.isLegendary == true %}
+    <hr class="monster-divider">
+    <div class="monster-section monster-legendary">
+      <div class="monster-section-title">Legendary</div>
+
+      {% if data.saves %}
+      <div class="monster-action">
+        <strong>Saves</strong> {{data.saves}}
+      </div>
+      {% endif %}
+
+      {% for action in data.legendaryActions %}
+      <p class="monster-action">
+        <strong>{{action.name}}.</strong> {{action.text|md}}
+      </p>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Bloodied -->
+    {% if data.isLegendary == true and data.bloodied.abilities %}
+    <hr class="monster-divider">
+    <div class="monster-section">
+      <div class="monster-section-title">Bloodied{% if data.bloodied.threshold %} ({{data.bloodied.threshold}}){% endif %}</div>
+      <div class="monster-action">{{data.bloodied.abilities|md}}</div>
+    </div>
+    {% endif %}
+
+    <!-- Last Stand -->
+    {% if data.isLegendary == true and data.lastStand.hp > 0 %}
+    <hr class="monster-divider">
+    <div class="monster-section">
+      <div class="monster-section-title">Last Stand ({{data.lastStand.hp}} HP)</div>
+      <div class="monster-action">{{data.lastStand.behavior|md}}</div>
+    </div>
+    {% endif %}
+
+  </section>
+
+  <!-- Description & Notes -->
+  <section class="other">
+    {% if descr %}
+    <div class="monster-description-full">
+      {{descr|md}}
+    </div>
+    {% endif %}
+
+    {% if notes %}
+    <h3>Notes</h3>
+    {{notes|md}}
+    {% endif %}
+
+    {% if image %}
+    <a href="{{env.dataURL}}{{image}}" target="_blank">
+      <img class="monster-image" src="{{env.dataURL}}{{image}}" />
+    </a>
+    {% endif %}
+  </section>
+
+  {% include "footer.html" %}
+</main>
+{% endblock %}

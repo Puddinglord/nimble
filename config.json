@@ -1,6 +1,7 @@
 {
   "entities": {
-    "default": {
+    "Default": {
+      "viewRenderer": "html",
       "detail": "",
       "tokenImage": "images/icon.jpg",
       "isPlayerControlled": false,
@@ -41,7 +42,8 @@
         }
       ]
     },
-    "monster": {
+    "Monster": {
+      "viewRenderer": "html",
       "detail": "{{data.size|map: 'Size'}} • Lvl {{data.level|default: '1'}}{% if data.armor %} • {{data.armor|uppercase}} Armor{% endif %}",
       "tokenImage": "{{image}}",
       "isPlayerControlled": false,

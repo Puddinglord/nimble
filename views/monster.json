@@ -9,7 +9,7 @@
     {
       "type": "text",
       "value": "{{name|uppercase}}",
-      "style": "title3",
+      "style": "title2",
       "weight": "black",
       "alignment": "center",
       "bgColor": "#f2eddf",
