@@ -8,7 +8,7 @@
   background: #f2eddf;
   padding: 12px 16px;
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-size: 14px;
   line-height: 1.4;
   color: #000;
@@ -38,31 +38,30 @@
 }
 
 .monster-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: bold;
+  font-family: 'Beaufort', Georgia, serif;
+  font-weight: 700;
   font-style: italic;
   font-size: 28px;
   letter-spacing: 0.01em;
+  font-variant: small-caps;
 }
 
 .monster-level {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-size: 13px;
   text-transform: uppercase;
   color: #000;
 }
 
 .monster-armor {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-weight: bold;
-  font-style: italic;
   font-size: 16px;
 }
 
 .monster-hp {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-weight: bold;
-  font-style: italic;
   font-size: 18px;
 }
 
@@ -74,7 +73,7 @@
 }
 
 .monster-fly {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-size: 11px;
   font-weight: bold;
   text-transform: uppercase;
@@ -176,7 +175,7 @@
 }
 
 .monster-section-title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
@@ -224,7 +223,7 @@
 }
 
 .other h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Next Condensed', sans-serif;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
