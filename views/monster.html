@@ -13,7 +13,7 @@
     <div class="monster-header">
       <div class="monster-header-left">
         <span class="monster-name">{{name}}</span>
-        <span class="monster-level">LVL {{data.level|default: '—'}}, {{data.size|default: 'Medium'|map: 'Size'|uppercase}}</span>
+        <span class="monster-level">LVL {{data.level|default: '—'}}{% if data.size %},{% endif %} {{data.size|default: 'Medium'|map: 'Size'|uppercase}}</span>
       </div>
       <div class="monster-header-right">
         {% if data.isLegendary == true %}
